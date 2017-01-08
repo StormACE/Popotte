@@ -11,7 +11,7 @@ Popotte - Conditions d'utilisation
   
  3- Le site web où Popotte est distribué n'essaye pas d'installer de logiciel tiers lors du téléchargement du fichier d'installation.  
   
- 4- Cette licence doit être incluse dans votre distribution  
+ 4- Cette licence doit être incluse dans votre distribution.
   
   
  Les recettes créent par Popotte son libre de droits.  
@@ -45,13 +45,13 @@ Popotte - Conditions d'utilisation
   
  Source codes provided here are for your educational purpose only.  
   
- Popotte is a mark of Martin Laflamme  
+ Popotte is a mark of Martin Laflamme.
   
  You use the program at your own risk - the author accepts no responsibility for any problems or losses which might arise from its use.  
   
   
   
- Martin Laflamme,  
+ Martin Laflamme
  08-01-2017 
 
 contact: kryptikcreations@gmail.com
