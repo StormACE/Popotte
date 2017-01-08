@@ -14,7 +14,9 @@ Vous pouvez distribuer Popotte seulement dans les conditions suivantes.
 4- Cette license doit être inclu dans votre distribution
 
 
-Les recettes créent par Popotte son libre de droits 
+Les recettes créent par Popotte son libre de droits.
+
+Les codes source distribuer ici sont pour votre éducation personnel seulement.
 
 Popotte est une marque de Martin Laflamme.
 
@@ -40,6 +42,8 @@ You can distribute Popotte under these conditions.
 
 
 The recipes created with Popotte are Royalty Free.
+
+Source codes provided here are for your educationnal purpose only.
 
 Popotte is a mark of Martin Laflamme
 
