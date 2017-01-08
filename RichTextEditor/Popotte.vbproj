@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F1226B3-82F5-44A7-AD8C-BAB1BD3D4235}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Popotte.My.MyApplication</StartupObject>
+    <RootNamespace>Popotte</RootNamespace>
+    <AssemblyName>Popotte</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\martin\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>125</ApplicationRevision>
+    <ApplicationVersion>4.8.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AdditionalParameters>
+    </AdditionalParameters>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>Full</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>false</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <DebugSymbols>true</DebugSymbols>
+    <AdditionalParameters>
+    </AdditionalParameters>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7E6CB31E45D8271ADD445DD5C986B60DB0928D2E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Popotte_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Popotte256-GoldMember.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Ionic.Zip">
+      <HintPath>Ionic.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="ExtendedRichTextBox" />
+    <Import Include="Ionic" />
+    <Import Include="Ionic.BZip2" />
+    <Import Include="Ionic.Crc" />
+    <Import Include="Ionic.Zip" />
+    <Import Include="Ionic.Zlib" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Popotte" />
+    <Import Include="Popotte.My" />
+    <Import Include="Popotte.My.Resources" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dlgAboutBox.Designer.vb">
+      <DependentUpon>dlgAboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgAboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="dlgLanguage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMultiModInfo.Designer.vb">
+      <DependentUpon>dlgMultiModInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMultiModInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgStartup.Designer.vb">
+      <DependentUpon>dlgStartup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgStartup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EncryptionSHA1.vb" />
+    <Compile Include="LanguageDialog.Designer.vb">
+      <DependentUpon>dlgLanguage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MiscFunctions.vb" />
+    <Compile Include="VérifierMiseAJour.vb" />
+    <Compile Include="dlgRappel.Designer.vb">
+      <DependentUpon>dlgRappel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgRappel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgCrypterDécrypter.Designer.vb">
+      <DependentUpon>dlgCrypterDécrypter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgCrypterDécrypter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgNouveauLivre.Designer.vb">
+      <DependentUpon>dlgNouveauLivre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgNouveauLivre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgResearchCenter.Designer.vb">
+      <DependentUpon>dlgResearchCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgResearchCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgConverter.Designer.vb">
+      <DependentUpon>dlgConverter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgConverter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgInfoRecette.Designer.vb">
+      <DependentUpon>dlgInfoRecette.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgInfoRecette.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgRenameLivre.Designer.vb">
+      <DependentUpon>dlgRenameLivre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgRenameLivre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniFileVb.vb" />
+    <Compile Include="Internet.vb" />
+    <Compile Include="dlgLivres.Designer.vb">
+      <DependentUpon>dlgLivres.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgLivres.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgFind.Designer.vb">
+      <DependentUpon>dlgFind.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgFind.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgReplace.Designer.vb">
+      <DependentUpon>dlgReplace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgReplace.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SortClass.vb" />
+    <Compile Include="SystemIO.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dlgAboutBox.resx">
+      <DependentUpon>dlgAboutBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgLanguage.resx">
+      <DependentUpon>dlgLanguage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMultiModInfo.resx">
+      <DependentUpon>dlgMultiModInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgRappel.resx">
+      <DependentUpon>dlgRappel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgCrypterDécrypter.resx">
+      <DependentUpon>dlgCrypterDécrypter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgConverter.resx">
+      <DependentUpon>dlgConverter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgInfoRecette.resx">
+      <DependentUpon>dlgInfoRecette.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgNouveauLivre.resx">
+      <DependentUpon>dlgNouveauLivre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgRenameLivre.resx">
+      <DependentUpon>dlgRenameLivre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgFind.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgFind.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgStartup.resx">
+      <DependentUpon>dlgStartup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgReplace.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgReplace.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgResearchCenter.resx">
+      <DependentUpon>dlgResearchCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgLivres.resx">
+      <DependentUpon>dlgLivres.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExtendedRichTextBox\ExtendedRichTextBox.vbproj">
+      <Project>{B08222BB-3904-4585-BF61-6073166E97F1}</Project>
+      <Name>ExtendedRichTextBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Popotte256-GoldMember.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
