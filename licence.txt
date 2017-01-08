@@ -1,6 +1,6 @@
 Popotte - Conditions d'utilisation
 
-Popotte garantit les droits d'auteur © 2003-2017 à Martin Laflamme, l'auteur. Vous pouvez utiliser ce logiciel gratuitement. Vous êtes autorisé d'installer et d'utiliser ce logiciel sur le nombre d'ordinateurs que vous voulez. Vous n'êtes Pas autorisé de vendre ce Logiciel ou d'enlever les informations concernant les droits d'auteur de celui-ci.
+Popotte garantit les droits d'auteur © 2003-2017 à Martin Laflamme, l'auteur. Vous pouvez utiliser ce logiciel gratuitement. Vous êtes autorisé d'installer et d'utiliser ce logiciel sur le nombre d'ordinateurs que vous voulez. Vous n'êtes Pas autorisé de modifier ou de vendre ce Logiciel ou d'enlever les informations concernant les droits d'auteur de celui-ci.
 
 Vous pouvez distribuer Popotte seulement dans les conditions suivantes.
 
@@ -26,7 +26,7 @@ Vous utilisez ce programme à vos risques et périls - l'auteur n'accepte aucune
 
 Popotte - Terms of use
 
-Popotte is copyrighted © 2003-2017 by Martin Laflamme, the author. You can use the program for free. You are authorized to install and use it on every computer you want. You are not allowed to sell the program or remove any copyright information from it.
+Popotte is copyrighted © 2003-2017 by Martin Laflamme, the author. You can use the program for free. You are authorized to install and use it on every computer you want. You are not allowed to modify or sell the program or remove any copyright information from it.
 
 You can distribute Popotte under these conditions.
 
