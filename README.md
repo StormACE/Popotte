@@ -1,2 +1,3 @@
 # Popotte
-Multi-langual Recipes software
+Recipes software
+Read license.txt before use or modification!!!
