@@ -1,0 +1,57 @@
+Popotte - Conditions d'utilisation  
+  
+ Popotte garantit les droits d'auteur © 2003-2017 à Martin Laflamme, l'auteur. Vous pouvez utiliser ce logiciel gratuitement. Vous êtes autorisé d'installer et d'utiliser ce logiciel sur le nombre d'ordinateurs que vous voulez. Vous n'êtes Pas autorisé de modifier ou de vendre ce Logiciel ou d'enlever les informations concernant les droits d'auteur de celui-ci.  
+  
+ Vous pouvez distribuer Popotte seulement dans les conditions suivantes.  
+  
+  
+ 1- Popotte doit être distribué dans les mêmes conditions que distribuées sur github.  
+  
+ 2- Popotte doit être distribué gratuitement.  
+  
+ 3- Le site web où Popotte est distribué n'essaye pas d'installer de logiciel tiers lors du téléchargement du fichier d'installation.  
+  
+ 4- Cette licence doit être incluse dans votre distribution.
+  
+  
+ Les recettes créent par Popotte son libre de droits.  
+  
+ Les codes sources distribués ici sont pour votre éducation personnelle seulement.  
+  
+ Popotte est une marque de Martin Laflamme.  
+  
+ Vous utilisez ce programme à vos risques et périls - l'auteur n'accepte aucune responsabilité concernant des problèmes ou pertes de données causés par ce logiciel.  
+  
+  
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+  
+  
+ Popotte - Terms of use  
+  
+ Popotte is copyrighted © 2003-2017 by Martin Laflamme, the author. You can use the program for free. You are authorized to install and use it on every computer you want. You are not allowed to modify or sell the program or remove any copyright information from it.  
+  
+ You can distribute Popotte under these conditions.  
+  
+ 1- Popotte must be distributed as distribute on github.  
+  
+ 2- Popotte must be distributed Free of Charge.  
+  
+ 3- The website where Popotte is distributed don't trick users to install unwanted software to download the installation file.  
+  
+ 4- This license must be included in your distribution.  
+  
+  
+ The recipes created with Popotte are Royalty Free.  
+  
+ Source codes provided here are for your educational purpose only.  
+  
+ Popotte is a mark of Martin Laflamme.
+  
+ You use the program at your own risk - the author accepts no responsibility for any problems or losses which might arise from its use.  
+  
+  
+  
+ Martin Laflamme
+ 08-01-2017 
+
+contact: kryptikcreations@gmail.com
