@@ -1,22 +1,24 @@
 Popotte - Conditions d'utilisation
 
-Popotte garantit les droits d'auteur © 2003-2016 à Martin Laflamme, l'auteur. Vous pouvez utiliser ce logiciel gratuitement. Vous êtes autorisé d'installer et d'utiliser ce logiciel sur le nombre d'ordinateurs que vous voulez. Vous n'êtes Pas autorisé de vendre ou décompiler ce Logiciel ou d'enlever les informations concernant les droits d'auteur de celui-ci.
+Popotte garantit les droits d'auteur Â© 2003-2017 Ã  Martin Laflamme, l'auteur. Vous pouvez utiliser ce logiciel gratuitement. Vous Ãªtes autorisÃ© d'installer et d'utiliser ce logiciel sur le nombre d'ordinateurs que vous voulez. Vous n'Ãªtes Pas autorisÃ© de vendre ce Logiciel ou d'enlever les informations concernant les droits d'auteur de celui-ci.
 
 Vous pouvez distribuer Popotte seulement dans les conditions suivantes.
 
 
-1- Popotte doit être distribué dans les mêmes conditions que distribuées par kryptikcreations.ca, c'est à dire, dans son fichier d'installation officiel.
+1- Popotte doit Ãªtre distribuÃ© dans les mÃªmes conditions que distribuÃ©es sur github.
 
-2- Popotte doit être distribué gratuitement
+2- Popotte doit Ãªtre distribuÃ© gratuitement.
 
-3- Le site web où Popotte est distribué n'essaye pas d'installer de logiciel tiers lors du téléchargement du fichier d'installation.
+3- Le site web oÃ¹ Popotte est distribuÃ© n'essaye pas d'installer de logiciel tiers lors du tÃ©lÃ©chargement du fichier d'installation.
+
+4- Cette license doit Ãªtre inclu dans votre distribution
 
 
-Les recettes créent par Popotte son libre de droits 
+Les recettes crÃ©ent par Popotte son libre de droits 
 
-Popotte est une marque de commerce de Martin Laflamme.
+Popotte est une marque de Martin Laflamme.
 
-Vous utilisez ce programme à vos risques et périls - l'auteur n'accepte aucune responsabilité concernant des problèmes ou pertes de données causés par ce logiciel.
+Vous utilisez ce programme Ã  vos risques et pÃ©rils - l'auteur n'accepte aucune responsabilitÃ© concernant des problÃ¨mes ou pertes de donnÃ©es causÃ©s par ce logiciel.
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,28 +26,29 @@ Vous utilisez ce programme à vos risques et périls - l'auteur n'accepte aucune r
 
 Popotte - Terms of use
 
-Popotte is copyrighted © 2003-2016 by Martin Laflamme, the author. You can use the program for free. You are authorized to install and use it on every computer you want. You are not allowed to sell or decompile the program or remove any copyright information from it.
+Popotte is copyrighted Â© 2003-2017 by Martin Laflamme, the author. You can use the program for free. You are authorized to install and use it on every computer you want. You are not allowed to sell the program or remove any copyright information from it.
 
 You can distribute Popotte under these conditions.
 
-1- Popotte must be distributed as distribute by kryptikcreations.ca, in its official installation file.
+1- Popotte must be distributed as distribute on github.
 
 2- Popotte must be distributed Free of Charge.
 
-3- The website where Popotte is distributed don't trick users to install unwanted software to download the installation file
+3- The website where Popotte is distributed don't trick users to install unwanted software to download the installation file.
+
+4- This licence must be included in your distribution.
 
 
 The recipes created with Popotte are Royalty Free.
 
-Popotte is a trademark of Martin Laflamme
+Popotte is a mark of Martin Laflamme
 
 You use the program at your own risk - the author accepts no responsibility for any problems or losses which might arise from its use.
 
 
 
 Martin Laflamme,
-20 mars 2016
+08-01-2017
 
 Contact :
-Website : http://www.kryptikcreations.ca
-Email : mailto://info@kryptikcreations.ca
+Email : mailto://kryptikcreations@gmail.com
