@@ -1,3 +1,3 @@
 # Popotte
 Recipes software
-Read license.txt before use or modification!!!
+Read licence.txt before use or modification!!!
