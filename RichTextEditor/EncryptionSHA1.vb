@@ -2,7 +2,7 @@
 Imports System.Security.Cryptography
 Imports System.Text
 
-'''GPL 3 License
+'''Apache license v2.0
 
 
 Module EncryptionSHA1
