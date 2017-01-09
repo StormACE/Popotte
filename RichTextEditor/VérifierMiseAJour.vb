@@ -47,7 +47,7 @@ Public Class CVérifierMiseAJour
                                           "Popotte - " & LangINI.GetKeyValue("Popotte - VerifyUpdate", "2"))
 
                     If answer = Windows.Forms.DialogResult.OK Then
-                        Process.Start("https://github.com/StormAce/Popotte/commits/Beta")
+                        Process.Start("https://github.com/StormAce/Popotte/commits/Nightly")
                     End If
                 Else
                     If demarrage = False Then
