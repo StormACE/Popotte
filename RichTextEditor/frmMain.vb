@@ -9,22 +9,19 @@ Imports ExtendedRichTextBox
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.43
-''' 1 mars 2016 au 1 Janvier 2017
+''' Popotte 5.0.0.44
+''' 1 mars 2016 au 9 Janvier 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' </summary>
 ''' 
-''' ////////// Changes Logs /////////////////
-''' ////////// Beta 1 /////////////////////
-''' Ajouté, Option "AutoCorrecteur par défaut" pour choisir un auto-correcteur externe ex: "Antidote"
-''' Ajouté, Menu Édité->AutoCorrection et dans le context-menu de la RichEditBox pour lancer le texte sélectionné dans l'auto-correcteur
-''' Amélioration, ajouté une case pour vérifier le mot de passe et une case pour choisir le nombre de itérations voulu dans le dialogue Crypter/Decrypter
-''' Amélioration, Réduit l'usage du RAM lors de la recherche dans le dialogue "Mes Livres de Recettes"
-''' Amélioration, Recherche maintenant dans la description des recettes
-''' Changement, Changé la police par défaut pour Calibri Light
-''' Àjouté, Multi-sélection des recettes pour les changer de livre
-''' Réparé, Bogues Mineurs
+''' ////////// Changes Logs ///////////////////////
+''' ////////// Beta 2 English//////////////////////
+''' Fixed, update verification bug
+''' Add, project to github
+''' ////////// Beta 2 Francais/////////////////////
+''' Réparé, bogue lors de la vérification des mises à jour
+''' Ajouté, le projet à github
 
 
 Public Class frmMain

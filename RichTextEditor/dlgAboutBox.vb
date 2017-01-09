@@ -29,7 +29,7 @@ Public NotInheritable Class dlgAboutBox
         ' Initialisez tout le texte affiché dans la boîte de dialogue À propos de.
         ' TODO: personnalisez les informations d'assembly de l'application dans le volet "Application" de la 
         '    boîte de dialogue Propriétés du projet (sous le menu "Projet").
-        Me.LabelProductName.Text = My.Application.Info.ProductName & " 64 bits"
+        Me.LabelProductName.Text = My.Application.Info.ProductName & " 32 bits"
         Me.LabelVersion.Text = String.Format(LangINI.GetKeyValue("Popotte - AboutBox", "2") & " {0}", My.Application.Info.Version.ToString) & "  BETA  " & System.IO.File.GetLastWriteTime(System.AppDomain.CurrentDomain.BaseDirectory & "Popotte.exe").ToLongDateString()
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.TextBoxDescription.Text = My.Application.Info.Description
