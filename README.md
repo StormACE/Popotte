@@ -94,7 +94,7 @@ SHA1 encryption module License.txt
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-To build the soft you need at least Visual Studio Community Edition
+To build the software you need at least Visual Studio Community Edition
 
 Don't forget to read the "Licence.txt" file before using, modifying and/or distribute the software!
 
