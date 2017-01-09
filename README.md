@@ -59,4 +59,44 @@ Voici quelques caractéristiques des fonctionnalités :
 
 -Conçu pour les débutants ainsi que les utilisateurs plus avancés Popotte permet de gérer des recettes facilement et sont interface WYSIWYG est simple et efficace!
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Structure tree to get the build to work...
+
+Folder needed in the root of the software folder:
+
+Exemples
+
+Images
+
+Languages
+
+
+Files needed in the root of the software folder:
+
+AdvRTB.dll
+
+Ionic.Zip.dll
+
+Popotte - English.chm
+
+Popotte - Francais.chm
+
+Popotte.exe
+
+AdvRTB.dll Licence.txt
+
+Licence Ionic Zip.txt
+
+licence.txt
+
+SHA1 encryption module License.txt
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+To build the soft you need at least Visual Studio Community Edition
+
+Open "Popotte.sln"
+
+Build the software.
 
