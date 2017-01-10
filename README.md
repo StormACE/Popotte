@@ -3,6 +3,8 @@ Recipes management software
 Read licence.txt before use or modification!!!
 New beta release should be online this week.
 
+![alt tag](https://raw.githubusercontent.com/StormAce/Popotte/Nightly/popotte.png)
+
 Popotte is a software build to write, read and sort your recipes easily.
 
 Here are some functionality characteristics :
