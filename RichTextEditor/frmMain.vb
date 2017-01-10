@@ -2554,7 +2554,7 @@ Public Class frmMain
     End Sub
 
     Private Sub ToolStripMenuItemSiteWeb_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemSiteWeb.Click
-        Process.Start("https://www.kryptikcreations.ca")
+        Process.Start("https://github.com/StormAce/Popotte")
     End Sub
 
     Private Sub CourteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CourteToolStripMenuItem.Click
