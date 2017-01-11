@@ -3,6 +3,11 @@ Recipes management software
 Read licence.txt before use or modification!!!
 New beta release should be online this week.
 
+Logiciel de gestion de recettes
+Lisez License.txt avant d'utiliser ou modifier!!!
+La nouvelle version beta devrait être en-ligne cette semaine.
+
+
 ![alt tag](https://raw.githubusercontent.com/StormAce/Popotte/Nightly/popotte.png)
 
 Popotte is a software build to write, read and sort your recipes easily.
@@ -31,10 +36,6 @@ Here are some functionality characteristics :
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Logiciel de gestion de recettes
-Lisez License.txt avant d'utiliser ou modifier!!!
-La nouvelle version beta devrait être en-ligne cette semaine.
 
 
 Popotte est un logiciel conçu pour Écrire, Lire et Classer des recettes facilement.
