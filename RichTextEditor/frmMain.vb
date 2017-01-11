@@ -9,10 +9,11 @@ Imports ExtendedRichTextBox
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.44
-''' 1 mars 2016 au 9 Janvier 2017
+''' Popotte 5.0.0.45
+''' 1 mars 2016 au 10 Janvier 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
+''' Read licence.txt
 ''' </summary>
 ''' 
 ''' ////////// Changes Logs ///////////////////////
@@ -20,8 +21,8 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' Fixed, update verification bug
 ''' Add, project to github
 ''' ////////// Beta 2 Francais/////////////////////
-''' RÈparÈ, bogue lors de la vÈrification des mises ‡ jour
-''' AjoutÈ, le projet ‡ github
+''' R√©par√©, bogue lors de la v√©rification des mises √† jour
+''' Ajout√©, le projet √† github
 
 
 Public Class frmMain
@@ -135,7 +136,7 @@ Public Class frmMain
         PrintToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "15")
         ExitToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "16")
 
-        'Menu …diter
+        'Menu √âditer
         mnuUndo.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "17")
         mnuRedo.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "18")
         FindToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "19")
@@ -147,7 +148,7 @@ Public Class frmMain
         InsertImageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "25")
         InsertlocalfileToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "26")
         CouleurDeSurbrillanceToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "96")
-        SurlignerLaSÈlectionToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "97")
+        SurlignerLaS√©lectionToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "97")
         AnnulerLaSurbrillanceToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "98")
         AutoCeditToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "100")
 
@@ -165,7 +166,7 @@ Public Class frmMain
         QuartToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "35")
         DemiToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "36")
         Quart3ToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "37")
-        TableDesCharactËresToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "38")
+        TableDesCharact√®resToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "38")
         CourteToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "39")
         LongueToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "40")
         CourteHeureToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "41")
@@ -175,15 +176,15 @@ Public Class frmMain
 
         'Menu Paragraphe
         ParagrapheToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "69")
-        …chancrureToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "70")
+        √âchancrureToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "70")
         PositionToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "71")
         AucunToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "72")
-        Texte¿GaucheToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "73")
-        TexteCentrÈToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "74")
-        Texte¿DroiteToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "75")
+        Texte√ÄGaucheToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "73")
+        TexteCentr√©ToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "74")
+        Texte√ÄDroiteToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "75")
         MargeDToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "88")
         CMToolStripMenuItem8.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "72")
-        TexteJustifiÈToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "89")
+        TexteJustifi√©ToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "89")
 
         'Menu Outils
         ConvertisseurToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "45")
@@ -191,15 +192,15 @@ Public Class frmMain
         CrypterToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "47")
         ToolStripMenuItemArchiverLesRecettes.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "48")
         SaveBD_ToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "49")
-        OuvrirLeRÈpertoireDesRecettesToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "50")
+        OuvrirLeR√©pertoireDesRecettesToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "50")
 
         'Menu Options
         AffichageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "51")
-        …diteurExterneParDÈfautToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "52")
+        √âditeurExterneParD√©fautToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "52")
         DossierRecetteToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "53")
-        OuvrirMesLivresAuDÈmarrageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "54")
-        OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "55")
-        VÈrifierSiUneMise¿JourEstDisponibleAuDÈmarrageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "56")
+        OuvrirMesLivresAuD√©marrageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "54")
+        OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "55")
+        V√©rifierSiUneMise√ÄJourEstDisponibleAuD√©marrageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "56")
         BarDoutilsToolStripMenuItem1.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "57")
         DMLRToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "58")
         ToolStripMenuItemURL.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "59")
@@ -256,7 +257,7 @@ Public Class frmMain
         AutoCcontextToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "100")
 
 
-        'VÈrifier si la form a ÈtÈ redimensionner
+        'V√©rifier si la form a √©t√© redimensionner
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\WinSize", True)
         If regKey IsNot Nothing Then
             If regKey.GetValue("Maximized", False) Then
@@ -270,7 +271,7 @@ Public Class frmMain
 
         CenterToScreen()
 
-        'les boutons de sauvegarde sont dÈactivÈ tant que le texte n'est pas modifiÈ
+        'les boutons de sauvegarde sont d√©activ√© tant que le texte n'est pas modifi√©
         ToolStripButtonSave.Enabled = False
         SaveToolStripMenuItem.Enabled = False
         SaveAsANSIToolStripMenuItem.Enabled = False
@@ -280,7 +281,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\CentreRecherche", True)
         If regKey IsNot Nothing Then
             Dim valuename As String() = regKey.GetValueNames()
-            System.Array.Sort(Of String)(valuename) 'classe les noms des engins de recherche par ordre alphabÈtique
+            System.Array.Sort(Of String)(valuename) 'classe les noms des engins de recherche par ordre alphab√©tique
             For Each items As String In valuename
                 Dim item1 As New ToolStripMenuItem
                 item1.Text = items
@@ -309,7 +310,7 @@ Public Class frmMain
 
         'Set default alignment
         ToolStripButtonGauche.Checked = True
-        Texte¿GaucheToolStripMenuItem.Checked = True
+        Texte√ÄGaucheToolStripMenuItem.Checked = True
 
         'Get and set indent
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Indent", True)
@@ -662,7 +663,7 @@ Public Class frmMain
 
     'Handler for context search
     Private Sub ToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        'Quand un engins de recherche est sÈlectionnÈ dans le context menu
+        'Quand un engins de recherche est s√©lectionn√© dans le context menu
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\CentreRecherche", True)
         If regKey IsNot Nothing Then
             Dim Link As String = regKey.GetValue(sender.ToString, "")
@@ -687,7 +688,7 @@ Public Class frmMain
         If answer = Windows.Forms.DialogResult.Yes Then
             CopyFolder(Application.StartupPath & "\exemples\Poutine", PopotteDir & "Poutine")
             CopyFolder(Application.StartupPath & "\exemples\Desserts", PopotteDir & "Desserts")
-            CopyFolder(Application.StartupPath & "\exemples\P‚tes", PopotteDir & "P‚tes")
+            CopyFolder(Application.StartupPath & "\exemples\P√¢tes", PopotteDir & "P√¢tes")
             CopyFolder(Application.StartupPath & "\exemples\Fruits de mer", PopotteDir & "Fruits de mer")
         End If
     End Sub
@@ -717,7 +718,7 @@ Public Class frmMain
 
     Private Sub frmMain_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
 
-        'VÈrifier si un dossier a ÈtÈ sÈlectionnÈ
+        'V√©rifier si un dossier a √©t√© s√©lectionn√©
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RecetteDir", True)
         If regKey IsNot Nothing Then
             PopotteDir = regKey.GetValue("", "")
@@ -727,7 +728,7 @@ Public Class frmMain
             f.Dispose()
         End If
 
-        'VÈrifier mise ‡ jour
+        'V√©rifier mise √† jour
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\VerUpdate", True)
         Dim VerUpdate As Integer
         If regKey IsNot Nothing Then
@@ -738,7 +739,7 @@ Public Class frmMain
 
         demarrage = True
         If VerUpdate = 1 Then
-            VÈrifierSiUneMise¿JourEstDisponibleAuDÈmarrageToolStripMenuItem.Checked = True
+            V√©rifierSiUneMise√ÄJourEstDisponibleAuD√©marrageToolStripMenuItem.Checked = True
             UpdateToolStripMenuItem_Click(Me, e)
         End If
         demarrage = False
@@ -754,10 +755,10 @@ Public Class frmMain
             End If
 
             If LivreDem = 1 Then
-                OuvrirMesLivresAuDÈmarrageToolStripMenuItem.Checked = True
+                OuvrirMesLivresAuD√©marrageToolStripMenuItem.Checked = True
                 ToolStripMenuItemLivres_Click(Me, e)
             Else
-                OuvrirMesLivresAuDÈmarrageToolStripMenuItem.Checked = False
+                OuvrirMesLivresAuD√©marrageToolStripMenuItem.Checked = False
             End If
 
             'Ouvrir la derniere recette au demarage
@@ -770,7 +771,7 @@ Public Class frmMain
             End If
 
             If DerRecette = 1 Then
-                OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem.Checked = True
+                OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem.Checked = True
                 Dim Recette As String = regKey.GetValue("DerRecette", "")
                 Dim strExt As String
                 strExt = Path.GetExtension(Recette)
@@ -794,7 +795,7 @@ Public Class frmMain
                 LivreOuvert = regKey.GetValue("Livre", "")
                 currentFile = regKey.GetValue("Recette", "")
             Else
-                OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem.Checked = False
+                OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem.Checked = False
             End If
         End If
     End Sub
@@ -1046,31 +1047,31 @@ Public Class frmMain
 
             If rtbDoc.SelectionAlignment = TextAlign.Left Then
                 ToolStripButtonGauche.Checked = True
-                Texte¿GaucheToolStripMenuItem.Checked = True
+                Texte√ÄGaucheToolStripMenuItem.Checked = True
             Else
                 ToolStripButtonGauche.Checked = False
-                Texte¿GaucheToolStripMenuItem.Checked = False
+                Texte√ÄGaucheToolStripMenuItem.Checked = False
             End If
             If rtbDoc.SelectionAlignment = TextAlign.Center Then
                 ToolStripButtonCentre.Checked = True
-                TexteCentrÈToolStripMenuItem.Checked = True
+                TexteCentr√©ToolStripMenuItem.Checked = True
             Else
                 ToolStripButtonCentre.Checked = False
-                TexteCentrÈToolStripMenuItem.Checked = False
+                TexteCentr√©ToolStripMenuItem.Checked = False
             End If
             If rtbDoc.SelectionAlignment = TextAlign.Right Then
                 ToolStripButtonDroite.Checked = True
-                Texte¿DroiteToolStripMenuItem.Checked = True
+                Texte√ÄDroiteToolStripMenuItem.Checked = True
             Else
                 ToolStripButtonDroite.Checked = False
-                Texte¿DroiteToolStripMenuItem.Checked = False
+                Texte√ÄDroiteToolStripMenuItem.Checked = False
             End If
             If rtbDoc.SelectionAlignment = TextAlign.Justify Then
                 JustifyToolStripButton.Checked = True
-                TexteJustifiÈToolStripMenuItem.Checked = True
+                TexteJustifi√©ToolStripMenuItem.Checked = True
             Else
                 JustifyToolStripButton.Checked = False
-                TexteJustifiÈToolStripMenuItem.Checked = False
+                TexteJustifi√©ToolStripMenuItem.Checked = False
             End If
 
             'marge gauche indentation
@@ -1280,9 +1281,9 @@ Public Class frmMain
         ToolStripButtonGauche.Checked = True
         ToolStripButtonCentre.Checked = False
         ToolStripButtonDroite.Checked = False
-        Texte¿GaucheToolStripMenuItem.Checked = True
-        TexteCentrÈToolStripMenuItem.Checked = False
-        Texte¿DroiteToolStripMenuItem.Checked = False
+        Texte√ÄGaucheToolStripMenuItem.Checked = True
+        TexteCentr√©ToolStripMenuItem.Checked = False
+        Texte√ÄDroiteToolStripMenuItem.Checked = False
         rtbDoc.Modified = False
         RappelTimer.Stop()
         RappelTimer.Start()
@@ -1726,14 +1727,14 @@ Public Class frmMain
         GetCharFormat()
     End Sub
 
-    Private Sub NumÈriqueToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles NumÈriqueToolStripMenuItem.Click
+    Private Sub Num√©riqueToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles Num√©riqueToolStripMenuItem.Click
         If rtbDoc.SelectionList = True Then
             rtbDoc.SelectionList = False
         Else
             rtbDoc.BulletIndent = 10
             rtbDoc.ListFormat = ListFormats.Numbered
             rtbDoc.SelectionList = True
-            NumÈriqueToolStripMenuItem.Checked = True
+            Num√©riqueToolStripMenuItem.Checked = True
         End If
         rtbDoc.Focus()
         GetCharFormat()
@@ -1845,31 +1846,31 @@ Public Class frmMain
 
 
     Private Sub DegreToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles DegreToolStripMenuItem.Click
-        rtbDoc.SelectedText = "∞"
+        rtbDoc.SelectedText = "¬∞"
     End Sub
 
 
     Private Sub QuartToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles QuartToolStripMenuItem.Click
-        rtbDoc.SelectedText = "º"
+        rtbDoc.SelectedText = "¬º"
     End Sub
 
 
     Private Sub DemiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles DemiToolStripMenuItem.Click
-        rtbDoc.SelectedText = "Ω"
+        rtbDoc.SelectedText = "¬Ω"
     End Sub
 
 
     Private Sub Quart3ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles Quart3ToolStripMenuItem.Click
-        rtbDoc.SelectedText = "æ"
+        rtbDoc.SelectedText = "¬æ"
     End Sub
 
 
-    Private Sub TableDesCharactËresToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles TableDesCharactËresToolStripMenuItem.Click
+    Private Sub TableDesCharact√®resToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles TableDesCharact√®resToolStripMenuItem.Click
         Process.Start("charmap.exe")
     End Sub
 
 
-    Private Sub OuvrirLeRÈpertoireDesRecettesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles OuvrirLeRÈpertoireDesRecettesToolStripMenuItem.Click
+    Private Sub OuvrirLeR√©pertoireDesRecettesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles OuvrirLeR√©pertoireDesRecettesToolStripMenuItem.Click
         Process.Start(PopotteDir)
     End Sub
 
@@ -2266,40 +2267,40 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub OuvrirMesLivresAuDÈmarrageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles OuvrirMesLivresAuDÈmarrageToolStripMenuItem.Click
+    Private Sub OuvrirMesLivresAuD√©marrageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles OuvrirMesLivresAuD√©marrageToolStripMenuItem.Click
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\LivreDem", True)
         If regKey Is Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\", True)
             regKey = regKey.CreateSubKey("LivreDem")
         End If
 
-        If OuvrirMesLivresAuDÈmarrageToolStripMenuItem.Checked Then
-            OuvrirMesLivresAuDÈmarrageToolStripMenuItem.Checked = False
+        If OuvrirMesLivresAuD√©marrageToolStripMenuItem.Checked Then
+            OuvrirMesLivresAuD√©marrageToolStripMenuItem.Checked = False
             regKey.SetValue("check", 0)
         Else
-            OuvrirMesLivresAuDÈmarrageToolStripMenuItem.Checked = True
+            OuvrirMesLivresAuD√©marrageToolStripMenuItem.Checked = True
             regKey.SetValue("check", 1)
             Dim regKey2 As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
-            OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem.Checked = False
+            OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem.Checked = False
             regKey2.SetValue("check", 0)
         End If
     End Sub
 
-    Private Sub OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem.Click
+    Private Sub OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem.Click
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
         If regKey Is Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\", True)
             regKey = regKey.CreateSubKey("DerRecette")
         End If
 
-        If OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem.Checked Then
-            OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem.Checked = False
+        If OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem.Checked Then
+            OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem.Checked = False
             regKey.SetValue("check", 0)
         Else
-            OuvrirLaDerniËrerecetteAuDÈmarrageToolStripMenuItem.Checked = True
+            OuvrirLaDerni√®rerecetteAuD√©marrageToolStripMenuItem.Checked = True
             regKey.SetValue("check", 1)
             Dim regKey2 As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\LivreDem", True)
-            OuvrirMesLivresAuDÈmarrageToolStripMenuItem.Checked = False
+            OuvrirMesLivresAuD√©marrageToolStripMenuItem.Checked = False
             regKey2.SetValue("check", 0)
         End If
     End Sub
@@ -2411,7 +2412,7 @@ Public Class frmMain
                 End If
             End If
 
-            'Livre au dÈmarrage
+            'Livre au d√©marrage
             Dim regLivreDem As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\LivreDem\", True)
             If regLivreDem IsNot Nothing Then
                 Dim ValueLivreDemCount As Integer = regLivreDem.ValueCount()
@@ -2578,14 +2579,14 @@ Public Class frmMain
     End Sub
 
     Private Sub crypter_Click(sender As Object, e As EventArgs) Handles CrypterToolStripMenuItem.Click
-        Dim crypt As New dlgCrypterDÈcrypter
+        Dim crypt As New dlgCrypterD√©crypter
         crypt.ShowDialog()
         crypt.Dispose()
     End Sub
 
     Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateToolStripMenuItem.Click
         'Lancer dans un nouveau thread
-        Dim Tasks As New CVÈrifierMiseAJour(demarrage)
+        Dim Tasks As New CV√©rifierMiseAJour(demarrage)
         Dim Thread1 As New System.Threading.Thread(
             AddressOf Tasks.CheckForupdate)
         Thread1.Name = "CheckUpdatePopotte"
@@ -2594,18 +2595,18 @@ Public Class frmMain
         'Thread1.Join() ' Wait for thread 1 to finish.
     End Sub
 
-    Private Sub VÈrifierSiUneMise¿JourEstDisponibleAuDÈmarrageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VÈrifierSiUneMise¿JourEstDisponibleAuDÈmarrageToolStripMenuItem.Click
+    Private Sub V√©rifierSiUneMise√ÄJourEstDisponibleAuD√©marrageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles V√©rifierSiUneMise√ÄJourEstDisponibleAuD√©marrageToolStripMenuItem.Click
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\VerUpdate", True)
         If regKey Is Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\", True)
             regKey = regKey.CreateSubKey("VerUpdate")
         End If
 
-        If VÈrifierSiUneMise¿JourEstDisponibleAuDÈmarrageToolStripMenuItem.Checked Then
-            VÈrifierSiUneMise¿JourEstDisponibleAuDÈmarrageToolStripMenuItem.Checked = False
+        If V√©rifierSiUneMise√ÄJourEstDisponibleAuD√©marrageToolStripMenuItem.Checked Then
+            V√©rifierSiUneMise√ÄJourEstDisponibleAuD√©marrageToolStripMenuItem.Checked = False
             regKey.SetValue("check", 0)
         Else
-            VÈrifierSiUneMise¿JourEstDisponibleAuDÈmarrageToolStripMenuItem.Checked = True
+            V√©rifierSiUneMise√ÄJourEstDisponibleAuD√©marrageToolStripMenuItem.Checked = True
             regKey.SetValue("check", 1)
         End If
     End Sub
@@ -2656,7 +2657,7 @@ Public Class frmMain
         SaveFileDialog1.Dispose()
     End Sub
 
-    Private Sub …diteurExterneParDÈfautToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles …diteurExterneParDÈfautToolStripMenuItem.Click
+    Private Sub √âditeurExterneParD√©fautToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles √âditeurExterneParD√©fautToolStripMenuItem.Click
         Dim ppath As String = ""
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\EditeurExt", True)
         If regKey IsNot Nothing Then
@@ -3058,7 +3059,7 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub SurlignerLaSÈlectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SurlignerLaSÈlectionToolStripMenuItem.Click
+    Private Sub SurlignerLaS√©lectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SurlignerLaS√©lectionToolStripMenuItem.Click
         If rtbDoc.SelectedText <> "" Then
             rtbDoc.SelectionHighLight = HighlightColor
         End If
@@ -3183,7 +3184,7 @@ Public Class frmMain
     End Sub
 
     Private Sub SurlignerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SurlignerToolStripMenuItem.Click
-        SurlignerLaSÈlectionToolStripMenuItem_Click(Me, e)
+        SurlignerLaS√©lectionToolStripMenuItem_Click(Me, e)
     End Sub
     Private Sub AnnulerSurbrillanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnnulerSurbrillanceToolStripMenuItem.Click
         AnnulerLaSurbrillanceToolStripMenuItem_Click(Me, e)
@@ -3268,13 +3269,13 @@ Public Class frmMain
         ToolStripButtonCentre.Checked = False
         ToolStripButtonDroite.Checked = False
         JustifyToolStripButton.Checked = False
-        Texte¿GaucheToolStripMenuItem.Checked = True
-        TexteCentrÈToolStripMenuItem.Checked = False
-        Texte¿DroiteToolStripMenuItem.Checked = False
-        TexteJustifiÈToolStripMenuItem.Checked = False
+        Texte√ÄGaucheToolStripMenuItem.Checked = True
+        TexteCentr√©ToolStripMenuItem.Checked = False
+        Texte√ÄDroiteToolStripMenuItem.Checked = False
+        TexteJustifi√©ToolStripMenuItem.Checked = False
     End Sub
 
-    Private Sub Texte¿GaucheToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Texte¿GaucheToolStripMenuItem.Click
+    Private Sub Texte√ÄGaucheToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Texte√ÄGaucheToolStripMenuItem.Click
         ToolStripButtonGauche_Click(Me, e)
     End Sub
 
@@ -3284,13 +3285,13 @@ Public Class frmMain
         ToolStripButtonDroite.Checked = False
         ToolStripButtonGauche.Checked = False
         JustifyToolStripButton.Checked = False
-        Texte¿GaucheToolStripMenuItem.Checked = False
-        TexteCentrÈToolStripMenuItem.Checked = True
-        Texte¿DroiteToolStripMenuItem.Checked = False
-        TexteJustifiÈToolStripMenuItem.Checked = False
+        Texte√ÄGaucheToolStripMenuItem.Checked = False
+        TexteCentr√©ToolStripMenuItem.Checked = True
+        Texte√ÄDroiteToolStripMenuItem.Checked = False
+        TexteJustifi√©ToolStripMenuItem.Checked = False
     End Sub
 
-    Private Sub TexteCentrÈToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TexteCentrÈToolStripMenuItem.Click
+    Private Sub TexteCentr√©ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TexteCentr√©ToolStripMenuItem.Click
         ToolStripButtonCentre_Click(Me, e)
     End Sub
 
@@ -3300,10 +3301,10 @@ Public Class frmMain
         ToolStripButtonGauche.Checked = False
         ToolStripButtonCentre.Checked = False
         JustifyToolStripButton.Checked = False
-        Texte¿GaucheToolStripMenuItem.Checked = False
-        TexteCentrÈToolStripMenuItem.Checked = False
-        TexteJustifiÈToolStripMenuItem.Checked = False
-        Texte¿DroiteToolStripMenuItem.Checked = True
+        Texte√ÄGaucheToolStripMenuItem.Checked = False
+        TexteCentr√©ToolStripMenuItem.Checked = False
+        TexteJustifi√©ToolStripMenuItem.Checked = False
+        Texte√ÄDroiteToolStripMenuItem.Checked = True
     End Sub
 
     Private Sub JustifyToolStripButton_Click(sender As Object, e As EventArgs) Handles JustifyToolStripButton.Click
@@ -3312,18 +3313,18 @@ Public Class frmMain
         ToolStripButtonDroite.Checked = False
         ToolStripButtonGauche.Checked = False
         ToolStripButtonCentre.Checked = False
-        Texte¿GaucheToolStripMenuItem.Checked = False
-        TexteCentrÈToolStripMenuItem.Checked = False
-        Texte¿DroiteToolStripMenuItem.Checked = False
-        TexteJustifiÈToolStripMenuItem.Checked = True
+        Texte√ÄGaucheToolStripMenuItem.Checked = False
+        TexteCentr√©ToolStripMenuItem.Checked = False
+        Texte√ÄDroiteToolStripMenuItem.Checked = False
+        TexteJustifi√©ToolStripMenuItem.Checked = True
     End Sub
 
 
-    Private Sub Texte¿DroiteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Texte¿DroiteToolStripMenuItem.Click
+    Private Sub Texte√ÄDroiteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Texte√ÄDroiteToolStripMenuItem.Click
         ToolStripButtonDroite_Click(Me, e)
     End Sub
 
-    Private Sub TexteJustifiÈToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TexteJustifiÈToolStripMenuItem.Click
+    Private Sub TexteJustifi√©ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TexteJustifi√©ToolStripMenuItem.Click
         JustifyToolStripButton_Click(Me, e)
     End Sub
 
