@@ -15,7 +15,7 @@ Public Class CVérifierMiseAJour
     Public Sub CheckForupdate()
         Dim appData As String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)
         Dim Destpath As String = appData & "\Popotte\popotte.version"
-        Dim Link As String = "https://github.com/StormAce/Popotte/blob/Nightly/Popotte.version"
+        Dim Link As String = "https://raw.githubusercontent.com/StormAce/Popotte/Nightly/Popotte.version"
         Dim vers As String = Nothing
         If System.IO.File.Exists(Destpath) Then
             Try
