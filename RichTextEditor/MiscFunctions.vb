@@ -1,5 +1,7 @@
 ﻿Imports System.Text.RegularExpressions
 
+'GPL 3
+
 Module MiscFunctions
     ' ...
     ''' <summary>
