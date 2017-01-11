@@ -1,4 +1,7 @@
-﻿Public Class ListViewColumnSorter
+'GPL 3﻿
+'Read "Gnu GPL v3.txt"
+
+Public Class ListViewColumnSorter
     Implements IComparer
     Public Enum SortOrder
         Ascending

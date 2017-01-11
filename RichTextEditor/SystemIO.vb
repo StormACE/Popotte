@@ -1,4 +1,6 @@
-﻿Imports System.IO
+'Martin laflamme﻿
+
+Imports System.IO
 Imports System.Security
 
 Module SystemIO

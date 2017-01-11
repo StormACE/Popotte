@@ -1,5 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
 
+'GPL 3
+'Read "Gnu GPL v3.txt"
+
 Module MiscFunctions
     ' ...
     ''' <summary>

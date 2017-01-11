@@ -3,6 +3,7 @@ Imports System.Security.Cryptography
 Imports System.Text
 
 '''Apache license v2.0
+'Read "Apache v2.txt"
 
 
 Module EncryptionSHA1

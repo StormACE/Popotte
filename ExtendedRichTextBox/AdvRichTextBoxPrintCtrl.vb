@@ -7,8 +7,8 @@ Imports System.ComponentModel
 Imports System.Text
 Imports System.Drawing.Printing
 
-'By Martin Laflamme For Popotte 5.0
-'Copyright Martin Laflamme 2016
+'Apache v2
+'Read "Apache v2.txt"
 'This control class replaces the use of the regular RichTextBox control; the
 'purpose of this extension was specifically to facilitate printing the contents
 'of a rich text box control and adding advanced functions.
