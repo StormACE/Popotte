@@ -1,3 +1,5 @@
+'GPL 3
+
 Imports System.IO
 Imports System.Text.RegularExpressions
 Imports System.Collections
