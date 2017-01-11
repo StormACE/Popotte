@@ -1,5 +1,8 @@
 ﻿Imports System.IO
 Imports System.Text
+
+'Apache v2
+
 Public Class CVérifierMiseAJour
 
     'Get Language
