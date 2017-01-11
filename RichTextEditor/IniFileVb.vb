@@ -1,4 +1,5 @@
 'GPL 3
+'Read "Gnu GPL v3.txt"
 
 Imports System.IO
 Imports System.Text.RegularExpressions

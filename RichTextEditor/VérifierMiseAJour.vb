@@ -2,6 +2,7 @@
 Imports System.Text
 
 'Apache v2
+'Read "Apache v2.txt"
 
 Public Class CVérifierMiseAJour
 
