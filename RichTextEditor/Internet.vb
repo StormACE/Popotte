@@ -1,4 +1,5 @@
-﻿Module Internet
+'Martin Laflamme﻿
+Module Internet
     Public Function DownloadFile(ByRef URL As String, ByRef destinationFileName As String) As Integer
         'Get Language
         Dim LangINI As IniFile = frmMain.LangIni
