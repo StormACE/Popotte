@@ -9,8 +9,8 @@ Imports ExtendedRichTextBox
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.45
-''' 1 mars 2016 au 10 Janvier 2017
+''' Popotte 5.0.0.46
+''' 1 mars 2016 au 11 Janvier 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' Read licence.txt
@@ -19,9 +19,11 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// Beta 2 English//////////////////////
 ''' Fixed, update verification bug
+''' Fixed, Highlight color save correctly now
 ''' Add, project to github
 ''' ////////// Beta 2 Francais/////////////////////
 ''' Réparé, bogue lors de la vérification des mises à jour
+''' Réparé, La couleur de surbrillance se sauvegarde correctement maintenant
 ''' Ajouté, le projet à github
 
 
@@ -3078,7 +3080,7 @@ Public Class frmMain
         ColorDialog1.Color = HighlightColor
 
         If ColorDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
-            regKey.SetValue("", ColorDialog1.Color, RegistryValueKind.Unknown)
+            regKey.SetValue("", ColorDialog1.Color, RegistryValueKind.String)
             HighlightColor = ColorDialog1.Color
             ColorDialog1.Dispose()
         End If
