@@ -9,6 +9,7 @@ Public Class CVérifierMiseAJour
     'Get Language
     Private LangINI As IniFile = frmMain.LangIni
 
+    'True if software startup
     Dim demarrage As Boolean
 
     'Constructor
