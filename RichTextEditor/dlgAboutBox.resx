@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="TextBoxDescription.Text" xml:space="preserve">
+    <value>Description :
+
+(Au moment de l'exécution, le texte des étiquettes sera remplacé par les informations d'assembly de l'application.
+Personnalisez les informations d'assembly de l'application dans le volet Application du Concepteur de projets.)</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LogoPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -829,12 +835,6 @@
         Gg+E5xWLD/GrUf5qafAS41FDILqx0viSFiw8ZDdULX61rLYS41FDILqxiiqq+F9A0uj/A8rKx9l4Ybl3
         AAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="TextBoxDescription.Text" xml:space="preserve">
-    <value>Description :
-
-(Au moment de l'exécution, le texte des étiquettes sera remplacé par les informations d'assembly de l'application.
-Personnalisez les informations d'assembly de l'application dans le volet Application du Concepteur de projets.)</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

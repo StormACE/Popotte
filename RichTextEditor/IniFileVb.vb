@@ -3,8 +3,6 @@
 
 Imports System.IO
 Imports System.Text.RegularExpressions
-Imports System.Collections
-Imports System.Diagnostics
 
 
 ' IniFile class used to read and write ini files by loading the file into memory

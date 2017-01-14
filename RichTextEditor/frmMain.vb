@@ -5,26 +5,23 @@ Imports System.IO
 Imports System.ComponentModel
 Imports System.Threading
 Imports System.Globalization
-Imports ExtendedRichTextBox
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.46
-''' 1 mars 2016 au 11 Janvier 2017
+''' Popotte 5.0.0.47
+''' 1 mars 2016 au 13 Janvier 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' Read licence.txt
 ''' </summary>
 ''' 
 ''' ////////// Changes Logs ///////////////////////
-''' ////////// Beta 2 English//////////////////////
-''' Fixed, update verification bug
-''' Fixed, Highlight color save correctly now
-''' Add, project to github
-''' ////////// Beta 2 Francais/////////////////////
-''' Réparé, bogue lors de la vérification des mises à jour
-''' Réparé, La couleur de surbrillance se sauvegarde correctement maintenant
-''' Ajouté, le projet à github
+''' ////////// English //////////////////////
+''' Fixed, Cut when nothing selected
+''' Add, License button to aboutbox
+''' ////////// Francais /////////////////////
+''' Réparé, Couper quand rien de sélectionné.
+''' Ajouté, Boutton Licence au dialogue À propos.
 
 
 Public Class frmMain
@@ -1500,9 +1497,10 @@ Public Class frmMain
     Private Sub CutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles CutToolStripMenuItem.Click
         rtbDoc.Cut()
         Dim iData As IDataObject = Clipboard.GetDataObject()
-
         If iData.GetDataPresent(DataFormats.Text) Then
-            Clipboard.SetText(rtbDoc.SelectedText.ToString())
+            If rtbDoc.SelectedText.ToString() <> "" Then
+                Clipboard.SetText(rtbDoc.SelectedText.ToString())
+            End If
         ElseIf iData.GetDataPresent(DataFormats.Rtf) Then
             rtbDoc.Cut()
         End If
@@ -3225,18 +3223,6 @@ Public Class frmMain
                        newFontStyle
                     )
                 End If
-
-#If False Then
-                
-                
-                Dim newFontStyle As System.Drawing.FontStyle
-                If rtbDoc.SelectionFont.Style <> Nothing Then
-                    newFontStyle = rtbDoc.SelectionFont.Style
-                End If
-                If CInt(SelectedSize) <> 0 Then
-                    Me.rtbDoc.SelectionFont = New Font(SelectedFont, CInt(SelectedSize), newFontStyle)
-                End If
-#End If
             End If
         End If
     End Sub

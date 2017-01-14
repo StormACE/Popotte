@@ -1,0 +1,5 @@
+C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\bin\x86\Release\AdvRTB.dll
+C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.Resources.resources
+C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.vbproj.GenerateResource.Cache
+C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\x86\Release\AdvRTB.dll
+C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.vbprojResolveAssemblyReference.cache
