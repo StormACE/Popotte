@@ -1,4 +1,10 @@
-﻿
+﻿''' <summary>
+''' Popotte v5
+''' 1 mars 2016 au 13 Janvier 2017
+''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
+''' Copyright Martin Laflamme 2003/2017
+''' Read licence.txt
+''' </summary>
 
 Public Class dlgCrypterDécrypter
 
@@ -15,8 +21,6 @@ Public Class dlgCrypterDécrypter
         Cancel_Button.Text = LangINI.GetKeyValue("Popotte - Encryption", "7")
         LabelVerifyPass.Text = LangINI.GetKeyValue("Popotte - Encryption", "8")
         Label1.Text = LangINI.GetKeyValue("Popotte - Encryption", "9")
-
-
 
         'Add ToolTips To Controls
         Dim buttonToolTip1 As New ToolTip()
@@ -70,15 +74,16 @@ Public Class dlgCrypterDécrypter
         buttonToolTip5.SetToolTip(TextBoxIteration, LangINI.GetKeyValue("Popotte - Encryption", "15"))
         buttonToolTip6.ToolTipTitle = LangINI.GetKeyValue("Popotte - Encryption", "16")
         buttonToolTip6.SetToolTip(TextBoxVerifyPass, LangINI.GetKeyValue("Popotte - Encryption", "17"))
+
     End Sub
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         If frmMain.rtbDoc.SelectedText <> "" Then
-            If TextBox1.Text <> "" Then
-                If TextBox1.Text = TextBoxVerifyPass.Text Then
+            If TextBoxPass.Text <> "" Then
+                If TextBoxPass.Text = TextBoxVerifyPass.Text Then
 
                     If CheckBoxCrypt.Checked Then
-                        Dim text1 As String = Encrypt(frmMain.rtbDoc.SelectedText, TextBox1.Text, TextBoxSel.Text, Val(TextBoxIteration.Text))
+                        Dim text1 As String = Encrypt(frmMain.rtbDoc.SelectedText, TextBoxPass.Text, TextBoxSel.Text, Val(TextBoxIteration.Text))
                         If text1 <> "" Then
                             frmMain.rtbDoc.SelectedText = text1
                             frmMain.rtbDoc.Select(0, 0)
@@ -86,7 +91,7 @@ Public Class dlgCrypterDécrypter
                             Me.Close()
                         End If
                     Else
-                        Dim text2 As String = Decrypt(frmMain.rtbDoc.SelectedText, TextBox1.Text, TextBoxSel.Text, Val(TextBoxIteration.Text))
+                        Dim text2 As String = Decrypt(frmMain.rtbDoc.SelectedText, TextBoxPass.Text, TextBoxSel.Text, Val(TextBoxIteration.Text))
                         If text2 <> "" Then
                             frmMain.rtbDoc.SelectedText = text2
                             frmMain.rtbDoc.Select(0, 0)
@@ -102,7 +107,7 @@ Public Class dlgCrypterDécrypter
                 End If
             Else
                 MsgBox(LangINI.GetKeyValue("Popotte - Encryption - MessageBox", "1"), MsgBoxStyle.Exclamation, "Popotte - " & LangINI.GetKeyValue("Popotte - Encryption - MessageBox", "2"))
-                TextBox1.Focus()
+                TextBoxPass.Focus()
             End If
         Else
             MsgBox(LangINI.GetKeyValue("Popotte - Encryption - MessageBox", "3"), MsgBoxStyle.Exclamation, "Popotte - " & LangINI.GetKeyValue("Popotte - Encryption - MessageBox", "2"))
@@ -126,7 +131,7 @@ Public Class dlgCrypterDécrypter
         CheckBoxDeCrypt.Checked = True
     End Sub
 
-    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxPass.KeyPress
         If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
             OK_Button_Click(Me, e)
             e.Handled = True

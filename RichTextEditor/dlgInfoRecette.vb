@@ -1,6 +1,14 @@
 ﻿Imports Microsoft.Win32
 Imports System.IO
 
+''' <summary>
+''' Popotte v5
+''' 1 mars 2016 au 13 Janvier 2017
+''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
+''' Copyright Martin Laflamme 2003/2017
+''' Read licence.txt
+''' </summary>
+
 Public Class dlgInfoRecette
 
 #Region "Declaration"

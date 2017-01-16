@@ -1,4 +1,10 @@
-﻿
+﻿''' <summary>
+''' Popotte v5
+''' 1 mars 2016 au 13 Janvier 2017
+''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
+''' Copyright Martin Laflamme 2003/2017
+''' Read licence.txt
+''' </summary>
 Public NotInheritable Class dlgAboutBox
 
 #Region "Declarations"
@@ -7,13 +13,13 @@ Public NotInheritable Class dlgAboutBox
     Dim Button_Licence As Control
 #End Region
 
-    Private Sub AboutBox1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub AboutBox1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         ' Définissez le titre du formulaire.
         Dim ApplicationTitle As String
         If My.Application.Info.Title <> "" Then
             ApplicationTitle = My.Application.Info.Title
         Else
-            ApplicationTitle = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
+            ApplicationTitle = IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
         End If
 
         'Controls Language
@@ -29,13 +35,13 @@ Public NotInheritable Class dlgAboutBox
         ' Initialisez tout le texte affiché dans la boîte de dialogue À propos de.
         ' TODO: personnalisez les informations d'assembly de l'application dans le volet "Application" de la 
         '    boîte de dialogue Propriétés du projet (sous le menu "Projet").
-        Me.LabelProductName.Text = My.Application.Info.ProductName & " AnyCPU"
-        Me.LabelVersion.Text = String.Format(LangINI.GetKeyValue("Popotte - AboutBox", "2") & " {0}", My.Application.Info.Version.ToString) & "  BETA  " & System.IO.File.GetLastWriteTime(System.AppDomain.CurrentDomain.BaseDirectory & "Popotte.exe").ToLongDateString()
+        Me.LabelProductName.Text = My.Application.Info.ProductName
+        Me.LabelVersion.Text = String.Format(LangINI.GetKeyValue("Popotte - AboutBox", "2") & " {0}", My.Application.Info.Version.ToString) & "  BETA  " & "AnyCPU " & System.IO.File.GetLastWriteTime(System.AppDomain.CurrentDomain.BaseDirectory & "Popotte.exe").ToLongDateString()
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.TextBoxDescription.Text = My.Application.Info.Description
     End Sub
 
-    Private Sub Button_Licence_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Button_Licence_Click(ByVal sender As Object, ByVal e As EventArgs)
         Process.Start(Application.StartupPath & "\licence.txt")
     End Sub
 
