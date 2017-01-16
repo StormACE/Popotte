@@ -8,7 +8,7 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.48
+''' Popotte 5.0.0.49
 ''' 1 mars 2016 au 16 Janvier 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
@@ -17,13 +17,9 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Fixed, Cut when nothing selected
-''' Add, License button to aboutbox
-''' Cleanup code a little
+''' Fixed, Language change order of procedure
 ''' ////////// Francais /////////////////////
-''' Réparé, Couper quand rien de sélectionné.
-''' Ajouté, Boutton Licence au dialogue À propos.
-''' Nettoyé le code
+''' Réparé, Ordre de procedure du changement de langage
 
 
 Public Class frmMain
@@ -50,6 +46,7 @@ Public Class frmMain
     Private demarrage As Boolean 'is the application starting up
     Private FileAssoValue As Boolean = False
     Private firststart As Boolean = True
+    Private restart As Boolean = False
 
     Public regKey As RegistryKey
     Public PopotteDir As String = "c:\users\" & UserName & "\Popotte\"  'default recipe dir
@@ -901,8 +898,10 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_FormClosing(ByVal sender As System.Object, ByVal e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If CloseApp(e) = DialogResult.Cancel Then
-            e.Cancel = True
+        If Not restart Then
+            If CloseApp(e) = DialogResult.Cancel Then
+                e.Cancel = True
+            End If
         End If
     End Sub
 
@@ -929,7 +928,9 @@ Public Class frmMain
                     End If
                     rtbDoc.RightMargin = 0
                     RappelTimer.Dispose()
-                    End
+                    If Not restart Then
+                        End
+                    End If
                 Case DialogResult.No
                     SaveSize()
                     If RappelTimer.Enabled Then
@@ -937,7 +938,9 @@ Public Class frmMain
                     End If
                     rtbDoc.RightMargin = 0
                     RappelTimer.Dispose()
-                    End
+                    If Not restart Then
+                        End
+                    End If
                 Case DialogResult.Cancel
                     Return DialogResult.Cancel
             End Select
@@ -948,7 +951,9 @@ Public Class frmMain
             End If
             rtbDoc.RightMargin = 0
             RappelTimer.Dispose()
-            End
+            If Not restart Then
+                End
+            End If
         End If
     End Function
 
@@ -2545,7 +2550,14 @@ Public Class frmMain
     Private Sub LanguageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LanguageToolStripMenuItem.Click
         Dim d As New LanguageDialog
         d.ShowDialog()
-        d.Dispose()
+        If d.DialogResult = DialogResult.Yes Then
+            d.Dispose()
+            restart = True
+            If Not CloseApp(e) = DialogResult.Cancel Then
+                Process.Start(Application.ExecutablePath)
+                Application.Exit()
+            End If
+        End If
     End Sub
 
     Private Sub AidesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AidesToolStripMenuItem1.Click

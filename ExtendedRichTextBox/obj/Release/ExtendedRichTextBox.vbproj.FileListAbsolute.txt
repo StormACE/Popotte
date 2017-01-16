@@ -6,3 +6,4 @@ C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Release\Extended
 C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Release\AdvRTB.dll
 C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Release\AdvRTB.xml
 C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Release\AdvRTB.pdb
+C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Release\ExtendedRichTextBox.vbprojResolveAssemblyReference.cache
