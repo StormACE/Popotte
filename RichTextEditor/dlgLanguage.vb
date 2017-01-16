@@ -57,8 +57,7 @@ Public Class LanguageDialog
         Dim result As DialogResult = MessageBox.Show(LangINI.GetKeyValue("Popotte - LanguageDialogue - MessageBox", "1") & Environment.NewLine & LangINI.GetKeyValue("Popotte - LanguageDialogue - MessageBox", "2"), "Popotte", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
         Select Case result
             Case DialogResult.Yes
-                Process.Start(Application.ExecutablePath)
-                Application.Exit()
+                Me.DialogResult = DialogResult.Yes
             Case DialogResult.No
                 Me.Close()
             Case DialogResult.Cancel
