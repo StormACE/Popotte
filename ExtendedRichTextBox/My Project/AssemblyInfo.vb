@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Advanced RichText Control")>
 <Assembly: AssemblyCompany("Martin Laflamme")>
 <Assembly: AssemblyProduct("AdvRTB")>
-<Assembly: AssemblyCopyright("Copyright © Martin Laflamme 2016")>
+<Assembly: AssemblyCopyright("Copyright © Martin Laflamme 2017")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

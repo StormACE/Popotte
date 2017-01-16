@@ -34,7 +34,7 @@ Here are some functionality characteristics :
 
 -Multi-Languages 
 
--Build to be easy for newbie and for more advanced user, Popotte can manage your recipe collections easily and is WYSIWYG interface is -simple and effective!
+-Build to be easy for newbie and for more advanced user, Popotte can manage your recipe collections easily and is WYSIWYG interface is simple and effective!
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

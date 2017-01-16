@@ -12,11 +12,11 @@ Module MiscFunctions
     ''' <param name="s">A String representing the color (Color[Colorname or ARGB]).</param>
     ''' <returns>A System.Drawing.Color.</returns>
     ''' <remarks>Returns Black if the color could not be parsed.</remarks>
-    Public Function ColourFromData(s As String) As Color
-        Dim fallbackColour = Color.Black
+    Public Function ColorFromData(s As String) As Color
+        Dim fallbackColor = Color.Black
 
         If Not s.StartsWith("color", StringComparison.OrdinalIgnoreCase) Then
-            Return fallbackColour
+            Return fallbackColor
         End If
 
         ' Extract whatever is between the brackets.
@@ -25,14 +25,14 @@ Module MiscFunctions
         Dim colorNameMatch = re.Match(str1)
 
         'convert to Color object
-        Dim colourName As String = colorNameMatch.Value.ToString
+        Dim colorName As String = colorNameMatch.Value.ToString
         'if color is a name
-        If Not String.IsNullOrEmpty(colourName) And Not colourName.StartsWith("A=") Then
-            Return Color.FromName(colourName)
+        If Not String.IsNullOrEmpty(colorName) And Not colorName.StartsWith("A=") Then
+            Return Color.FromName(colorName)
         Else
             ' Was not a named color. Parse for ARGB values.
             re = New Regex("A=(\d+).*?R=(\d+).*?G=(\d+).*?B=(\d+)", RegexOptions.IgnoreCase)
-            Dim componentMatches = re.Match(colourName)
+            Dim componentMatches = re.Match(colorName)
 
             If componentMatches.Success Then
 
@@ -44,14 +44,14 @@ Module MiscFunctions
                 Dim maxValue = 255
 
                 If a > maxValue OrElse r > maxValue OrElse g > maxValue OrElse b > maxValue Then
-                    Return fallbackColour
+                    Return fallbackColor
                 End If
 
                 Return System.Drawing.Color.FromArgb(a, r, g, b)
 
             End If
 
-            Return fallbackColour
+            Return fallbackColor
         End If
     End Function
 End Module

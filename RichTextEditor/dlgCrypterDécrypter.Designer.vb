@@ -27,7 +27,7 @@ Partial Class dlgCrypterDécrypter
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
         Me.LabelMotdePasse = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPass = New System.Windows.Forms.TextBox()
         Me.CheckBoxCrypt = New System.Windows.Forms.CheckBox()
         Me.CheckBoxDeCrypt = New System.Windows.Forms.CheckBox()
         Me.TextBoxSel = New System.Windows.Forms.TextBox()
@@ -47,154 +47,171 @@ Partial Class dlgCrypterDécrypter
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(238, 322)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(159, 215)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(243, 47)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(162, 31)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'OK_Button
         '
         Me.OK_Button.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.OK_Button.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.OK_Button.Location = New System.Drawing.Point(6, 5)
-        Me.OK_Button.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.OK_Button.Location = New System.Drawing.Point(4, 3)
+        Me.OK_Button.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.OK_Button.Name = "OK_Button"
-        Me.OK_Button.Size = New System.Drawing.Size(109, 37)
-        Me.OK_Button.TabIndex = 2
+        Me.OK_Button.Size = New System.Drawing.Size(73, 25)
+        Me.OK_Button.TabIndex = 8
         Me.OK_Button.Text = "OK"
+        Me.OK_Button.UseCompatibleTextRendering = True
         '
         'Cancel_Button
         '
         Me.Cancel_Button.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Cancel_Button.Location = New System.Drawing.Point(127, 5)
-        Me.Cancel_Button.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Cancel_Button.Location = New System.Drawing.Point(85, 3)
+        Me.Cancel_Button.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Cancel_Button.Name = "Cancel_Button"
-        Me.Cancel_Button.Size = New System.Drawing.Size(110, 37)
-        Me.Cancel_Button.TabIndex = 3
+        Me.Cancel_Button.Size = New System.Drawing.Size(73, 25)
+        Me.Cancel_Button.TabIndex = 7
         Me.Cancel_Button.Text = "Annuler"
+        Me.Cancel_Button.UseCompatibleTextRendering = True
         '
         'LabelMotdePasse
         '
         Me.LabelMotdePasse.AutoSize = True
-        Me.LabelMotdePasse.Location = New System.Drawing.Point(22, 21)
-        Me.LabelMotdePasse.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LabelMotdePasse.Location = New System.Drawing.Point(15, 14)
+        Me.LabelMotdePasse.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelMotdePasse.Name = "LabelMotdePasse"
-        Me.LabelMotdePasse.Size = New System.Drawing.Size(118, 21)
-        Me.LabelMotdePasse.TabIndex = 1
+        Me.LabelMotdePasse.Size = New System.Drawing.Size(79, 19)
+        Me.LabelMotdePasse.TabIndex = 0
         Me.LabelMotdePasse.Text = "Mot de passe :"
+        Me.LabelMotdePasse.UseCompatibleTextRendering = True
         '
-        'TextBox1
+        'TextBoxPass
         '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.TextBox1.Location = New System.Drawing.Point(26, 47)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(457, 29)
-        Me.TextBox1.TabIndex = 0
-        Me.TextBox1.UseSystemPasswordChar = True
+        Me.TextBoxPass.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.TextBoxPass.Location = New System.Drawing.Point(17, 31)
+        Me.TextBoxPass.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.TextBoxPass.Name = "TextBoxPass"
+        Me.TextBoxPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBoxPass.Size = New System.Drawing.Size(306, 22)
+        Me.TextBoxPass.TabIndex = 1
+        Me.TextBoxPass.UseSystemPasswordChar = True
+        Me.TextBoxPass.WordWrap = False
         '
         'CheckBoxCrypt
         '
+        Me.CheckBoxCrypt.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.CheckBoxCrypt.AutoSize = True
         Me.CheckBoxCrypt.Checked = True
         Me.CheckBoxCrypt.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBoxCrypt.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.CheckBoxCrypt.Location = New System.Drawing.Point(26, 272)
-        Me.CheckBoxCrypt.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.CheckBoxCrypt.Location = New System.Drawing.Point(17, 181)
+        Me.CheckBoxCrypt.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.CheckBoxCrypt.Name = "CheckBoxCrypt"
-        Me.CheckBoxCrypt.Size = New System.Drawing.Size(92, 26)
+        Me.CheckBoxCrypt.Size = New System.Drawing.Size(70, 18)
         Me.CheckBoxCrypt.TabIndex = 4
         Me.CheckBoxCrypt.Text = "Crypter"
+        Me.CheckBoxCrypt.UseCompatibleTextRendering = True
         Me.CheckBoxCrypt.UseVisualStyleBackColor = True
         '
         'CheckBoxDeCrypt
         '
+        Me.CheckBoxDeCrypt.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.CheckBoxDeCrypt.AutoSize = True
         Me.CheckBoxDeCrypt.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.CheckBoxDeCrypt.Location = New System.Drawing.Point(125, 273)
-        Me.CheckBoxDeCrypt.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.CheckBoxDeCrypt.Location = New System.Drawing.Point(83, 182)
+        Me.CheckBoxDeCrypt.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.CheckBoxDeCrypt.Name = "CheckBoxDeCrypt"
-        Me.CheckBoxDeCrypt.Size = New System.Drawing.Size(111, 26)
+        Me.CheckBoxDeCrypt.Size = New System.Drawing.Size(82, 18)
         Me.CheckBoxDeCrypt.TabIndex = 5
         Me.CheckBoxDeCrypt.Text = "Décrypter"
+        Me.CheckBoxDeCrypt.UseCompatibleTextRendering = True
         Me.CheckBoxDeCrypt.UseVisualStyleBackColor = True
         '
         'TextBoxSel
         '
+        Me.TextBoxSel.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.TextBoxSel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.TextBoxSel.Location = New System.Drawing.Point(26, 204)
-        Me.TextBoxSel.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.TextBoxSel.Location = New System.Drawing.Point(17, 136)
+        Me.TextBoxSel.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TextBoxSel.Name = "TextBoxSel"
         Me.TextBoxSel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBoxSel.Size = New System.Drawing.Size(457, 29)
-        Me.TextBoxSel.TabIndex = 0
-        Me.TextBoxSel.TabStop = False
+        Me.TextBoxSel.Size = New System.Drawing.Size(306, 22)
+        Me.TextBoxSel.TabIndex = 3
         Me.TextBoxSel.Text = "U9N!nvikY87gT#Hb"
+        Me.TextBoxSel.UseSystemPasswordChar = True
+        Me.TextBoxSel.WordWrap = False
         '
         'LabelSalt
         '
         Me.LabelSalt.AutoSize = True
-        Me.LabelSalt.Location = New System.Drawing.Point(22, 177)
-        Me.LabelSalt.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LabelSalt.Location = New System.Drawing.Point(15, 118)
+        Me.LabelSalt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelSalt.Name = "LabelSalt"
-        Me.LabelSalt.Size = New System.Drawing.Size(146, 21)
-        Me.LabelSalt.TabIndex = 5
+        Me.LabelSalt.Size = New System.Drawing.Size(99, 13)
+        Me.LabelSalt.TabIndex = 0
         Me.LabelSalt.Text = "Une Pincée de Sel"
         '
         'TextBoxIteration
         '
+        Me.TextBoxIteration.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.TextBoxIteration.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.TextBoxIteration.Location = New System.Drawing.Point(365, 272)
-        Me.TextBoxIteration.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBoxIteration.Location = New System.Drawing.Point(243, 181)
+        Me.TextBoxIteration.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TextBoxIteration.Name = "TextBoxIteration"
         Me.TextBoxIteration.ShortcutsEnabled = False
-        Me.TextBoxIteration.Size = New System.Drawing.Size(111, 29)
+        Me.TextBoxIteration.Size = New System.Drawing.Size(75, 22)
         Me.TextBoxIteration.TabIndex = 6
         Me.TextBoxIteration.Text = "7"
         '
         'Label1
         '
+        Me.Label1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(260, 276)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(173, 184)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 21)
-        Me.Label1.TabIndex = 7
+        Me.Label1.Size = New System.Drawing.Size(60, 19)
+        Me.Label1.TabIndex = 0
         Me.Label1.Text = "Itérations :"
+        Me.Label1.UseCompatibleTextRendering = True
         '
         'TextBoxVerifyPass
         '
+        Me.TextBoxVerifyPass.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.TextBoxVerifyPass.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.TextBoxVerifyPass.Location = New System.Drawing.Point(26, 125)
-        Me.TextBoxVerifyPass.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBoxVerifyPass.Location = New System.Drawing.Point(17, 83)
+        Me.TextBoxVerifyPass.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TextBoxVerifyPass.Name = "TextBoxVerifyPass"
-        Me.TextBoxVerifyPass.Size = New System.Drawing.Size(457, 29)
-        Me.TextBoxVerifyPass.TabIndex = 1
+        Me.TextBoxVerifyPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBoxVerifyPass.Size = New System.Drawing.Size(306, 22)
+        Me.TextBoxVerifyPass.TabIndex = 2
         Me.TextBoxVerifyPass.UseSystemPasswordChar = True
+        Me.TextBoxVerifyPass.WordWrap = False
         '
         'LabelVerifyPass
         '
         Me.LabelVerifyPass.AutoSize = True
-        Me.LabelVerifyPass.Location = New System.Drawing.Point(22, 101)
-        Me.LabelVerifyPass.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LabelVerifyPass.Location = New System.Drawing.Point(15, 67)
+        Me.LabelVerifyPass.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.LabelVerifyPass.Name = "LabelVerifyPass"
-        Me.LabelVerifyPass.Size = New System.Drawing.Size(196, 21)
-        Me.LabelVerifyPass.TabIndex = 9
+        Me.LabelVerifyPass.Size = New System.Drawing.Size(133, 13)
+        Me.LabelVerifyPass.TabIndex = 0
         Me.LabelVerifyPass.Text = "Vérifier le mot de passe :"
         '
         'dlgCrypterDécrypter
         '
-        Me.AcceptButton = Me.OK_Button
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(144.0!, 144.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(502, 388)
+        Me.ClientSize = New System.Drawing.Size(335, 259)
+        Me.Controls.Add(Me.TextBoxPass)
         Me.Controls.Add(Me.LabelVerifyPass)
         Me.Controls.Add(Me.TextBoxVerifyPass)
         Me.Controls.Add(Me.Label1)
@@ -203,14 +220,13 @@ Partial Class dlgCrypterDécrypter
         Me.Controls.Add(Me.TextBoxSel)
         Me.Controls.Add(Me.CheckBoxDeCrypt)
         Me.Controls.Add(Me.CheckBoxCrypt)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.LabelMotdePasse)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "dlgCrypterDécrypter"
@@ -226,7 +242,7 @@ Partial Class dlgCrypterDécrypter
     Friend WithEvents OK_Button As System.Windows.Forms.Button
     Friend WithEvents Cancel_Button As System.Windows.Forms.Button
     Friend WithEvents LabelMotdePasse As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxPass As System.Windows.Forms.TextBox
     Friend WithEvents CheckBoxCrypt As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBoxDeCrypt As System.Windows.Forms.CheckBox
     Friend WithEvents TextBoxSel As TextBox

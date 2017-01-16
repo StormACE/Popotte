@@ -37,30 +37,32 @@ Partial Class dlgConverter
         Me.Close_Button.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Close_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close_Button.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Close_Button.Location = New System.Drawing.Point(407, 147)
-        Me.Close_Button.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Close_Button.Location = New System.Drawing.Point(271, 98)
+        Me.Close_Button.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Close_Button.Name = "Close_Button"
-        Me.Close_Button.Size = New System.Drawing.Size(112, 37)
+        Me.Close_Button.Size = New System.Drawing.Size(75, 25)
         Me.Close_Button.TabIndex = 4
         Me.Close_Button.Text = "Fermer"
         '
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.TextBox2.Location = New System.Drawing.Point(407, 69)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.TextBox2.Location = New System.Drawing.Point(271, 46)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(110, 29)
+        Me.TextBox2.Size = New System.Drawing.Size(75, 22)
         Me.TextBox2.TabIndex = 3
+        Me.TextBox2.WordWrap = False
         '
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.TextBox1.Location = New System.Drawing.Point(20, 69)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.TextBox1.Location = New System.Drawing.Point(13, 46)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(110, 29)
+        Me.TextBox1.Size = New System.Drawing.Size(75, 22)
         Me.TextBox1.TabIndex = 1
+        Me.TextBox1.WordWrap = False
         '
         'ConverterComboBox
         '
@@ -68,49 +70,49 @@ Partial Class dlgConverter
         Me.ConverterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ConverterComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ConverterComboBox.FormattingEnabled = True
-        Me.ConverterComboBox.Location = New System.Drawing.Point(142, 69)
-        Me.ConverterComboBox.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.ConverterComboBox.Location = New System.Drawing.Point(95, 46)
+        Me.ConverterComboBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.ConverterComboBox.Name = "ConverterComboBox"
-        Me.ConverterComboBox.Size = New System.Drawing.Size(252, 29)
+        Me.ConverterComboBox.Size = New System.Drawing.Size(169, 21)
         Me.ConverterComboBox.TabIndex = 2
         '
         'LabelIn
         '
         Me.LabelIn.AutoSize = True
-        Me.LabelIn.Location = New System.Drawing.Point(16, 43)
-        Me.LabelIn.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LabelIn.Location = New System.Drawing.Point(11, 29)
+        Me.LabelIn.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelIn.Name = "LabelIn"
-        Me.LabelIn.Size = New System.Drawing.Size(67, 21)
+        Me.LabelIn.Size = New System.Drawing.Size(46, 13)
         Me.LabelIn.TabIndex = 6
         Me.LabelIn.Text = "Entrée :"
         '
         'LabelConv
         '
         Me.LabelConv.AutoSize = True
-        Me.LabelConv.Location = New System.Drawing.Point(138, 44)
-        Me.LabelConv.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LabelConv.Location = New System.Drawing.Point(92, 29)
+        Me.LabelConv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelConv.Name = "LabelConv"
-        Me.LabelConv.Size = New System.Drawing.Size(103, 21)
+        Me.LabelConv.Size = New System.Drawing.Size(71, 13)
         Me.LabelConv.TabIndex = 7
         Me.LabelConv.Text = "Convertion :"
         '
         'LabelOut
         '
         Me.LabelOut.AutoSize = True
-        Me.LabelOut.Location = New System.Drawing.Point(403, 44)
-        Me.LabelOut.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LabelOut.Location = New System.Drawing.Point(269, 29)
+        Me.LabelOut.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelOut.Name = "LabelOut"
-        Me.LabelOut.Size = New System.Drawing.Size(63, 21)
+        Me.LabelOut.Size = New System.Drawing.Size(43, 13)
         Me.LabelOut.TabIndex = 8
         Me.LabelOut.Text = "Sortie :"
         '
         'dlgConverter
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(144.0!, 144.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
         Me.CancelButton = Me.Close_Button
-        Me.ClientSize = New System.Drawing.Size(538, 204)
+        Me.ClientSize = New System.Drawing.Size(359, 136)
         Me.Controls.Add(Me.LabelOut)
         Me.Controls.Add(Me.LabelConv)
         Me.Controls.Add(Me.LabelIn)
@@ -121,7 +123,7 @@ Partial Class dlgConverter
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "dlgConverter"

@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.47
-''' 1 mars 2016 au 13 Janvier 2017
+''' Popotte 5.0.0.48
+''' 1 mars 2016 au 16 Janvier 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' Read licence.txt
@@ -19,9 +19,11 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' ////////// English //////////////////////
 ''' Fixed, Cut when nothing selected
 ''' Add, License button to aboutbox
+''' Cleanup code a little
 ''' ////////// Francais /////////////////////
 ''' Réparé, Couper quand rien de sélectionné.
 ''' Ajouté, Boutton Licence au dialogue À propos.
+''' Nettoyé le code
 
 
 Public Class frmMain
@@ -612,7 +614,7 @@ Public Class frmMain
         'HighLightColor
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\HLColor", True)
         If regKey IsNot Nothing Then
-            HighlightColor = ColourFromData(regKey.GetValue(""))
+            HighlightColor = ColorFromData(regKey.GetValue(""))
         End If
 
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\AutoCExt", True)
@@ -2682,11 +2684,6 @@ Public Class frmMain
         OpenFileDialog1.Dispose()
     End Sub
 
-    Private Sub JaimeToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Process.Start("https://www.facebook.com/PopotteKC")
-    End Sub
-
-
     Private Sub AfficherLesImagesDesRecettesDansLaListeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AfficherLesImagesDesRecettesDansLaListeToolStripMenuItem.Click
         If AfficherLesImagesDesRecettesDansLaListeToolStripMenuItem.Checked Then
             ImageRecette = True
@@ -3072,7 +3069,7 @@ Public Class frmMain
             Dim newregKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
             regKey = newregKey.CreateSubKey("HLColor")
         Else
-            HighlightColor = ColourFromData(regKey.GetValue(""))
+            HighlightColor = ColorFromData(regKey.GetValue(""))
         End If
 
         ColorDialog1.Color = HighlightColor
