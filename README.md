@@ -1,4 +1,11 @@
 # Popotte 5.0
+
+Some more little anoying bugs to fix when i got the time to do it before stable release.
+
+Quelques petits bogues à régler avant la version stable...
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Recipes management software
 Read licence.txt before use or modification!!!
 
