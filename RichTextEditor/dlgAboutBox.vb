@@ -36,7 +36,7 @@ Public NotInheritable Class dlgAboutBox
         ' TODO: personnalisez les informations d'assembly de l'application dans le volet "Application" de la 
         '    boîte de dialogue Propriétés du projet (sous le menu "Projet").
         Me.LabelProductName.Text = My.Application.Info.ProductName
-        Me.LabelVersion.Text = String.Format(LangINI.GetKeyValue("Popotte - AboutBox", "2") & " {0}", My.Application.Info.Version.ToString) & "  BETA  " & "AnyCPU " & System.IO.File.GetLastWriteTime(System.AppDomain.CurrentDomain.BaseDirectory & "Popotte.exe").ToLongDateString()
+        Me.LabelVersion.Text = String.Format(LangINI.GetKeyValue("Popotte - AboutBox", "2") & " {0}", My.Application.Info.Version.ToString) & "  BETA  " & "x64 " & System.IO.File.GetLastWriteTime(System.AppDomain.CurrentDomain.BaseDirectory & "Popotte.exe").ToLongDateString()
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.TextBoxDescription.Text = My.Application.Info.Description
     End Sub
