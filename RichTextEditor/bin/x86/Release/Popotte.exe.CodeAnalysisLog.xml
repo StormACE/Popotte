@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#Save(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-12-29 20:18:27Z" FixCategory="DependsOnFix">
+            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-12-29 23:56:02Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning">L'objet 'Local3' peut être supprimé plusieurs fois dans la méthode 'IniFile.Save(String)'. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.</Issue>
             </Message>
            </Messages>

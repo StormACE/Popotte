@@ -1,6 +1,6 @@
 ﻿''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 13 Janvier 2017
+''' 1 mars 2016 au 29 décembre 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' Read licence.txt
@@ -11,10 +11,11 @@ Public NotInheritable Class dlgAboutBox
     'Get Language
     Private LangINI As IniFile = frmMain.LangIni
     Dim Button_Licence As Control
-    Dim CPU As String = "x86"
+    Dim CPU As String = "x64"
 #End Region
 
     Private Sub AboutBox1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+
         ' Définissez le titre du formulaire.
         Dim ApplicationTitle As String
         If My.Application.Info.Title <> "" Then
@@ -37,7 +38,7 @@ Public NotInheritable Class dlgAboutBox
         ' TODO: personnalisez les informations d'assembly de l'application dans le volet "Application" de la 
         '    boîte de dialogue Propriétés du projet (sous le menu "Projet").
         Me.LabelProductName.Text = My.Application.Info.ProductName
-        Me.LabelVersion.Text = String.Format(LangINI.GetKeyValue("Popotte - AboutBox", "2") & " {0}", My.Application.Info.Version.ToString) & "  BETA  " & CPU & " " & System.IO.File.GetLastWriteTime(System.AppDomain.CurrentDomain.BaseDirectory & "Popotte.exe").ToLongDateString()
+        Me.LabelVersion.Text = String.Format(LangINI.GetKeyValue("Popotte - AboutBox", "2") & " {0}", My.Application.Info.Version.ToString) & "  BETA  " & CPU & "   " & System.IO.File.GetLastWriteTime(System.AppDomain.CurrentDomain.BaseDirectory & "Popotte.exe").ToLongDateString()
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.TextBoxDescription.Text = My.Application.Info.Description
     End Sub

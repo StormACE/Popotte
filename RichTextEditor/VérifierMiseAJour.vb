@@ -20,7 +20,7 @@ Public Class CVérifierMiseAJour
     Public Sub CheckForupdate()
         Dim appData As String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)
         Dim Destpath As String = appData & "\Popotte\popotte.version"
-        Dim Link As String = "https://raw.githubusercontent.com/StormAce/Popotte/Beta/Popotte.version"
+        Dim Link As String = "https://raw.githubusercontent.com/StormACE/Popotte/Beta/Popotte.version"
         Dim vers As String = Nothing
         If System.IO.File.Exists(Destpath) Then
             Try
@@ -52,7 +52,7 @@ Public Class CVérifierMiseAJour
                                           "Popotte - " & LangINI.GetKeyValue("Popotte - VerifyUpdate", "2"))
 
                     If answer = Windows.Forms.DialogResult.OK Then
-                            Process.Start("https://github.com/StormAce/Popotte/commits/Beta")
+                        Process.Start("https://github.com/StormACE/Popotte/commits/Beta")
                     End If
                 Else
                     If demarrage = False Then
