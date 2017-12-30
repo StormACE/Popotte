@@ -8,7 +8,7 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.50
+''' Popotte 5.0.0.51
 ''' 1 mars 2016 au 29 décembre 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
@@ -17,9 +17,11 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Fixed, Language change order of procedure
+''' Minor updates
+''' Update verification reactivated
 ''' ////////// Francais /////////////////////
-''' Réparé, Ordre de procedure du changement de langage
+''' Mises à jour mineur
+''' Vérification des mises à jour réactivé
 
 
 Public Class frmMain
@@ -2569,7 +2571,7 @@ Public Class frmMain
     End Sub
 
     Private Sub ToolStripMenuItemSiteWeb_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemSiteWeb.Click
-        Process.Start("https://github.com/StormAce/Popotte")
+        Process.Start("https://github.com/StormACE/Popotte")
     End Sub
 
     Private Sub CourteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CourteToolStripMenuItem.Click
