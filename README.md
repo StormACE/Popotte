@@ -1,21 +1,13 @@
 # Popotte 5.0
-
-Some more little anoying bugs to fix when i got the time to do it before stable release.
-
-Quelques petits bogues à régler avant la version stable...
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 Recipes management software
 Read licence.txt before use or modification!!!
 
-New 5.0.0.51 released.
-
+New 5.0.0.52 Final released.
 
 Logiciel de gestion de recettes
 Lisez License.txt avant d'utiliser ou modifier!!!
 
-La nouvelle version 5.0.0.51 est en-ligne.
+La nouvelle version 5.0.0.52 Final est en-ligne.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
