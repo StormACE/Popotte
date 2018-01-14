@@ -1,43 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
-<FxCopReport Version="14.0">
- <Targets>
-  <Target Name="C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\bin\x86\Release\Popotte.exe">
-   <Modules>
-    <Module Name="popotte.exe">
-     <Namespaces>
-      <Namespace Name="Popotte">
-       <Types>
-        <Type Name="IniFile" Kind="Class" Accessibility="Public" ExternallyVisible="True">
-         <Members>
-          <Member Name="#Save(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-12-29 23:56:02Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning">L'objet 'Local3' peut être supprimé plusieurs fois dans la méthode 'IniFile.Save(String)'. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-         </Members>
-        </Type>
-       </Types>
-      </Namespace>
-     </Namespaces>
-    </Module>
-   </Modules>
-  </Target>
- </Targets>
- <Rules>
-  <Rule TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202">
-   <Name>Ne pas supprimer d'objets plusieurs fois</Name>
-   <Description>Il est possible d'appeler plusieurs fois une méthode Dispose correctement implémentée sans lever d'exception. La réussite de l'opération n'est toutefois pas garantie et, pour éviter de générer un System.ObjectDisposedException, n'appelez pas cette méthode plus d'une fois par objet.</Description>
-   <Resolution Name="Default">L'objet {0} peut être supprimé plusieurs fois dans la méthode {1}. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.</Resolution>
-   <Owner>RuleOwner</Owner>
-   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
-   <Email />
-   <MessageLevel Certainty="75">Warning</MessageLevel>
-   <File Name="dataflowrules.dll" Version="14.0.0.0" />
-  </Rule>
- </Rules>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
  <Localized>
   <String Key="Category">Catégorie</String>
   <String Key="Certainty">Certitude</String>
@@ -63,9 +26,13 @@
   <String Key="ReportTitle">Rapport d'analyse du code</String>
  </Localized>
  <Exceptions>
-  <Exception Keyword="CA0068" Kind="Engine" TreatAsWarning="True">
+  <Exception Keyword="CA0064" Kind="Engine" TreatAsWarning="True">
    <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
-   <ExceptionMessage>Impossible de trouver des informations de débogage pour l'assembly cible 'Popotte.exe'. Pour obtenir de meilleurs résultats d'analyse, incluez le fichier .pdb avec les informations de débogage de 'Popotte.exe' dans le même répertoire que l'assembly cible.</ExceptionMessage>
+   <ExceptionMessage>Aucune analyse n'a été effectuée, car l'ensemble de règles spécifié n'a pas pu être chargé ou ne contient aucune règle d'analyse du code managé.</ExceptionMessage>
+  </Exception>
+  <Exception Keyword="CA0063" Kind="Engine" TreatAsWarning="True">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>* Impossible de charger le fichier d'ensemble de règles 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\Rule Sets\MinimumRecommendedRules.ruleset' ou l'un de ses fichiers d'ensemble de règles dépendants. </ExceptionMessage>
   </Exception>
  </Exceptions>
 </FxCopReport>

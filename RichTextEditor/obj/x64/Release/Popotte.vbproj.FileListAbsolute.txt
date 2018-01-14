@@ -21,3 +21,4 @@ C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.d
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.Resources.resources
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.GenerateResource.Cache
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.exe
+C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.CoreCompileInputs.cache

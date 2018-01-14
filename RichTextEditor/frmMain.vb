@@ -8,20 +8,20 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.51
-''' 1 mars 2016 au 29 décembre 2017
+''' Popotte 5.0.0.52
+''' 1 mars 2016 au 14 Janvier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2017
+''' Copyright Martin Laflamme 2003/2018
 ''' Read licence.txt
 ''' </summary>
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Minor updates
-''' Update verification reactivated
+''' Code Cleanup
+''' Final release
 ''' ////////// Francais /////////////////////
-''' Mises à jour mineur
-''' Vérification des mises à jour réactivé
+''' Ménage du code
+''' Version Final
 
 
 Public Class frmMain
@@ -75,7 +75,7 @@ Public Class frmMain
         FaireMiseaJour()
 
         'Get Windows DPI
-        DPI = CreateGraphics.DpiX
+        DPI = CInt(CreateGraphics.DpiX)
 
         'Get Windows Language ISO 3 letter code DEFAULT = English
         Dim SystemLang As String = CultureInfo.CurrentCulture.ThreeLetterISOLanguageName
