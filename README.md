@@ -9,13 +9,15 @@ Quelques petits bogues à régler avant la version stable...
 Recipes management software
 Read licence.txt before use or modification!!!
 
-New 5.0.0.50 released.
+New 5.0.0.51 released.
+
 
 Logiciel de gestion de recettes
 Lisez License.txt avant d'utiliser ou modifier!!!
 
-La nouvelle version 5.0.0.50 est en-ligne.
+La nouvelle version 5.0.0.51 est en-ligne.
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Popotte is a software build to write, read and sort your recipes easily.
 
