@@ -2,10 +2,10 @@
 Version=6.6
 Edition=0
 GUID={5F0BB561-EC49-40B9-A624-D4B295995512}
-AppName=Popotte 5  32 bits
+AppName=Popotte
 AppVersion=5.0.0.52
 AppDescription=Recipes Software / Logiciel pour recettes
-CompanyName=Martin Laflamme
+CompanyName=Kryptik Creations
 WebSite=https://github.com/StormACE/Popotte
 SupportLink=https://github.com/StormACE/Popotte
 InstallMode=0
@@ -73,30 +73,30 @@ UninstallForce=1
 UninstallRestart=0
 UninstallSettings=0
 UninstallSettingsCommand=
-VisitUninstallPage=0
-UninstallURL=https://github.com/StormAce/Popotte/issues
+VisitUninstallPage=1
+UninstallURL=https://kryptikcreations.ca
 Updater=0
-UpdateURL=https://raw.githubusercontent.com/StormAce/Popotte/Beta/Popotte.version
+UpdateURL=https://kryptikcreations.ca/popotte.version
 CheckUpdateBefore=1
 AutoCheckUpdate=0
 UpdateDay=1
 AutoSilentUpdate=0
 WizardBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Wizard\04.bmp
 HeaderBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Header\01.bmp
-LogoBitmap=C:\Users\krypt\Desktop\Popotte256-GoldMember.bmp
+LogoBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Logo\01.bmp
 SilentInstall=0
 Theme=1
 ShowPublisher=1
-HideFileNames=1
+HideFileNames=0
 DialogWelcome=1
 DialogLicense=1
 DialogReadme=0
 DialogUserInfo=0
 DialogDestinationFolder=1
-DialogAdditionalTasks=0
+DialogAdditionalTasks=1
 DialogReady=1
 DialogFinish=1
-DefaultLanguage=English
+DefaultLanguage=French
 AutoDetectLanguage=1
 AcceptAgreement=1
 InfoUserName=0
@@ -131,9 +131,9 @@ French=
 0=C:\Program Files (x86)\Actual Installer\Uninstall.exe?<InstallDir>\Uninstall.exe?1?-1
 
 [License]
-(Default)=C:\Users\krypt\Desktop\Popotte\licence.txt
-English=C:\Users\krypt\Desktop\Popotte\licence.txt
-French=C:\Users\krypt\Desktop\Popotte\licence.txt
+(Default)=C:\Users\krypt\Documents\Visual Studio 2015\Projects\Popotte 5\RichTextEditor\bin\Release\licence.txt
+English=C:\Users\krypt\Documents\Visual Studio 2015\Projects\Popotte 5\RichTextEditor\bin\Release\licence.txt
+French=C:\Users\krypt\Documents\Visual Studio 2015\Projects\Popotte 5\RichTextEditor\bin\Release\licence.txt
 
 [Readme]
 (Default)=
@@ -144,7 +144,4 @@ French=
 0=<ProgramGroup>*?<AppName>*?<InstallDir>\Popotte.exe*?*?*?<InstallDir>*?*?0*?Normal
 1=<CommonDesktop>*?<AppName>*?<InstallDir>\Popotte.exe*?*?*?<InstallDir>*?*?0*?Normal
 2=<ProgramGroup>*?Uninstall <AppName>*?<InstallDir>\Uninstall.exe*?*?*?<InstallDir>*?*?0*?Normal
-
-[FileOptions]
-0=C:\Users\krypt\Desktop\Popotte\PopotteInstallationX32.exe?D
 
