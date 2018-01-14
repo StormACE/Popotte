@@ -66,7 +66,7 @@ Public Class dlgInfoRecette
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre & "\" & strText, True)
         If regKey IsNot Nothing Then
             NoteComboBox.SelectedIndex = regKey.GetValue("Note", 5)
-            DescTextBox.Text = regKey.GetValue("Description", "")
+            DescTextBox.Text = regKey.GetValue("Description", "").ToString
         Else
             NoteComboBox.SelectedIndex = 5
         End If
@@ -92,7 +92,7 @@ Public Class dlgInfoRecette
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Dim SourceFile As String = PopotteDir & NomLivre & "\" & strText & ".rtf"
         Dim NewName As String = NomTextBox.Text.Trim
-        Dim NewNote As String = NoteComboBox.SelectedIndex
+        Dim NewNote As String = NoteComboBox.SelectedIndex.ToString
         Dim NewLivre As String = Me.ComboBoxLivre.Text.Trim
         Dim NewDesc As String = DescTextBox.Text.Trim
         If Saveit = False Then

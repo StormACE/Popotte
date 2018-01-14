@@ -103,7 +103,7 @@ Public Class dlgConverter
         Me.ConverterComboBox.Items.Add(LangINI.GetKeyValue("Popotte - Converter", "24"))
         Me.ConverterComboBox.Items.Add(LangINI.GetKeyValue("Popotte - Converter", "25"))
         ConverterComboBox.SelectedIndex = 0
-        TextBox1.Text = 0
+        TextBox1.Text = "0"
     End Sub
 
     Private Sub ConverterComboBox_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ConverterComboBox.SelectedIndexChanged

@@ -16,3 +16,4 @@ C:\Users\krypt\Documents\GitHub\Popotte - essaie richedit reload\ExtendedRichTex
 C:\Users\krypt\Documents\GitHub\Popotte - essaie richedit reload\ExtendedRichTextBox\obj\Release\AdvRTB.dll
 C:\Users\krypt\Documents\GitHub\Popotte - essaie richedit reload\ExtendedRichTextBox\obj\Release\AdvRTB.xml
 C:\Users\krypt\Documents\GitHub\Popotte - essaie richedit reload\ExtendedRichTextBox\obj\Release\AdvRTB.pdb
+C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Release\ExtendedRichTextBox.vbproj.CoreCompileInputs.cache

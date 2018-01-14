@@ -1560,11 +1560,11 @@ Partial Class frmMain
         Me.ClientSize = New System.Drawing.Size(1176, 868)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.ToolStrip2)
-        Me.Controls.Add(Me.rtbDoc)
+        Controls.Add(rtbDoc)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.MenuStrip1
+        MainMenuStrip = MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmMain"
         Me.Text = "Popotte"
