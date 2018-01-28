@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.52
-''' 1 mars 2016 au 14 Janvier 2018
+''' Popotte 5.0.0.53
+''' 1 mars 2016 au 28 Janvier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2018
 ''' Read licence.txt
@@ -18,10 +18,10 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
 ''' Code Cleanup
-''' Final release
+''' Fix bug with search in recipe
 ''' ////////// Francais /////////////////////
 ''' Ménage du code
-''' Version Final
+''' Réglé, un bogue avec la recherche de recette
 
 
 Public Class frmMain
