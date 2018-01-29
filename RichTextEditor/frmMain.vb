@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.0.53
-''' 1 mars 2016 au 28 Janvier 2018
+''' Popotte 5.0.0.54
+''' 1 mars 2016 au 29 Janvier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2018
 ''' Read licence.txt
@@ -19,9 +19,11 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' ////////// English //////////////////////
 ''' Code Cleanup
 ''' Fix bug with search in recipe
+''' Fix bug with autocorrector
 ''' ////////// Francais /////////////////////
 ''' Ménage du code
 ''' Réglé, un bogue avec la recherche de recette
+''' Réglé, un bogue avec l'auto-correction
 
 
 Public Class frmMain
@@ -3138,19 +3140,22 @@ Public Class frmMain
         If System.IO.File.Exists(Destpath) Then
             My.Computer.FileSystem.DeleteFile(Destpath)
         End If
+
         txtWriter = New StreamWriter(Destpath, True, System.Text.Encoding.Unicode)
         txtWriter.Write(rtbDoc.SelectedText)
         txtWriter.Close()
         txtWriter = Nothing
-        txtWriter.Dispose()
+
         rtbDoc.SelectionStart = 0
         rtbDoc.SelectionLength = 0
         rtbDoc.Modified = False
 
         Dim ppath As String = ""
+
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\AutoCExt", True)
+
         If regKey IsNot Nothing Then
-            ppath = regKey.GetValue("")
+            ppath = CType(regKey.GetValue(""), String)
         End If
 
         Dim Argument As String
