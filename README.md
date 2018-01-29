@@ -2,7 +2,9 @@
 Recipes management software
 Read licence.txt before use or modification!!!
 
-New 5.0.0.52 Final released.
+Nightly Branch availlable
+
+New 5.0.0.52 Final build released.
 
 Logiciel de gestion de recettes
 Lisez License.txt avant d'utiliser ou modifier!!!
