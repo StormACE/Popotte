@@ -47,8 +47,11 @@ Partial Class dlgLivres
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.ButtonFav = New System.Windows.Forms.Button()
         Me.TextBoxRecherche = New System.Windows.Forms.TextBox()
+        Me.FavorisContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EnleverFavToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LivreContextMenuStrip.SuspendLayout()
         Me.RecetteContextMenuStrip.SuspendLayout()
+        Me.FavorisContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'ListViewLivres
@@ -213,10 +216,10 @@ Partial Class dlgLivres
         '
         'ButtonFav
         '
-        Me.ButtonFav.BackColor = System.Drawing.SystemColors.Highlight
+        Me.ButtonFav.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.ButtonFav.BackgroundImage = CType(resources.GetObject("ButtonFav.BackgroundImage"), System.Drawing.Image)
         Me.ButtonFav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonFav.Location = New System.Drawing.Point(13, 14)
+        Me.ButtonFav.Location = New System.Drawing.Point(10, 18)
         Me.ButtonFav.Name = "ButtonFav"
         Me.ButtonFav.Size = New System.Drawing.Size(38, 34)
         Me.ButtonFav.TabIndex = 7
@@ -230,6 +233,21 @@ Partial Class dlgLivres
         Me.TextBoxRecherche.Name = "TextBoxRecherche"
         Me.TextBoxRecherche.Size = New System.Drawing.Size(211, 22)
         Me.TextBoxRecherche.TabIndex = 4
+        '
+        'FavorisContextMenuStrip
+        '
+        Me.FavorisContextMenuStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
+        Me.FavorisContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.FavorisContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnleverFavToolStripMenuItem})
+        Me.FavorisContextMenuStrip.Name = "RecetteContextMenuStrip"
+        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(180, 56)
+        '
+        'EnleverFavToolStripMenuItem
+        '
+        Me.EnleverFavToolStripMenuItem.Image = CType(resources.GetObject("EnleverFavToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.EnleverFavToolStripMenuItem.Name = "EnleverFavToolStripMenuItem"
+        Me.EnleverFavToolStripMenuItem.Size = New System.Drawing.Size(179, 30)
+        Me.EnleverFavToolStripMenuItem.Text = "Enlever des favoris"
         '
         'dlgLivres
         '
@@ -257,6 +275,7 @@ Partial Class dlgLivres
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.LivreContextMenuStrip.ResumeLayout(False)
         Me.RecetteContextMenuStrip.ResumeLayout(False)
+        Me.FavorisContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -284,4 +303,6 @@ Partial Class dlgLivres
     Friend WithEvents TextBoxRecherche As TextBox
     Friend WithEvents ToolStripMenuItemFAV As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents FavorisContextMenuStrip As ContextMenuStrip
+    Friend WithEvents EnleverFavToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 13 Janvier 2017
+''' 1 mars 2016 au 31 Janvier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' Read licence.txt
@@ -141,6 +141,7 @@ Public Class dlgLivres
         Dim buttonToolTip2 As New ToolTip()
         Dim buttonToolTip3 As New ToolTip()
         Dim buttonToolTip4 As New ToolTip()
+        Dim buttonToolTip5 As New ToolTip()
 
         buttonToolTip1.UseFading = True
         buttonToolTip1.UseAnimation = True
@@ -178,6 +179,15 @@ Public Class dlgLivres
         buttonToolTip4.ReshowDelay = 500
         buttonToolTip4.ToolTipIcon = ToolTipIcon.Info
 
+        buttonToolTip5.UseFading = True
+        buttonToolTip5.UseAnimation = True
+        buttonToolTip5.IsBalloon = True
+        buttonToolTip5.ShowAlways = True
+        buttonToolTip5.AutoPopDelay = 2500
+        buttonToolTip5.InitialDelay = 500
+        buttonToolTip5.ReshowDelay = 500
+        buttonToolTip5.ToolTipIcon = ToolTipIcon.Info
+
         buttonToolTip1.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "5")
         buttonToolTip1.SetToolTip(RevenirButton, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "1"))
         buttonToolTip2.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "6")
@@ -186,6 +196,8 @@ Public Class dlgLivres
         buttonToolTip3.SetToolTip(ButtonRecherche, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "3"))
         buttonToolTip4.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "8")
         buttonToolTip4.SetToolTip(TextBoxRecherche, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "4"))
+        buttonToolTip5.ToolTipTitle = "Mes Favoris"
+        buttonToolTip5.SetToolTip(ButtonFav, "Recettes Favorites")
 
         'Populer la listview avec les livres
         If frmMain.LivreOuvert = "" Then
@@ -394,6 +406,14 @@ Public Class dlgLivres
         If e.Button = MouseButtons.Right Then
             If ListViewRecettes.SelectedItems.Count > 0 Then
                 RecetteContextMenuStrip.Show(ListViewRecettes, New Point(e.X, e.Y))
+            End If
+        End If
+    End Sub
+
+    Private Sub ListViewRecherche_MouseClick(sender As Object, e As MouseEventArgs) Handles ListViewRecherche.MouseClick
+        If e.Button = MouseButtons.Right Then
+            If ListViewRecherche.SelectedItems.Count > 0 Then
+                FavorisContextMenuStrip.Show(ListViewRecherche, New Point(e.X, e.Y))
             End If
         End If
     End Sub
@@ -889,6 +909,8 @@ FileFound:
         ListViewRecherche.Items.Clear()
         ListViewRecettes.Visible = False
         ListViewRecherche.Visible = True
+        Text = "Popotte - Mes Favoris"
+
         Dim RecetteTotalCount As Integer = 0
         Dim objItem As ListViewItem
         Dim imgidx As Integer = 0
@@ -900,6 +922,8 @@ FileFound:
             For Each subKeyName As String In regKey.GetSubKeyNames()
 
                 RecetteTotalCount += 1
+                Text = "Popotte - Mes Favoris - (" & RecetteTotalCount.ToString & ")"
+
                 regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & subKeyName, True)
                 Dim Livre As String = regKey.GetValue("Livre").ToString
 
@@ -936,6 +960,19 @@ FileFound:
 #End Region
 
 #Region "ContextMenu methods"
+
+
+    Private Sub EnleverFavToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnleverFavToolStripMenuItem.Click
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+        Dim NomRecette As String = ListViewRecherche.SelectedItems(0).Text
+        regKey.DeleteSubKey(NomRecette)
+        'remove item from list
+        ListViewRecherche.FocusedItem.Remove()
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
+        If regKey IsNot Nothing Then
+            MessageBox.Show("La Recette n'a pas été effacé!", "Favoris", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
 
     Private Sub ChangerLeNomDuLivreToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChangerLeNomDuLivreToolStripMenuItem.Click
         Dim rdia As New RenommerLivreDialog(ListViewLivres.SelectedItems(0).Text)
@@ -1112,13 +1149,11 @@ FileFound:
             regKey.CreateSubKey(NomRecette.Trim)
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
             regKey.SetValue("Livre", Livre)
-            MessageBox.Show("La recette a été ajoutée aux Favoris")
+            MessageBox.Show(Me, "La recette a été ajoutée aux Favoris", "Favoris", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            MessageBox.Show("La recette existe déjà dans les favoris")
+            MessageBox.Show("La recette existe déjà dans les favoris", "Favoris", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
-
 
 #End Region
 
