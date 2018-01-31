@@ -787,7 +787,7 @@ Public Class dlgLivres
                                 .SubItems.Add(Description)
                                 .SubItems.Add(FolderName)
                                 .SubItems.Add(-1)
-                                .SubItems.Add(fi.Name)
+                                .SubItems.Add(RechercheTexte)
                                 .ImageIndex = imgidx
                             End With
                             RecetteTotalCount += 1
@@ -816,7 +816,7 @@ Public Class dlgLivres
                                     .SubItems.Add(Description)
                                     .SubItems.Add(FolderName)
                                     .SubItems.Add(-1)
-                                    .SubItems.Add(fi.Name)
+                                    .SubItems.Add(RechercheTexte)
                                     .ImageIndex = imgidx
                                 End With
                                 RecetteTotalCount += 1
@@ -845,7 +845,7 @@ Public Class dlgLivres
                                     .SubItems.Add(Description)
                                     .SubItems.Add(FolderName)
                                     .SubItems.Add(Position)
-                                    .SubItems.Add(fi.Name)
+                                    .SubItems.Add(RechercheTexte)
                                     .ImageIndex = imgidx
                                 End With
                                 RecetteTotalCount += 1
