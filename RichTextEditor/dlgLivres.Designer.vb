@@ -219,17 +219,19 @@ Partial Class dlgLivres
         Me.ButtonFav.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.ButtonFav.BackgroundImage = CType(resources.GetObject("ButtonFav.BackgroundImage"), System.Drawing.Image)
         Me.ButtonFav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonFav.Location = New System.Drawing.Point(10, 18)
+        Me.ButtonFav.Location = New System.Drawing.Point(13, 4)
         Me.ButtonFav.Name = "ButtonFav"
-        Me.ButtonFav.Size = New System.Drawing.Size(38, 34)
+        Me.ButtonFav.Size = New System.Drawing.Size(44, 44)
         Me.ButtonFav.TabIndex = 7
         Me.ButtonFav.UseVisualStyleBackColor = False
         '
         'TextBoxRecherche
         '
+        Me.TextBoxRecherche.AcceptsTab = True
         Me.TextBoxRecherche.AccessibleDescription = ""
+        Me.TextBoxRecherche.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.TextBoxRecherche.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.TextBoxRecherche.Location = New System.Drawing.Point(243, 476)
+        Me.TextBoxRecherche.Location = New System.Drawing.Point(243, 477)
         Me.TextBoxRecherche.Name = "TextBoxRecherche"
         Me.TextBoxRecherche.Size = New System.Drawing.Size(211, 22)
         Me.TextBoxRecherche.TabIndex = 4
@@ -240,7 +242,7 @@ Partial Class dlgLivres
         Me.FavorisContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.FavorisContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnleverFavToolStripMenuItem})
         Me.FavorisContextMenuStrip.Name = "RecetteContextMenuStrip"
-        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(180, 56)
+        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(180, 34)
         '
         'EnleverFavToolStripMenuItem
         '

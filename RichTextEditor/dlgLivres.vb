@@ -199,6 +199,17 @@ Public Class dlgLivres
         buttonToolTip5.ToolTipTitle = "Mes Favoris"
         buttonToolTip5.SetToolTip(ButtonFav, "Recettes Favorites")
 
+        'the textbox suggest favorites
+        Dim Favcollection As AutoCompleteStringCollection = New AutoCompleteStringCollection()
+        TextBoxRecherche.AutoCompleteSource = AutoCompleteSource.CustomSource
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+        If regKey IsNot Nothing Then
+            For Each subkeyname As String In regKey.GetSubKeyNames
+                Favcollection.Add(subkeyname)
+            Next
+            TextBoxRecherche.AutoCompleteCustomSource = Favcollection
+        End If
+
         'Populer la listview avec les livres
         If frmMain.LivreOuvert = "" Then
             If GetLivres() > 0 Then
@@ -1153,6 +1164,10 @@ FileFound:
         Else
             MessageBox.Show("La recette existe déjà dans les favoris", "Favoris", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Private Sub ListViewRecherche_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewRecherche.SelectedIndexChanged
+
     End Sub
 
 #End Region
