@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.1.0.60
-''' 1 mars 2016 au 1 fevrier 2018
+''' Popotte 5.1.0.61
+''' 1 mars 2016 au 2 fevrier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2018
 ''' Read licence.txt
@@ -2403,6 +2403,18 @@ Public Class frmMain
 
 
             '////////////////////// Add settings /////////////////////////////////////////////////
+
+            'Ajoute les favoris
+            Dim regKeyFAV As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\", True)
+            If regKeyFAV IsNot Nothing Then
+                For Each subkeyname As String In regKeyFAV.GetSubKeyNames()
+                    regKeyFAV = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & subkeyname, True)
+                    Dim Livre As String = regKeyFAV.GetValue("Livre").ToString()
+                    sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Settings\Favorites\" & subkeyname & "]")
+                    sb.AppendLine(Chr(34) & "Livre" & Chr(34) & "=" & Chr(34) & Livre & Chr(34))
+                    sb.AppendLine()
+                Next
+            End If
 
             'Ajoute les engins de recherche
             Dim regKeySearch As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\CentreRecherche\", True)
