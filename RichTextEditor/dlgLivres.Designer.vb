@@ -216,7 +216,7 @@ Partial Class dlgLivres
         '
         'ButtonFav
         '
-        Me.ButtonFav.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ButtonFav.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ButtonFav.BackgroundImage = CType(resources.GetObject("ButtonFav.BackgroundImage"), System.Drawing.Image)
         Me.ButtonFav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonFav.Location = New System.Drawing.Point(13, 4)

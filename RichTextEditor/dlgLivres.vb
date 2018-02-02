@@ -838,7 +838,7 @@ Public Class dlgLivres
                             Me.Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "18") & RecetteTotalCount & LangINI.GetKeyValue("Popotte - BooksDialog", "19")
                         Else
                             Dim Path As String = PopotteDir & FolderName & "\" & Filename
-                            Dim key = "Software\Popotte\Livres\" & FolderName & "\" & Strings.Left(Filename, Filename.Length - 4)
+                            Dim key As String = "Software\Popotte\Livres\" & FolderName & "\" & Strings.Left(Filename, Filename.Length - 4)
                             Dim note As Integer = -1
                             Dim Description As String = ""
 
