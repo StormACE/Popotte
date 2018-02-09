@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 31 Janvier 2018
+''' 1 mars 2016 au 09 fevrier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' Read licence.txt
@@ -43,6 +43,8 @@ Public Class dlgLivres
         ModifierLesInfosDeLaRecetteToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "4")
         OuvrirAvecEditeurExterneToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "5")
         EffacerLaRecetteToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "6")
+        EnleverFavToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "7")
+        ToolStripMenuItemFAV.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "8")
 
 
         ' Set ListViewLivres Properties
@@ -196,8 +198,8 @@ Public Class dlgLivres
         buttonToolTip3.SetToolTip(ButtonRecherche, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "3"))
         buttonToolTip4.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "8")
         buttonToolTip4.SetToolTip(TextBoxRecherche, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "4"))
-        buttonToolTip5.ToolTipTitle = "Mes Favoris"
-        buttonToolTip5.SetToolTip(ButtonFav, "Recettes Favorites")
+        buttonToolTip5.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "9")
+        buttonToolTip5.SetToolTip(ButtonFav, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "10"))
 
         'the textbox suggest favorites
         Dim Favcollection As AutoCompleteStringCollection = New AutoCompleteStringCollection()
@@ -920,7 +922,7 @@ FileFound:
         ListViewRecherche.Items.Clear()
         ListViewRecettes.Visible = False
         ListViewRecherche.Visible = True
-        Text = "Popotte - Mes Favoris"
+        Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "20")
 
         Dim RecetteTotalCount As Integer = 0
         Dim objItem As ListViewItem
@@ -933,7 +935,7 @@ FileFound:
             For Each subKeyName As String In regKey.GetSubKeyNames()
 
                 RecetteTotalCount += 1
-                Text = "Popotte - Mes Favoris - (" & RecetteTotalCount.ToString & ")"
+                Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "20") & " - (" & RecetteTotalCount.ToString & ")"
 
                 regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & subKeyName, True)
                 Dim Livre As String = regKey.GetValue("Livre").ToString
@@ -981,7 +983,7 @@ FileFound:
         ListViewRecherche.FocusedItem.Remove()
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
         If regKey IsNot Nothing Then
-            MessageBox.Show("La Recette n'a pas été effacé!", "Favoris", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "7"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -1160,14 +1162,10 @@ FileFound:
             regKey.CreateSubKey(NomRecette.Trim)
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
             regKey.SetValue("Livre", Livre)
-            MessageBox.Show(Me, "La recette a été ajoutée aux Favoris", "Favoris", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(Me, LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "9"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            MessageBox.Show("La recette existe déjà dans les favoris", "Favoris", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "10"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
-    End Sub
-
-    Private Sub ListViewRecherche_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewRecherche.SelectedIndexChanged
-
     End Sub
 
 #End Region
