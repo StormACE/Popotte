@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.0.1.55
-''' 1 mars 2016 au 29 Janvier 2018
+''' Popotte 5.1.0.62
+''' 1 mars 2016 au 9 fevrier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2018
 ''' Read licence.txt
@@ -17,15 +17,13 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Code Cleanup
-''' Fix bug with search in recipe
-''' Fix bug with autocorrector
-''' Fix bug with backing up the database
+''' Add a button in books dialog to retrieve favorites recipes
+''' Code cleanup
+''' Polished
 ''' ////////// Francais /////////////////////
+''' Ajouté un bouton dans le dialogue Livres pour afficher les recettes favorites
 ''' Ménage du code
-''' Réglé, un bogue avec la recherche de recette
-''' Réglé, un bogue avec l'auto-correction
-''' Réglé, un bogue avec la sauvegarde de la base de données
+''' Polis
 
 
 Public Class frmMain
@@ -96,7 +94,7 @@ Public Class frmMain
         'Get language from registry
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Language", True)
         If regKey IsNot Nothing Then
-            Language = regKey.GetValue("", "")
+            Language = regKey.GetValue("", "").ToString
             If Language <> "" Then
                 'load Language ini
                 Dim inifilen As String = Application.StartupPath & "\Languages\" & Language & ".ini"
@@ -717,6 +715,7 @@ Public Class frmMain
             End If
             Return 0
         Next
+        Return 0
     End Function
 
 
@@ -961,6 +960,7 @@ Public Class frmMain
                 End
             End If
         End If
+        Return 0
     End Function
 
     Private Sub SaveSize()
@@ -2403,6 +2403,18 @@ Public Class frmMain
 
 
             '////////////////////// Add settings /////////////////////////////////////////////////
+
+            'Ajoute les favoris
+            Dim regKeyFAV As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\", True)
+            If regKeyFAV IsNot Nothing Then
+                For Each subkeyname As String In regKeyFAV.GetSubKeyNames()
+                    regKeyFAV = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & subkeyname, True)
+                    Dim Livre As String = regKeyFAV.GetValue("Livre").ToString()
+                    sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Settings\Favorites\" & subkeyname & "]")
+                    sb.AppendLine(Chr(34) & "Livre" & Chr(34) & "=" & Chr(34) & Livre & Chr(34))
+                    sb.AppendLine()
+                Next
+            End If
 
             'Ajoute les engins de recherche
             Dim regKeySearch As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\CentreRecherche\", True)

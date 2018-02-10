@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 13 Janvier 2017
+''' 1 mars 2016 au 09 fevrier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' Read licence.txt
@@ -23,6 +23,8 @@ Public Class dlgLivres
     Private imageListSmallRecette As New ImageList
     'Get Language
     Private LangINI As IniFile = frmMain.LangIni
+
+    Private Fav As Boolean = False
 #End Region
 
 
@@ -41,6 +43,8 @@ Public Class dlgLivres
         ModifierLesInfosDeLaRecetteToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "4")
         OuvrirAvecEditeurExterneToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "5")
         EffacerLaRecetteToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "6")
+        EnleverFavToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "7")
+        ToolStripMenuItemFAV.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "8")
 
 
         ' Set ListViewLivres Properties
@@ -139,6 +143,7 @@ Public Class dlgLivres
         Dim buttonToolTip2 As New ToolTip()
         Dim buttonToolTip3 As New ToolTip()
         Dim buttonToolTip4 As New ToolTip()
+        Dim buttonToolTip5 As New ToolTip()
 
         buttonToolTip1.UseFading = True
         buttonToolTip1.UseAnimation = True
@@ -176,6 +181,15 @@ Public Class dlgLivres
         buttonToolTip4.ReshowDelay = 500
         buttonToolTip4.ToolTipIcon = ToolTipIcon.Info
 
+        buttonToolTip5.UseFading = True
+        buttonToolTip5.UseAnimation = True
+        buttonToolTip5.IsBalloon = True
+        buttonToolTip5.ShowAlways = True
+        buttonToolTip5.AutoPopDelay = 2500
+        buttonToolTip5.InitialDelay = 500
+        buttonToolTip5.ReshowDelay = 500
+        buttonToolTip5.ToolTipIcon = ToolTipIcon.Info
+
         buttonToolTip1.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "5")
         buttonToolTip1.SetToolTip(RevenirButton, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "1"))
         buttonToolTip2.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "6")
@@ -184,6 +198,19 @@ Public Class dlgLivres
         buttonToolTip3.SetToolTip(ButtonRecherche, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "3"))
         buttonToolTip4.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "8")
         buttonToolTip4.SetToolTip(TextBoxRecherche, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "4"))
+        buttonToolTip5.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "9")
+        buttonToolTip5.SetToolTip(ButtonFav, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "10"))
+
+        'the textbox suggest favorites
+        Dim Favcollection As AutoCompleteStringCollection = New AutoCompleteStringCollection()
+        TextBoxRecherche.AutoCompleteSource = AutoCompleteSource.CustomSource
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+        If regKey IsNot Nothing Then
+            For Each subkeyname As String In regKey.GetSubKeyNames
+                Favcollection.Add(subkeyname)
+            Next
+            TextBoxRecherche.AutoCompleteCustomSource = Favcollection
+        End If
 
         'Populer la listview avec les livres
         If frmMain.LivreOuvert = "" Then
@@ -396,6 +423,14 @@ Public Class dlgLivres
         End If
     End Sub
 
+    Private Sub ListViewRecherche_MouseClick(sender As Object, e As MouseEventArgs) Handles ListViewRecherche.MouseClick
+        If e.Button = MouseButtons.Right Then
+            If ListViewRecherche.SelectedItems.Count > 0 Then
+                FavorisContextMenuStrip.Show(ListViewRecherche, New Point(e.X, e.Y))
+            End If
+        End If
+    End Sub
+
     Private Sub ListViewLivres_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles ListViewLivres.KeyDown
         Select Case e.KeyCode
             Case Keys.Return
@@ -435,10 +470,16 @@ Public Class dlgLivres
 
     Private Sub RechercheItemClick()
         Dim NomRecette As String = ListViewRecherche.SelectedItems(0).Text
+        Dim position As Integer = -1
+        Dim Recherchetexte As String = ""
+
         frmMain.currentFile = NomRecette
         LastLivre = ListViewRecherche.SelectedItems(0).SubItems(3).Text
-        Dim position As Integer = ListViewRecherche.SelectedItems(0).SubItems(4).Text
-        Dim Recherchetexte As String = ListViewRecherche.SelectedItems(0).SubItems(5).Text
+
+        If Fav = False Then
+            position = CType(ListViewRecherche.SelectedItems(0).SubItems(4).Text, Integer)
+            Recherchetexte = ListViewRecherche.SelectedItems(0).SubItems(5).Text
+        End If
 
         Dim recette As String = NomRecette & ".rtf"
         Dim Path As String = ""
@@ -456,18 +497,22 @@ Public Class dlgLivres
             regKey.SetValue("Livre", frmMain.LivreOuvert)
             regKey.SetValue("Recette", NomRecette)
         End If
+
         frmMain.rtbDoc.LoadFile(Path, RichTextBoxStreamType.RichText)
 
-
-        ' Highlight the search string
-        If position <> -1 Then
-            frmMain.rtbDoc.Select(position, Recherchetexte.Length)
-            frmMain.Text = "Popotte - [" & recette & "]"
-        Else
-            frmMain.Text = "Popotte - [" & recette & "]"
+        If Fav = False Then
+            ' Highlight the search string
+            If position <> -1 Then
+                frmMain.rtbDoc.Select(position, Recherchetexte.Length)
+                frmMain.Text = "Popotte - [" & recette & "]"
+            Else
+                frmMain.Text = "Popotte - [" & recette & "]"
+            End If
         End If
+
+        Fav = False
+        Close()
         frmMain.rtbDoc.Modified = False
-        Me.Close()
     End Sub
 
     Private Sub LivreContextMenuStrip_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles LivreContextMenuStrip.Opening
@@ -774,8 +819,8 @@ Public Class dlgLivres
                             Dim Description As String = ""
                             regKey = Registry.CurrentUser.OpenSubKey(key, True)
                             If regKey IsNot Nothing Then
-                                note = regKey.GetValue("Note", -1)
-                                Description = regKey.GetValue("Description", "")
+                                note = CType(regKey.GetValue("Note", -1), Integer)
+                                Description = regKey.GetValue("Description", "").ToString
                             End If
 
                             AddImageToImagelist(Strings.Left(Filename, Filename.Length - 4), FolderName)
@@ -795,15 +840,15 @@ Public Class dlgLivres
                             Me.Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "18") & RecetteTotalCount & LangINI.GetKeyValue("Popotte - BooksDialog", "19")
                         Else
                             Dim Path As String = PopotteDir & FolderName & "\" & Filename
-                            Dim key = "Software\Popotte\Livres\" & FolderName & "\" & Strings.Left(Filename, Filename.Length - 4)
+                            Dim key As String = "Software\Popotte\Livres\" & FolderName & "\" & Strings.Left(Filename, Filename.Length - 4)
                             Dim note As Integer = -1
                             Dim Description As String = ""
 
                             'Search description
                             regKey = Registry.CurrentUser.OpenSubKey(key, True)
                             If regKey IsNot Nothing Then
-                                note = regKey.GetValue("Note", -1)
-                                Description = regKey.GetValue("Description", "")
+                                note = CType(regKey.GetValue("Note", -1), Integer)
+                                Description = regKey.GetValue("Description", "").ToString
                             End If
                             Dim DescFound As Integer = LCase(Description).IndexOf(LCase(RechercheTexte.Trim))
                             If DescFound <> -1 Then
@@ -832,8 +877,8 @@ Public Class dlgLivres
                             If Position <> -1 Then
                                 regKey = Registry.CurrentUser.OpenSubKey(key, True)
                                 If regKey IsNot Nothing Then
-                                    note = regKey.GetValue("Note", -1)
-                                    Description = regKey.GetValue("Description", "")
+                                    note = CType(regKey.GetValue("Note", -1), Integer)
+                                    Description = regKey.GetValue("Description", "").ToString
                                 End If
 
                                 AddImageToImagelist(Strings.Left(Filename, Filename.Length - 4), FolderName)
@@ -844,7 +889,7 @@ Public Class dlgLivres
                                     .SubItems.Add(ConvertNote(note))
                                     .SubItems.Add(Description)
                                     .SubItems.Add(FolderName)
-                                    .SubItems.Add(Position)
+                                    .SubItems.Add(Position.ToString)
                                     .SubItems.Add(RechercheTexte)
                                     .ImageIndex = imgidx
                                 End With
@@ -870,9 +915,77 @@ FileFound:
         ListViewRecherche.Focus()
         GC.Collect()
     End Sub
+
+    'Bouton Favorites
+    Private Sub ButtonFav_Click(sender As Object, e As EventArgs) Handles ButtonFav.Click
+        imageListSmallRecette.Images.Clear()
+        ListViewRecherche.Items.Clear()
+        ListViewRecettes.Visible = False
+        ListViewRecherche.Visible = True
+        Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "20")
+
+        Dim RecetteTotalCount As Integer = 0
+        Dim objItem As ListViewItem
+        Dim imgidx As Integer = 0
+        Fav = True
+        RevenirButton.Enabled = True
+
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+        If regKey IsNot Nothing Then
+            For Each subKeyName As String In regKey.GetSubKeyNames()
+
+                RecetteTotalCount += 1
+                Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "20") & " - (" & RecetteTotalCount.ToString & ")"
+
+                regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & subKeyName, True)
+                Dim Livre As String = regKey.GetValue("Livre").ToString
+
+                regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & Livre & "\" & subKeyName, True)
+                If regKey IsNot Nothing Then
+                    Dim note As Integer = CType(regKey.GetValue("Note"), Integer)
+                    Dim description As String = regKey.GetValue("Description").ToString
+                    AddImageToImagelist(subKeyName, Livre)
+                    'Add to listview
+                    objItem = ListViewRecherche.Items.Add(subKeyName)
+                    With objItem
+                        .SubItems.Add(ConvertNote(note))
+                        .SubItems.Add(description)
+                        .SubItems.Add(Livre)
+                        .ImageIndex = imgidx
+                    End With
+                    imgidx += 1
+                Else
+                    AddImageToImagelist(subKeyName, Livre)
+                    'Add to listview
+                    objItem = ListViewRecherche.Items.Add(subKeyName)
+                    With objItem
+                        .SubItems.Add("")
+                        .SubItems.Add("")
+                        .SubItems.Add(Livre)
+                        .ImageIndex = imgidx
+                    End With
+                    imgidx += 1
+                End If
+            Next
+        End If
+
+    End Sub
 #End Region
 
 #Region "ContextMenu methods"
+
+
+    Private Sub EnleverFavToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnleverFavToolStripMenuItem.Click
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+        Dim NomRecette As String = ListViewRecherche.SelectedItems(0).Text
+        regKey.DeleteSubKey(NomRecette)
+        'remove item from list
+        ListViewRecherche.FocusedItem.Remove()
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
+        If regKey IsNot Nothing Then
+            MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "7"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
 
     Private Sub ChangerLeNomDuLivreToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChangerLeNomDuLivreToolStripMenuItem.Click
         Dim rdia As New RenommerLivreDialog(ListViewLivres.SelectedItems(0).Text)
@@ -1007,7 +1120,7 @@ FileFound:
 
     Private Sub OuvrirAvecEditeurExterneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OuvrirAvecEditeurExterneToolStripMenuItem.Click
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\EditeurExt", True)
-        Dim Editpath As String = regKey.GetValue("")
+        Dim Editpath As String = regKey.GetValue("").ToString
 
         Dim NomRecette As String = ListViewRecettes.SelectedItems(0).Text
         Dim Argument As String
@@ -1025,6 +1138,34 @@ FileFound:
             MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "6") & " " & ex.ToString, "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "1"), MessageBoxButtons.OK, MessageBoxIcon.Warning) 'else display any possible error
         End Try
 
+    End Sub
+
+
+    Private Sub ToolStripMenuItemFAV_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemFAV.Click
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+        If regKey Is Nothing Then
+            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
+            regKey.CreateSubKey("Favorites")
+        End If
+        Dim NomRecette As String = ListViewRecettes.SelectedItems(0).Text
+        Dim Livre As String
+        If LastLivre <> "" Then
+            Livre = LastLivre
+        Else
+            Livre = frmMain.LivreOuvert
+        End If
+
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
+
+        If regKey Is Nothing Then
+            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+            regKey.CreateSubKey(NomRecette.Trim)
+            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
+            regKey.SetValue("Livre", Livre)
+            MessageBox.Show(Me, LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "9"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "10"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
 #End Region
