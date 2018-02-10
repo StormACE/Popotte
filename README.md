@@ -1,4 +1,4 @@
-# Popotte 5.0
+# Popotte 5
 Recipes management software
 Read licence.txt before use or modification!!!
 
