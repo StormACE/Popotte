@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.1.0.62
-''' 1 mars 2016 au 9 fevrier 2018
+''' Popotte 5.1.1.63
+''' 1 mars 2016 au 23 fevrier 2018
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2018
 ''' Read licence.txt
@@ -17,13 +17,9 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Add a button in books dialog to retrieve favorites recipes
-''' Code cleanup
-''' Polished
+''' Minor Bug Fix
 ''' ////////// Francais /////////////////////
-''' Ajouté un bouton dans le dialogue Livres pour afficher les recettes favorites
-''' Ménage du code
-''' Polis
+''' Réparé, bogue mineur
 
 
 Public Class frmMain
