@@ -2,14 +2,14 @@
 Recipes management software
 Read licence.txt before use or modification!!!
 
-Nightly Branch availlable 5.1.0.62
+Nightly Branch availlable 5.1.1.63
 
-New 5.1.0.62 Master build released.
+New 5.1.1.63 Master build released.
 
 Logiciel de gestion de recettes
 Lisez License.txt avant d'utiliser ou modifier!!!
 
-La nouvelle version 5.1.0.62 Master est en-ligne.
+La nouvelle version 5.1.1.63 Master est en-ligne.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
