@@ -28,3 +28,4 @@ C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\Release\Popotte.vbpro
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\Release\Popotte.exe
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\Release\Popotte.pdb
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\Release\Popotte.vbproj.CoreCompileInputs.cache
+C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\Release\Popotte.vbproj.CopyComplete
