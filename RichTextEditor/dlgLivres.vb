@@ -650,15 +650,22 @@ Public Class dlgLivres
     Private Sub AddImageToImagelist(itemname As String, livre As String)
         'lis la recette dans une string
         Dim rtfStr As String = ""
-        If ListViewRecettes.Visible = True Then
-            If LastLivre <> "" Then
-                rtfStr = File.ReadAllText(PopotteDir & LastLivre & "\" & itemname & ".rtf")
-            Else
-                rtfStr = File.ReadAllText(PopotteDir & frmMain.LivreOuvert & "\" & itemname & ".rtf")
+
+        Try
+
+            If ListViewRecettes.Visible = True Then
+                If LastLivre <> "" Then
+                    rtfStr = File.ReadAllText(PopotteDir & LastLivre & "\" & itemname & ".rtf")
+                Else
+                    rtfStr = File.ReadAllText(PopotteDir & frmMain.LivreOuvert & "\" & itemname & ".rtf")
+                End If
+            ElseIf ListViewRecherche.Visible = True Then
+                rtfStr = File.ReadAllText(PopotteDir & livre & "\" & itemname & ".rtf")
             End If
-        ElseIf ListViewRecherche.Visible = True Then
-            rtfStr = File.ReadAllText(PopotteDir & livre & "\" & itemname & ".rtf")
-        End If
+        Catch ex As Exception
+
+        End Try
+
 
         If frmMain.ImageRecette Then
             'extract image from rtf
@@ -1023,11 +1030,16 @@ FileFound:
 
     Private Sub RemoveLivreKey(ByVal NomLivre As String)
         Dim LivreRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre, True)
+
         If LivreRegKey IsNot Nothing Then
             Dim subKeys As String() = LivreRegKey.GetSubKeyNames()
             If subKeys IsNot Nothing Then
                 For Each subKeyName As String In subKeys
                     LivreRegKey.DeleteSubKey(subKeyName)
+                    Dim FavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & subKeyName, True)
+                    If FavRegKey IsNot Nothing Then
+                        FavRegKey.DeleteSubKey(subKeyName)
+                    End If
                 Next
                 Dim SRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres", True)
                 SRegKey.DeleteSubKey(NomLivre)
@@ -1088,6 +1100,12 @@ FileFound:
                         RemoveRecetteKey(LastLivre, NomRecette)
                     Else
                         RemoveRecetteKey(frmMain.LivreOuvert, NomRecette)
+                    End If
+
+                    'Remove Fav Key
+                    Dim FavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
+                    If FavRegKey IsNot Nothing Then
+                        FavRegKey.DeleteSubKey(NomRecette)
                     End If
 
                     'recount item
