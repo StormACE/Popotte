@@ -1103,8 +1103,9 @@ FileFound:
                     End If
 
                     'Remove Fav Key
-                    Dim FavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\", True)
+                    Dim FavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
                     If FavRegKey IsNot Nothing Then
+                        FavRegKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\", True)
                         FavRegKey.DeleteSubKey(NomRecette)
                     End If
 
