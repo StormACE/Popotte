@@ -14,7 +14,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Un logiciel gratuit pour écrire et classer des recettes. Si vous avez payé pour ce logiciel, veuillez vous faire rembourser par celui qui vous là vendu!!!!  Popotte est une Marque de Martin Laflamme.                                                                                                                                                        Free software to write and organize recipes. If you paid for this software, please be reimbursed by the person who sold it to you!!!! Popotte is Martin Laflamme mark.")>
 <Assembly: AssemblyCompany("Martin Laflamme")>
 <Assembly: AssemblyProduct("Popotte")>
-<Assembly: AssemblyCopyright("Copyright © Martin Laflamme 2003/2018")>
+<Assembly: AssemblyCopyright("Copyright © Martin Laflamme 2003/2019")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("5.1.2.64")>
-<Assembly: AssemblyFileVersion("5.1.2.64")>
+<Assembly: AssemblyVersion("5.1.3.65")>
+<Assembly: AssemblyFileVersion("5.1.3.65")>
 
 <Assembly: NeutralResourcesLanguageAttribute("fr-CA")> 
