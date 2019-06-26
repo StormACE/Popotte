@@ -1022,6 +1022,7 @@ FileFound:
 
                 If result = DialogResult.OK Then
                     frmMain.rtbDoc.LoadFile(Filepath, RichTextBoxStreamType.RichText)
+                    frmMain.rtbDoc.Modified = False
                     Me.Close()
                 End If
             End If
@@ -1029,6 +1030,9 @@ FileFound:
 
 
     End Sub
+
+
+
 #End Region
 
 #Region "ContextMenu methods"
