@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.2.0.66
-''' 1 mars 2016 au 26 juin 2019
+''' Popotte 5.2.0.67
+''' 1 mars 2016 au 30 juin 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt

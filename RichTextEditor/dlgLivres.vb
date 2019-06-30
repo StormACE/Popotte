@@ -4,9 +4,9 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 11 mai 2019
+''' 1 mars 2016 au 30 juin 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2017
+''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
 ''' </summary>
 
@@ -1017,12 +1017,26 @@ FileFound:
                 'Read file path from list at random index
                 Dim Filepath As String = tmpList.Item(resultInt)
                 Dim fn As String = Path.GetFileNameWithoutExtension(Filepath)
+                'Get Book folder name
+                Dim Livre As String = Path.GetDirectoryName(Filepath)
+                Livre &= ".xxx"
+                Livre = Path.GetFileNameWithoutExtension(Livre)
 
                 Dim result As Integer = MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "11") & fn & Chr(13) & LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "12"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "13"), MessageBoxButtons.OKCancel)
 
                 If result = DialogResult.OK Then
                     frmMain.rtbDoc.LoadFile(Filepath, RichTextBoxStreamType.RichText)
+                    frmMain.Text = "Popotte - [" & fn & "]"
+                    frmMain.GetCharFormat()
                     frmMain.rtbDoc.Modified = False
+                    frmMain.LivreOuvert = Livre
+                    frmMain.currentFile = Filepath
+                    frmMain.RappelTimer.Stop()
+                    frmMain.RappelTimer.Start()
+                    regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
+                    regKey.SetValue("DerRecette", Filepath)
+                    regKey.SetValue("Livre", Livre)
+                    regKey.SetValue("Recette", fn)
                     Me.Close()
                 End If
             End If
