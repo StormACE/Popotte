@@ -4,9 +4,9 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 11 mai 2019
+''' 1 mars 2016 au 30 juin 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2017
+''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
 ''' </summary>
 
@@ -144,6 +144,7 @@ Public Class dlgLivres
         Dim buttonToolTip3 As New ToolTip()
         Dim buttonToolTip4 As New ToolTip()
         Dim buttonToolTip5 As New ToolTip()
+        Dim buttonToolTip6 As New ToolTip()
 
         buttonToolTip1.UseFading = True
         buttonToolTip1.UseAnimation = True
@@ -190,6 +191,15 @@ Public Class dlgLivres
         buttonToolTip5.ReshowDelay = 500
         buttonToolTip5.ToolTipIcon = ToolTipIcon.Info
 
+        buttonToolTip6.UseFading = True
+        buttonToolTip6.UseAnimation = True
+        buttonToolTip6.IsBalloon = True
+        buttonToolTip6.ShowAlways = True
+        buttonToolTip6.AutoPopDelay = 2500
+        buttonToolTip6.InitialDelay = 500
+        buttonToolTip6.ReshowDelay = 500
+        buttonToolTip6.ToolTipIcon = ToolTipIcon.Info
+
         buttonToolTip1.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "5")
         buttonToolTip1.SetToolTip(RevenirButton, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "1"))
         buttonToolTip2.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "6")
@@ -200,6 +210,8 @@ Public Class dlgLivres
         buttonToolTip4.SetToolTip(TextBoxRecherche, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "4"))
         buttonToolTip5.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "9")
         buttonToolTip5.SetToolTip(ButtonFav, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "10"))
+        buttonToolTip6.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "11")
+        buttonToolTip6.SetToolTip(ButtonRandom, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "12"))
 
         'the textbox suggest favorites
         Dim Favcollection As AutoCompleteStringCollection = New AutoCompleteStringCollection()
@@ -977,6 +989,64 @@ FileFound:
         End If
 
     End Sub
+
+    Private Sub ButtonRandom_Click(sender As Object, e As EventArgs) Handles ButtonRandom.Click
+        If (Directory.Exists(PopotteDir)) Then
+            Dim tmpList As New List(Of String)
+            Dim count As Integer = 0
+            For Each Folder As String In My.Computer.FileSystem.GetDirectories(PopotteDir)
+                'Retourne le nom du dossier
+                Dim FolderName As String = Path.GetFileName(Folder)
+                'set search parameters
+                Dim di As New DirectoryInfo(PopotteDir & FolderName)
+                Dim aryFi As FileInfo() = di.GetFiles("*.rtf")
+                Dim fi As FileInfo
+
+
+                For Each fi In aryFi
+                    Dim Filename As String = Strings.LCase(fi.FullName)
+                    'put file path into List
+                    tmpList.Add(Filename)
+                    count += 1
+                Next
+            Next
+
+            If count > 0 Then
+                Dim r As New Random()
+                Dim resultInt As Integer = r.Next(0, count - 1)
+                'Read file path from list at random index
+                Dim Filepath As String = tmpList.Item(resultInt)
+                Dim fn As String = Path.GetFileNameWithoutExtension(Filepath)
+                'Get Book folder name
+                Dim Livre As String = Path.GetDirectoryName(Filepath)
+                Livre &= ".xxx"
+                Livre = Path.GetFileNameWithoutExtension(Livre)
+
+                Dim result As Integer = MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "11") & fn & Chr(13) & LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "12"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "13"), MessageBoxButtons.OKCancel)
+
+                If result = DialogResult.OK Then
+                    frmMain.rtbDoc.LoadFile(Filepath, RichTextBoxStreamType.RichText)
+                    frmMain.Text = "Popotte - [" & fn & "]"
+                    frmMain.GetCharFormat()
+                    frmMain.rtbDoc.Modified = False
+                    frmMain.LivreOuvert = Livre
+                    frmMain.currentFile = Filepath
+                    frmMain.RappelTimer.Stop()
+                    frmMain.RappelTimer.Start()
+                    regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
+                    regKey.SetValue("DerRecette", Filepath)
+                    regKey.SetValue("Livre", Livre)
+                    regKey.SetValue("Recette", fn)
+                    Me.Close()
+                End If
+            End If
+        End If
+
+
+    End Sub
+
+
+
 #End Region
 
 #Region "ContextMenu methods"
@@ -1186,6 +1256,8 @@ FileFound:
             MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "10"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+
 
 #End Region
 

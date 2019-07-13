@@ -2,7 +2,7 @@
 ''' Popotte v5
 ''' 1 mars 2016 au 29 décembre 2017
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2017
+''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
 ''' </summary>
 Public NotInheritable Class dlgAboutBox
@@ -11,7 +11,7 @@ Public NotInheritable Class dlgAboutBox
     'Get Language
     Private LangINI As IniFile = frmMain.LangIni
     Dim Button_Licence As Control
-    Dim xCPU As String = "x64"
+    Dim xCPU As String = "x86"
 #End Region
 
     Private Sub AboutBox1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
