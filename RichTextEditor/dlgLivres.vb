@@ -429,7 +429,12 @@ Public Class dlgLivres
 
     Private Sub ListViewRecettes_MouseClick(ByVal sender As System.Object, ByVal e As MouseEventArgs) Handles ListViewRecettes.MouseClick
         If e.Button = MouseButtons.Right Then
-            If ListViewRecettes.SelectedItems.Count > 0 Then
+            If ListViewRecettes.SelectedItems.Count > 1 Then
+                RecetteContextMenuStrip.Show(ListViewRecettes, New Point(e.X, e.Y))
+                EffacerLaRecetteToolStripMenuItem.Enabled = False
+                OuvrirAvecEditeurExterneToolStripMenuItem.Enabled = False
+                ToolStripMenuItemFAV.Enabled = False
+            ElseIf ListViewRecettes.SelectedItems.Count = 1 Then
                 RecetteContextMenuStrip.Show(ListViewRecettes, New Point(e.X, e.Y))
             End If
         End If
@@ -1146,7 +1151,9 @@ FileFound:
     End Sub
 
     Private Sub EffaçerLaRecetteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EffacerLaRecetteToolStripMenuItem.Click
-        DeleteRecette()
+        If ListViewRecettes.SelectedItems.Count = 1 Then
+            DeleteRecette()
+        End If
     End Sub
 
     Private Sub DeleteRecette()
@@ -1201,7 +1208,7 @@ FileFound:
         End If
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewBookToolStripMenuItem.Click
+    Private Sub NewBookToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewBookToolStripMenuItem.Click
         Dim NLdia As New NouveauLivreDialog()
         Dim dresult As Integer = NLdia.ShowDialog()
         Select Case dresult
@@ -1211,52 +1218,55 @@ FileFound:
     End Sub
 
     Private Sub OuvrirAvecEditeurExterneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OuvrirAvecEditeurExterneToolStripMenuItem.Click
-        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\EditeurExt", True)
-        Dim Editpath As String = regKey.GetValue("").ToString
+        If ListViewRecettes.SelectedItems.Count = 1 Then
+            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\EditeurExt", True)
+            Dim Editpath As String = regKey.GetValue("").ToString
 
-        Dim NomRecette As String = ListViewRecettes.SelectedItems(0).Text
-        Dim Argument As String
-        If LastLivre <> "" Then
-            Argument = PopotteDir & LastLivre & "\" & NomRecette & ".rtf"
-        Else
-            Argument = PopotteDir & frmMain.LivreOuvert & "\" & NomRecette & ".rtf"
+            Dim NomRecette As String = ListViewRecettes.SelectedItems(0).Text
+            Dim Argument As String
+            If LastLivre <> "" Then
+                Argument = PopotteDir & LastLivre & "\" & NomRecette & ".rtf"
+            Else
+                Argument = PopotteDir & frmMain.LivreOuvert & "\" & NomRecette & ".rtf"
+            End If
+
+            Argument = Chr(34) & Argument & Chr(34)
+
+            Try
+                Process.Start(Editpath, Argument)
+            Catch ex As Exception
+                MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "6") & " " & ex.ToString, "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "1"), MessageBoxButtons.OK, MessageBoxIcon.Warning) 'else display any possible error
+            End Try
         End If
-
-        Argument = Chr(34) & Argument & Chr(34)
-
-        Try
-            Process.Start(Editpath, Argument)
-        Catch ex As Exception
-            MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "6") & " " & ex.ToString, "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "1"), MessageBoxButtons.OK, MessageBoxIcon.Warning) 'else display any possible error
-        End Try
-
     End Sub
 
 
     Private Sub ToolStripMenuItemFAV_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemFAV.Click
-        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
-        If regKey Is Nothing Then
-            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
-            regKey.CreateSubKey("Favorites")
-        End If
-        Dim NomRecette As String = ListViewRecettes.SelectedItems(0).Text
-        Dim Livre As String
-        If LastLivre <> "" Then
-            Livre = LastLivre
-        Else
-            Livre = frmMain.LivreOuvert
-        End If
-
-        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
-
-        If regKey Is Nothing Then
+        If ListViewRecettes.SelectedItems.Count = 1 Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
-            regKey.CreateSubKey(NomRecette.Trim)
+            If regKey Is Nothing Then
+                regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
+                regKey.CreateSubKey("Favorites")
+            End If
+            Dim NomRecette As String = ListViewRecettes.SelectedItems(0).Text
+            Dim Livre As String
+            If LastLivre <> "" Then
+                Livre = LastLivre
+            Else
+                Livre = frmMain.LivreOuvert
+            End If
+
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
-            regKey.SetValue("Livre", Livre)
-            MessageBox.Show(Me, LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "9"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "10"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            If regKey Is Nothing Then
+                regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+                regKey.CreateSubKey(NomRecette.Trim)
+                regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NomRecette, True)
+                regKey.SetValue("Livre", Livre)
+                MessageBox.Show(Me, LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "9"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "10"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         End If
     End Sub
 
