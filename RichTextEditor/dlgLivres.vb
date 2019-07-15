@@ -436,6 +436,9 @@ Public Class dlgLivres
                 ToolStripMenuItemFAV.Enabled = False
             ElseIf ListViewRecettes.SelectedItems.Count = 1 Then
                 RecetteContextMenuStrip.Show(ListViewRecettes, New Point(e.X, e.Y))
+                EffacerLaRecetteToolStripMenuItem.Enabled = True
+                OuvrirAvecEditeurExterneToolStripMenuItem.Enabled = True
+                ToolStripMenuItemFAV.Enabled = True
             End If
         End If
     End Sub
