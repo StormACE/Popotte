@@ -436,9 +436,11 @@ Public Class dlgLivres
     End Sub
 
     Private Sub ListViewRecherche_MouseClick(sender As Object, e As MouseEventArgs) Handles ListViewRecherche.MouseClick
-        If e.Button = MouseButtons.Right Then
-            If ListViewRecherche.SelectedItems.Count > 0 Then
-                FavorisContextMenuStrip.Show(ListViewRecherche, New Point(e.X, e.Y))
+        If Fav = True Then
+            If e.Button = MouseButtons.Right Then
+                If ListViewRecherche.SelectedItems.Count > 0 Then
+                    FavorisContextMenuStrip.Show(ListViewRecherche, New Point(e.X, e.Y))
+                End If
             End If
         End If
     End Sub
@@ -816,6 +818,7 @@ Public Class dlgLivres
         If RechercheTexte <> "" Then
             ListViewRecettes.Visible = False
             ListViewRecherche.Visible = True
+            Fav = False
             Me.Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "18") & 0 & LangINI.GetKeyValue("Popotte - BooksDialog", "19")
             Me.Cursor = Cursors.WaitCursor
             Dim RecetteTotalCount As Integer = 0
