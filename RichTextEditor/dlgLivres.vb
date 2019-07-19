@@ -533,8 +533,9 @@ Public Class dlgLivres
         End If
 
         Fav = False
-        Close()
         frmMain.rtbDoc.Modified = False
+        Me.Close()
+
     End Sub
 
     Private Sub LivreContextMenuStrip_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles LivreContextMenuStrip.Opening
