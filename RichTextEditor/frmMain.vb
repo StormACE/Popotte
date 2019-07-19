@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.2.0.67
-''' 1 mars 2016 au 30 juin 2019
+''' Popotte 5.2.1.70
+''' 1 mars 2016 au 15 juillet 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -17,9 +17,9 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Add a random recipe button to My Book dialog
+''' Fix minor bugs
 ''' ////////// Francais /////////////////////
-''' Ajouté un bouton Au Hasard au dialogue Mes Livres de recettes
+''' Réglé des bogues mineurs
 
 
 Public Class frmMain
@@ -2678,8 +2678,10 @@ Public Class frmMain
             If SaveFileDialog1.FileName = "" Then Exit Sub
 
             Using zip As Ionic.Zip.ZipFile = New Ionic.Zip.ZipFile
+                Me.Cursor = Cursors.WaitCursor
                 zip.AddDirectory(PopotteDir)
                 zip.Save(SaveFileDialog1.FileName)
+                Me.Cursor = Cursors.Arrow
                 MessageBox.Show(LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "16"), "Popotte", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End Using
         Else
