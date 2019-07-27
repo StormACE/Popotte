@@ -4,3 +4,9 @@ C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\x86\Release\Exte
 C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\x86\Release\AdvRTB.dll
 C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.vbproj.CoreCompileInputs.cache
 C:\Users\krypt\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.vbprojAssemblyReference.cache
+C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\bin\x86\Release\AdvRTB.dll
+C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.vbprojAssemblyReference.cache
+C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.Resources.resources
+C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.vbproj.GenerateResource.cache
+C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\x86\Release\ExtendedRichTextBox.vbproj.CoreCompileInputs.cache
+C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\x86\Release\AdvRTB.dll
