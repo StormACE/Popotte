@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.2.1.70
-''' 1 mars 2016 au 15 juillet 2019
+''' Popotte 5.2.2.72
+''' 1 mars 2016 au 28 juillet 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -564,6 +564,10 @@ Public Class frmMain
             ' Create a timer 
             If regKey IsNot Nothing Then
                 Delay = regKey.GetValue("Delay", 300000)
+                RappelTimer.Interval = Delay
+                RappelTimer.Start()
+            Else
+                Delay = 300000
                 RappelTimer.Interval = Delay
                 RappelTimer.Start()
             End If
@@ -1783,7 +1787,6 @@ Public Class frmMain
 
         PrintPreviewDialog1.Document = PrintDocument1
         PrintPreviewDialog1.ShowDialog()
-        PrintPreviewDialog1.Dispose()
 
     End Sub
 
