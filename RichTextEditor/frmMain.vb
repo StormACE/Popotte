@@ -3431,9 +3431,11 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub ToolStripComboBoxPolices_Disposed(sender As Object, e As EventArgs) Handles ToolStripComboBoxPolices.Disposed
-
+    Private Sub ToolStripMenuItemMenu_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemMenu.Click
+        Dim mn As New frmMenu
+        mn.Show()
     End Sub
+
 
 
 #End Region

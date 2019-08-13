@@ -50,6 +50,7 @@ Partial Class dlgLivres
         Me.FavorisContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EnleverFavToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ButtonRandom = New System.Windows.Forms.Button()
+        Me.ToolStripMenuItemMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.LivreContextMenuStrip.SuspendLayout()
         Me.RecetteContextMenuStrip.SuspendLayout()
         Me.FavorisContextMenuStrip.SuspendLayout()
@@ -61,10 +62,10 @@ Partial Class dlgLivres
         Me.ListViewLivres.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListViewLivres.HideSelection = False
         Me.ListViewLivres.LabelEdit = True
-        Me.ListViewLivres.Location = New System.Drawing.Point(23, 94)
-        Me.ListViewLivres.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ListViewLivres.Location = New System.Drawing.Point(20, 81)
+        Me.ListViewLivres.Margin = New System.Windows.Forms.Padding(4)
         Me.ListViewLivres.Name = "ListViewLivres"
-        Me.ListViewLivres.Size = New System.Drawing.Size(1178, 709)
+        Me.ListViewLivres.Size = New System.Drawing.Size(1010, 608)
         Me.ListViewLivres.TabIndex = 0
         Me.ListViewLivres.UseCompatibleStateImageBehavior = False
         Me.ListViewLivres.View = System.Windows.Forms.View.Details
@@ -74,40 +75,40 @@ Partial Class dlgLivres
         Me.LivreContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.LivreContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewBookToolStripMenuItem, Me.ChangerLeNomDuLivreToolStripMenuItem, Me.ToolStripSeparator1, Me.EffacerLeLivreToolStripMenuItem})
         Me.LivreContextMenuStrip.Name = "LivreContextMenuStrip"
-        Me.LivreContextMenuStrip.Size = New System.Drawing.Size(326, 118)
+        Me.LivreContextMenuStrip.Size = New System.Drawing.Size(289, 106)
         '
         'NewBookToolStripMenuItem
         '
         Me.NewBookToolStripMenuItem.Image = CType(resources.GetObject("NewBookToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NewBookToolStripMenuItem.Name = "NewBookToolStripMenuItem"
-        Me.NewBookToolStripMenuItem.Size = New System.Drawing.Size(325, 36)
+        Me.NewBookToolStripMenuItem.Size = New System.Drawing.Size(288, 32)
         Me.NewBookToolStripMenuItem.Text = "Nouveau Livre"
         '
         'ChangerLeNomDuLivreToolStripMenuItem
         '
         Me.ChangerLeNomDuLivreToolStripMenuItem.Name = "ChangerLeNomDuLivreToolStripMenuItem"
-        Me.ChangerLeNomDuLivreToolStripMenuItem.Size = New System.Drawing.Size(325, 36)
+        Me.ChangerLeNomDuLivreToolStripMenuItem.Size = New System.Drawing.Size(288, 32)
         Me.ChangerLeNomDuLivreToolStripMenuItem.Text = "Changer le Nom du Livre"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(322, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(285, 6)
         '
         'EffacerLeLivreToolStripMenuItem
         '
         Me.EffacerLeLivreToolStripMenuItem.Image = CType(resources.GetObject("EffacerLeLivreToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EffacerLeLivreToolStripMenuItem.Name = "EffacerLeLivreToolStripMenuItem"
-        Me.EffacerLeLivreToolStripMenuItem.Size = New System.Drawing.Size(325, 36)
+        Me.EffacerLeLivreToolStripMenuItem.Size = New System.Drawing.Size(288, 32)
         Me.EffacerLeLivreToolStripMenuItem.Text = "Effacer le Livre"
         '
         'RevenirButton
         '
         Me.RevenirButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.RevenirButton.Location = New System.Drawing.Point(23, 910)
-        Me.RevenirButton.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.RevenirButton.Location = New System.Drawing.Point(20, 780)
+        Me.RevenirButton.Margin = New System.Windows.Forms.Padding(4)
         Me.RevenirButton.Name = "RevenirButton"
-        Me.RevenirButton.Size = New System.Drawing.Size(145, 44)
+        Me.RevenirButton.Size = New System.Drawing.Size(124, 38)
         Me.RevenirButton.TabIndex = 0
         Me.RevenirButton.Text = "&Revenir"
         Me.RevenirButton.UseVisualStyleBackColor = True
@@ -116,10 +117,10 @@ Partial Class dlgLivres
         '
         Me.FermerButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.FermerButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.FermerButton.Location = New System.Drawing.Point(1059, 910)
-        Me.FermerButton.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.FermerButton.Location = New System.Drawing.Point(908, 780)
+        Me.FermerButton.Margin = New System.Windows.Forms.Padding(4)
         Me.FermerButton.Name = "FermerButton"
-        Me.FermerButton.Size = New System.Drawing.Size(145, 44)
+        Me.FermerButton.Size = New System.Drawing.Size(124, 38)
         Me.FermerButton.TabIndex = 1
         Me.FermerButton.Text = "&Fermer"
         Me.FermerButton.UseVisualStyleBackColor = True
@@ -131,11 +132,11 @@ Partial Class dlgLivres
         Me.ListViewRecettes.GridLines = True
         Me.ListViewRecettes.HideSelection = False
         Me.ListViewRecettes.LabelEdit = True
-        Me.ListViewRecettes.Location = New System.Drawing.Point(23, 94)
-        Me.ListViewRecettes.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ListViewRecettes.Location = New System.Drawing.Point(20, 81)
+        Me.ListViewRecettes.Margin = New System.Windows.Forms.Padding(4)
         Me.ListViewRecettes.Name = "ListViewRecettes"
         Me.ListViewRecettes.ShowItemToolTips = True
-        Me.ListViewRecettes.Size = New System.Drawing.Size(1175, 709)
+        Me.ListViewRecettes.Size = New System.Drawing.Size(1008, 608)
         Me.ListViewRecettes.TabIndex = 3
         Me.ListViewRecettes.UseCompatibleStateImageBehavior = False
         Me.ListViewRecettes.Visible = False
@@ -144,50 +145,50 @@ Partial Class dlgLivres
         '
         Me.RecetteContextMenuStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
         Me.RecetteContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.RecetteContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemFAV, Me.ToolStripSeparator4, Me.ModifierLesInfosDeLaRecetteToolStripMenuItem, Me.ToolStripSeparator3, Me.OuvrirAvecEditeurExterneToolStripMenuItem, Me.ToolStripSeparator2, Me.EffacerLaRecetteToolStripMenuItem})
+        Me.RecetteContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemFAV, Me.ToolStripMenuItemMenu, Me.ToolStripSeparator4, Me.ModifierLesInfosDeLaRecetteToolStripMenuItem, Me.ToolStripSeparator3, Me.OuvrirAvecEditeurExterneToolStripMenuItem, Me.ToolStripSeparator2, Me.EffacerLaRecetteToolStripMenuItem})
         Me.RecetteContextMenuStrip.Name = "RecetteContextMenuStrip"
-        Me.RecetteContextMenuStrip.Size = New System.Drawing.Size(376, 166)
+        Me.RecetteContextMenuStrip.Size = New System.Drawing.Size(331, 215)
         '
         'ToolStripMenuItemFAV
         '
         Me.ToolStripMenuItemFAV.Image = CType(resources.GetObject("ToolStripMenuItemFAV.Image"), System.Drawing.Image)
         Me.ToolStripMenuItemFAV.Name = "ToolStripMenuItemFAV"
-        Me.ToolStripMenuItemFAV.Size = New System.Drawing.Size(375, 36)
+        Me.ToolStripMenuItemFAV.Size = New System.Drawing.Size(330, 32)
         Me.ToolStripMenuItemFAV.Text = "Ajouter aux Favoris"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(372, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(327, 6)
         '
         'ModifierLesInfosDeLaRecetteToolStripMenuItem
         '
         Me.ModifierLesInfosDeLaRecetteToolStripMenuItem.Name = "ModifierLesInfosDeLaRecetteToolStripMenuItem"
-        Me.ModifierLesInfosDeLaRecetteToolStripMenuItem.Size = New System.Drawing.Size(375, 36)
+        Me.ModifierLesInfosDeLaRecetteToolStripMenuItem.Size = New System.Drawing.Size(330, 32)
         Me.ModifierLesInfosDeLaRecetteToolStripMenuItem.Text = "Modifier les infos de la recette"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(372, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(327, 6)
         '
         'OuvrirAvecEditeurExterneToolStripMenuItem
         '
         Me.OuvrirAvecEditeurExterneToolStripMenuItem.Enabled = False
         Me.OuvrirAvecEditeurExterneToolStripMenuItem.Name = "OuvrirAvecEditeurExterneToolStripMenuItem"
-        Me.OuvrirAvecEditeurExterneToolStripMenuItem.Size = New System.Drawing.Size(375, 36)
+        Me.OuvrirAvecEditeurExterneToolStripMenuItem.Size = New System.Drawing.Size(330, 32)
         Me.OuvrirAvecEditeurExterneToolStripMenuItem.Text = "Ouvrir avec l'éditeur externe"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(372, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(327, 6)
         '
         'EffacerLaRecetteToolStripMenuItem
         '
         Me.EffacerLaRecetteToolStripMenuItem.Image = CType(resources.GetObject("EffacerLaRecetteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EffacerLaRecetteToolStripMenuItem.Name = "EffacerLaRecetteToolStripMenuItem"
-        Me.EffacerLaRecetteToolStripMenuItem.Size = New System.Drawing.Size(375, 36)
+        Me.EffacerLaRecetteToolStripMenuItem.Size = New System.Drawing.Size(330, 32)
         Me.EffacerLaRecetteToolStripMenuItem.Text = "Effacer la recette"
         '
         'ListViewRecherche
@@ -195,20 +196,20 @@ Partial Class dlgLivres
         Me.ListViewRecherche.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ListViewRecherche.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListViewRecherche.HideSelection = False
-        Me.ListViewRecherche.Location = New System.Drawing.Point(23, 94)
-        Me.ListViewRecherche.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ListViewRecherche.Location = New System.Drawing.Point(20, 81)
+        Me.ListViewRecherche.Margin = New System.Windows.Forms.Padding(4)
         Me.ListViewRecherche.Name = "ListViewRecherche"
-        Me.ListViewRecherche.Size = New System.Drawing.Size(1175, 709)
+        Me.ListViewRecherche.Size = New System.Drawing.Size(1008, 608)
         Me.ListViewRecherche.TabIndex = 4
         Me.ListViewRecherche.UseCompatibleStateImageBehavior = False
         '
         'ButtonRecherche
         '
         Me.ButtonRecherche.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.ButtonRecherche.Location = New System.Drawing.Point(536, 910)
-        Me.ButtonRecherche.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ButtonRecherche.Location = New System.Drawing.Point(459, 780)
+        Me.ButtonRecherche.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonRecherche.Name = "ButtonRecherche"
-        Me.ButtonRecherche.Size = New System.Drawing.Size(145, 44)
+        Me.ButtonRecherche.Size = New System.Drawing.Size(124, 38)
         Me.ButtonRecherche.TabIndex = 5
         Me.ButtonRecherche.Text = "Re&chercher"
         Me.ButtonRecherche.UseVisualStyleBackColor = True
@@ -217,9 +218,9 @@ Partial Class dlgLivres
         '
         Me.ScanRichTextBox.DetectUrls = False
         Me.ScanRichTextBox.Location = New System.Drawing.Point(0, 0)
-        Me.ScanRichTextBox.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ScanRichTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.ScanRichTextBox.Name = "ScanRichTextBox"
-        Me.ScanRichTextBox.Size = New System.Drawing.Size(0, 0)
+        Me.ScanRichTextBox.Size = New System.Drawing.Size(1, 1)
         Me.ScanRichTextBox.TabIndex = 6
         Me.ScanRichTextBox.Text = ""
         Me.ScanRichTextBox.Visible = False
@@ -229,10 +230,10 @@ Partial Class dlgLivres
         Me.ButtonFav.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ButtonFav.BackgroundImage = CType(resources.GetObject("ButtonFav.BackgroundImage"), System.Drawing.Image)
         Me.ButtonFav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonFav.Location = New System.Drawing.Point(23, 7)
-        Me.ButtonFav.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ButtonFav.Location = New System.Drawing.Point(20, 6)
+        Me.ButtonFav.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonFav.Name = "ButtonFav"
-        Me.ButtonFav.Size = New System.Drawing.Size(80, 79)
+        Me.ButtonFav.Size = New System.Drawing.Size(69, 68)
         Me.ButtonFav.TabIndex = 7
         Me.ButtonFav.UseVisualStyleBackColor = False
         '
@@ -242,10 +243,10 @@ Partial Class dlgLivres
         Me.TextBoxRecherche.AccessibleDescription = ""
         Me.TextBoxRecherche.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.TextBoxRecherche.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.TextBoxRecherche.Location = New System.Drawing.Point(425, 835)
-        Me.TextBoxRecherche.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.TextBoxRecherche.Location = New System.Drawing.Point(364, 716)
+        Me.TextBoxRecherche.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxRecherche.Name = "TextBoxRecherche"
-        Me.TextBoxRecherche.Size = New System.Drawing.Size(366, 32)
+        Me.TextBoxRecherche.Size = New System.Drawing.Size(314, 29)
         Me.TextBoxRecherche.TabIndex = 4
         '
         'FavorisContextMenuStrip
@@ -254,32 +255,38 @@ Partial Class dlgLivres
         Me.FavorisContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.FavorisContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnleverFavToolStripMenuItem})
         Me.FavorisContextMenuStrip.Name = "RecetteContextMenuStrip"
-        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(267, 40)
+        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(240, 36)
         '
         'EnleverFavToolStripMenuItem
         '
         Me.EnleverFavToolStripMenuItem.Image = CType(resources.GetObject("EnleverFavToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EnleverFavToolStripMenuItem.Name = "EnleverFavToolStripMenuItem"
-        Me.EnleverFavToolStripMenuItem.Size = New System.Drawing.Size(266, 36)
+        Me.EnleverFavToolStripMenuItem.Size = New System.Drawing.Size(239, 32)
         Me.EnleverFavToolStripMenuItem.Text = "Enlever des favoris"
         '
         'ButtonRandom
         '
         Me.ButtonRandom.BackgroundImage = CType(resources.GetObject("ButtonRandom.BackgroundImage"), System.Drawing.Image)
         Me.ButtonRandom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonRandom.Location = New System.Drawing.Point(109, 7)
+        Me.ButtonRandom.Location = New System.Drawing.Point(93, 6)
         Me.ButtonRandom.Name = "ButtonRandom"
-        Me.ButtonRandom.Size = New System.Drawing.Size(80, 79)
+        Me.ButtonRandom.Size = New System.Drawing.Size(69, 68)
         Me.ButtonRandom.TabIndex = 8
         Me.ButtonRandom.UseVisualStyleBackColor = True
         '
+        'ToolStripMenuItemMenu
+        '
+        Me.ToolStripMenuItemMenu.Name = "ToolStripMenuItemMenu"
+        Me.ToolStripMenuItemMenu.Size = New System.Drawing.Size(330, 32)
+        Me.ToolStripMenuItemMenu.Text = "Ajouter au Menu"
+        '
         'dlgLivres
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(168.0!, 168.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(144.0!, 144.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
         Me.CancelButton = Me.FermerButton
-        Me.ClientSize = New System.Drawing.Size(1228, 975)
+        Me.ClientSize = New System.Drawing.Size(1053, 836)
         Me.Controls.Add(Me.ButtonRandom)
         Me.Controls.Add(Me.TextBoxRecherche)
         Me.Controls.Add(Me.ButtonFav)
@@ -293,7 +300,7 @@ Partial Class dlgLivres
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "dlgLivres"
@@ -332,4 +339,5 @@ Partial Class dlgLivres
     Friend WithEvents FavorisContextMenuStrip As ContextMenuStrip
     Friend WithEvents EnleverFavToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ButtonRandom As Button
+    Friend WithEvents ToolStripMenuItemMenu As ToolStripMenuItem
 End Class
