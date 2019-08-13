@@ -45,6 +45,7 @@ Public Class dlgLivres
         EffacerLaRecetteToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "6")
         EnleverFavToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "7")
         ToolStripMenuItemFAV.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "8")
+        ToolStripMenuItemMenu.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "9")
 
 
         ' Set ListViewLivres Properties

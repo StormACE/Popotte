@@ -191,6 +191,7 @@ Public Class frmMain
         ToolStripMenuItemArchiverLesRecettes.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "48")
         SaveBD_ToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "49")
         OuvrirLeRépertoireDesRecettesToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "50")
+        ToolStripMenuItemMenu.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "102")
 
         'Menu Options
         AffichageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "51")

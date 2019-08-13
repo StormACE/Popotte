@@ -10,6 +10,8 @@ Public Class dlgAddMenu
     Private regKey As RegistryKey
     Private nlivre As String = ""
     Private recette As String = ""
+    'Get Language
+    Private LangINI As IniFile = frmMain.LangIni
 
     Public Sub New(ByVal NRecette As String, ByVal Livre As String)
 
@@ -22,19 +24,27 @@ Public Class dlgAddMenu
     End Sub
 
     Private Sub DlgAddMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ListBoxDays.Items.Add("Sunday")
-        ListBoxDays.Items.Add("Monday")
-        ListBoxDays.Items.Add("Tuesday")
-        ListBoxDays.Items.Add("Wednesday")
-        ListBoxDays.Items.Add("Thursday")
-        ListBoxDays.Items.Add("Friday")
-        ListBoxDays.Items.Add("Saturday")
+
+        Text = LangINI.GetKeyValue("Popotte - Addmenu", "1")
+        Label1.Text = LangINI.GetKeyValue("Popotte - Addmenu", "2")
+        Label2.Text = LangINI.GetKeyValue("Popotte - Addmenu", "3")
+
+        ListBoxDays.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "4"))
+        ListBoxDays.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "5"))
+        ListBoxDays.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "6"))
+        ListBoxDays.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "7"))
+        ListBoxDays.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "8"))
+        ListBoxDays.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "9"))
+        ListBoxDays.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "10"))
         ListBoxDays.SelectedIndex = 0
 
-        ListBoxMeal.Items.Add("1st Meal")
-        ListBoxMeal.Items.Add("2nd Meal")
-        ListBoxMeal.Items.Add("3rd Meal")
+        ListBoxMeal.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "11"))
+        ListBoxMeal.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "12"))
+        ListBoxMeal.Items.Add(LangINI.GetKeyValue("Popotte - Addmenu", "13"))
         ListBoxMeal.SelectedIndex = 0
+
+        ButtonAdd.Text = LangINI.GetKeyValue("Popotte - Addmenu", "14")
+        Cancel_Button.Text = LangINI.GetKeyValue("Popotte - Addmenu", "15")
 
     End Sub
 
@@ -66,6 +76,8 @@ Public Class dlgAddMenu
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\" & day & "\" & mealgroup, True)
         regKey.SetValue("Recette", recette)
         regKey.SetValue("Livre", nlivre)
+
+        MessageBox.Show(LangINI.GetKeyValue("Popotte - Addmenu", "16"), "Popotte", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()

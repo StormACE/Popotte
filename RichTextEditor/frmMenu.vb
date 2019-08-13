@@ -7,39 +7,68 @@ Imports Microsoft.Win32
 Public Class frmMenu
 
     Private regKey As RegistryKey
+    'Get Language
+    Private LangINI As IniFile = frmMain.LangIni
 
     Private Sub FrmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CenterToScreen()
         Dim nRecette As String = ""
         Dim nLivre As String = ""
 
-        ListBoxSunday.Items.Add("Aucune recette")
-        ListBoxSunday.Items.Add("Aucune recette")
-        ListBoxSunday.Items.Add("Aucune recette")
+        Text = LangINI.GetKeyValue("Popotte - Menu", "12")
 
-        ListBoxMonday.Items.Add("Aucune recette")
-        ListBoxMonday.Items.Add("Aucune recette")
-        ListBoxMonday.Items.Add("Aucune recette")
+        LabelSunday.Text = LangINI.GetKeyValue("Popotte - Menu", "2")
+        LabelMonday.Text = LangINI.GetKeyValue("Popotte - Menu", "3")
+        LabelTuesday.Text = LangINI.GetKeyValue("Popotte - Menu", "4")
+        LabelWednesday.Text = LangINI.GetKeyValue("Popotte - Menu", "5")
+        LabelThursday.Text = LangINI.GetKeyValue("Popotte - Menu", "6")
+        LabelFriday.Text = LangINI.GetKeyValue("Popotte - Menu", "7")
+        LabelSaturday.Text = LangINI.GetKeyValue("Popotte - Menu", "8")
 
-        ListBoxTuesday.Items.Add("Aucune recette")
-        ListBoxTuesday.Items.Add("Aucune recette")
-        ListBoxTuesday.Items.Add("Aucune recette")
+        ListBoxSunday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxSunday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxSunday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
 
-        ListBoxWednesday.Items.Add("Aucune recette")
-        ListBoxWednesday.Items.Add("Aucune recette")
-        ListBoxWednesday.Items.Add("Aucune recette")
+        ListBoxMonday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxMonday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxMonday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
 
-        ListBoxThursday.Items.Add("Aucune recette")
-        ListBoxThursday.Items.Add("Aucune recette")
-        ListBoxThursday.Items.Add("Aucune recette")
+        ListBoxTuesday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxTuesday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxTuesday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
 
-        ListBoxFriday.Items.Add("Aucune recette")
-        ListBoxFriday.Items.Add("Aucune recette")
-        ListBoxFriday.Items.Add("Aucune recette")
+        ListBoxWednesday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxWednesday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxWednesday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
 
-        ListBoxSaturday.Items.Add("Aucune recette")
-        ListBoxSaturday.Items.Add("Aucune recette")
-        ListBoxSaturday.Items.Add("Aucune recette")
+        ListBoxThursday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxThursday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxThursday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+
+        ListBoxFriday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxFriday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxFriday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+
+        ListBoxSaturday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxSaturday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+        ListBoxSaturday.Items.Add(LangINI.GetKeyValue("Popotte - Menu", "1"))
+
+        ButtonClose.Text = LangINI.GetKeyValue("Popotte - Menu", "9")
+
+        ModifierToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "10")
+        EffacerToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "11")
+        Modifier2ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "10")
+        Effacer2ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "11")
+        Modifier3ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "10")
+        Effacer3ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "11")
+        Modifier4ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "10")
+        Effacer4ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "11")
+        Modifier5ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "10")
+        Effacer5ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "11")
+        Modifier6ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "10")
+        Effacer6ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "11")
+        Modifier7ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "10")
+        Effacer7ToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - Menu", "11")
 
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\Sunday", True)
         If regKey IsNot Nothing Then

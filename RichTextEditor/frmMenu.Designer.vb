@@ -26,12 +26,12 @@ Partial Class frmMenu
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.ButtonClose = New System.Windows.Forms.Button()
         Me.LabelMonday = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LabelTuesday = New System.Windows.Forms.Label()
+        Me.LabelWednesday = New System.Windows.Forms.Label()
+        Me.LabelSunday = New System.Windows.Forms.Label()
+        Me.LabelThursday = New System.Windows.Forms.Label()
+        Me.LabelFriday = New System.Windows.Forms.Label()
+        Me.LabelSaturday = New System.Windows.Forms.Label()
         Me.ListBoxSunday = New System.Windows.Forms.ListBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ModifierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -89,65 +89,65 @@ Partial Class frmMenu
         Me.LabelMonday.TabIndex = 8
         Me.LabelMonday.Text = "Monday"
         '
-        'Label1
+        'LabelTuesday
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(14, 153)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(176, 54)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Tuesday"
+        Me.LabelTuesday.AutoSize = True
+        Me.LabelTuesday.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTuesday.Location = New System.Drawing.Point(14, 153)
+        Me.LabelTuesday.Name = "LabelTuesday"
+        Me.LabelTuesday.Size = New System.Drawing.Size(176, 54)
+        Me.LabelTuesday.TabIndex = 9
+        Me.LabelTuesday.Text = "Tuesday"
         '
-        'Label2
+        'LabelWednesday
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 219)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(242, 54)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Wednesday"
+        Me.LabelWednesday.AutoSize = True
+        Me.LabelWednesday.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelWednesday.Location = New System.Drawing.Point(12, 219)
+        Me.LabelWednesday.Name = "LabelWednesday"
+        Me.LabelWednesday.Size = New System.Drawing.Size(242, 54)
+        Me.LabelWednesday.TabIndex = 10
+        Me.LabelWednesday.Text = "Wednesday"
         '
-        'Label3
+        'LabelSunday
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 21)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(162, 54)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Sunday"
+        Me.LabelSunday.AutoSize = True
+        Me.LabelSunday.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSunday.Location = New System.Drawing.Point(12, 21)
+        Me.LabelSunday.Name = "LabelSunday"
+        Me.LabelSunday.Size = New System.Drawing.Size(162, 54)
+        Me.LabelSunday.TabIndex = 11
+        Me.LabelSunday.Text = "Sunday"
         '
-        'Label4
+        'LabelThursday
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(14, 285)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(197, 54)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Thursday"
+        Me.LabelThursday.AutoSize = True
+        Me.LabelThursday.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelThursday.Location = New System.Drawing.Point(14, 285)
+        Me.LabelThursday.Name = "LabelThursday"
+        Me.LabelThursday.Size = New System.Drawing.Size(197, 54)
+        Me.LabelThursday.TabIndex = 12
+        Me.LabelThursday.Text = "Thursday"
         '
-        'Label5
+        'LabelFriday
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(14, 351)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(140, 54)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Friday"
+        Me.LabelFriday.AutoSize = True
+        Me.LabelFriday.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelFriday.Location = New System.Drawing.Point(14, 351)
+        Me.LabelFriday.Name = "LabelFriday"
+        Me.LabelFriday.Size = New System.Drawing.Size(140, 54)
+        Me.LabelFriday.TabIndex = 13
+        Me.LabelFriday.Text = "Friday"
         '
-        'Label6
+        'LabelSaturday
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(12, 417)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(192, 54)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Saturday"
+        Me.LabelSaturday.AutoSize = True
+        Me.LabelSaturday.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSaturday.Location = New System.Drawing.Point(12, 417)
+        Me.LabelSaturday.Name = "LabelSaturday"
+        Me.LabelSaturday.Size = New System.Drawing.Size(192, 54)
+        Me.LabelSaturday.TabIndex = 14
+        Me.LabelSaturday.Text = "Saturday"
         '
         'ListBoxSunday
         '
@@ -385,12 +385,12 @@ Partial Class frmMenu
         Me.Controls.Add(Me.ListBoxTuesday)
         Me.Controls.Add(Me.ListBoxMonday)
         Me.Controls.Add(Me.ListBoxSunday)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LabelSaturday)
+        Me.Controls.Add(Me.LabelFriday)
+        Me.Controls.Add(Me.LabelThursday)
+        Me.Controls.Add(Me.LabelSunday)
+        Me.Controls.Add(Me.LabelWednesday)
+        Me.Controls.Add(Me.LabelTuesday)
         Me.Controls.Add(Me.LabelMonday)
         Me.Controls.Add(Me.ButtonClose)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -412,12 +412,12 @@ Partial Class frmMenu
     End Sub
     Friend WithEvents ButtonClose As Button
     Friend WithEvents LabelMonday As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents LabelTuesday As Label
+    Friend WithEvents LabelWednesday As Label
+    Friend WithEvents LabelSunday As Label
+    Friend WithEvents LabelThursday As Label
+    Friend WithEvents LabelFriday As Label
+    Friend WithEvents LabelSaturday As Label
     Friend WithEvents ListBoxSunday As ListBox
     Friend WithEvents ListBoxMonday As ListBox
     Friend WithEvents ListBoxTuesday As ListBox
