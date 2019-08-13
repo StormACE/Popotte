@@ -50,3 +50,4 @@ C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\x64\Release\Popotte
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\x64\Release\Popotte.exe
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgAddMenu.resources
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\x64\Release\Popotte.frmMenu.resources
+C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgmodifymenu.resources

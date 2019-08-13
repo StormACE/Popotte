@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.0.73
-''' 1 mars 2016 au 12 Août 2019
+''' Popotte 5.3.0.74
+''' 1 mars 2016 au 13 Août 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -642,6 +642,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
         If Not regKey Is Nothing Then
             regKey.CreateSubKey("DerRecette")
+            regKey.CreateSubKey("Menu")
         End If
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres", True)
         If regKey Is Nothing Then

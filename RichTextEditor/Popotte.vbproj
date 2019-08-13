@@ -163,6 +163,12 @@
     <Compile Include="dlgLanguage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dlgmodifymenu.Designer.vb">
+      <DependentUpon>dlgmodifymenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgmodifymenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="dlgMultiModInfo.Designer.vb">
       <DependentUpon>dlgMultiModInfo.vb</DependentUpon>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dlgLanguage.resx">
       <DependentUpon>dlgLanguage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgmodifymenu.resx">
+      <DependentUpon>dlgmodifymenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dlgMultiModInfo.resx">
       <DependentUpon>dlgMultiModInfo.vb</DependentUpon>

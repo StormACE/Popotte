@@ -22,6 +22,7 @@ Partial Class frmMenu
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.ButtonClose = New System.Windows.Forms.Button()
         Me.LabelMonday = New System.Windows.Forms.Label()
@@ -32,18 +33,46 @@ Partial Class frmMenu
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ListBoxSunday = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ModifierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EffacerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListBoxMonday = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Modifier2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Effacer2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListBoxTuesday = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip3 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Modifier3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Effacer3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListBoxWednesday = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip4 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Modifier4ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Effacer4ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListBoxThursday = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip5 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Modifier5ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Effacer5ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListBoxFriday = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip6 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Modifier6ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Effacer6ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListBoxSaturday = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip7 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Modifier7ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Effacer7ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip1.SuspendLayout()
+        Me.ContextMenuStrip2.SuspendLayout()
+        Me.ContextMenuStrip3.SuspendLayout()
+        Me.ContextMenuStrip4.SuspendLayout()
+        Me.ContextMenuStrip5.SuspendLayout()
+        Me.ContextMenuStrip6.SuspendLayout()
+        Me.ContextMenuStrip7.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonClose
         '
         Me.ButtonClose.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonClose.Location = New System.Drawing.Point(744, 695)
+        Me.ButtonClose.Location = New System.Drawing.Point(600, 508)
         Me.ButtonClose.Name = "ButtonClose"
         Me.ButtonClose.Size = New System.Drawing.Size(94, 47)
         Me.ButtonClose.TabIndex = 7
@@ -54,7 +83,7 @@ Partial Class frmMenu
         '
         Me.LabelMonday.AutoSize = True
         Me.LabelMonday.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMonday.Location = New System.Drawing.Point(12, 148)
+        Me.LabelMonday.Location = New System.Drawing.Point(12, 87)
         Me.LabelMonday.Name = "LabelMonday"
         Me.LabelMonday.Size = New System.Drawing.Size(178, 54)
         Me.LabelMonday.TabIndex = 8
@@ -64,7 +93,7 @@ Partial Class frmMenu
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 233)
+        Me.Label1.Location = New System.Drawing.Point(14, 153)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(176, 54)
         Me.Label1.TabIndex = 9
@@ -74,7 +103,7 @@ Partial Class frmMenu
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 326)
+        Me.Label2.Location = New System.Drawing.Point(12, 219)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(242, 54)
         Me.Label2.TabIndex = 10
@@ -84,7 +113,7 @@ Partial Class frmMenu
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 57)
+        Me.Label3.Location = New System.Drawing.Point(12, 21)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(162, 54)
         Me.Label3.TabIndex = 11
@@ -94,7 +123,7 @@ Partial Class frmMenu
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(12, 413)
+        Me.Label4.Location = New System.Drawing.Point(14, 285)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(197, 54)
         Me.Label4.TabIndex = 12
@@ -104,7 +133,7 @@ Partial Class frmMenu
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(12, 505)
+        Me.Label5.Location = New System.Drawing.Point(14, 351)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(140, 54)
         Me.Label5.TabIndex = 13
@@ -114,7 +143,7 @@ Partial Class frmMenu
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(12, 593)
+        Me.Label6.Location = New System.Drawing.Point(12, 417)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(192, 54)
         Me.Label6.TabIndex = 14
@@ -122,79 +151,233 @@ Partial Class frmMenu
         '
         'ListBoxSunday
         '
+        Me.ListBoxSunday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBoxSunday.ContextMenuStrip = Me.ContextMenuStrip1
         Me.ListBoxSunday.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBoxSunday.FormattingEnabled = True
         Me.ListBoxSunday.ItemHeight = 28
-        Me.ListBoxSunday.Location = New System.Drawing.Point(260, 57)
+        Me.ListBoxSunday.Location = New System.Drawing.Point(261, 21)
         Me.ListBoxSunday.Name = "ListBoxSunday"
-        Me.ListBoxSunday.Size = New System.Drawing.Size(577, 60)
+        Me.ListBoxSunday.Size = New System.Drawing.Size(434, 60)
         Me.ListBoxSunday.TabIndex = 15
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ModifierToolStripMenuItem, Me.EffacerToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(160, 68)
+        '
+        'ModifierToolStripMenuItem
+        '
+        Me.ModifierToolStripMenuItem.Name = "ModifierToolStripMenuItem"
+        Me.ModifierToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.ModifierToolStripMenuItem.Text = "Modifier"
+        '
+        'EffacerToolStripMenuItem
+        '
+        Me.EffacerToolStripMenuItem.Image = CType(resources.GetObject("EffacerToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.EffacerToolStripMenuItem.Name = "EffacerToolStripMenuItem"
+        Me.EffacerToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.EffacerToolStripMenuItem.Text = "Effacer"
         '
         'ListBoxMonday
         '
+        Me.ListBoxMonday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBoxMonday.ContextMenuStrip = Me.ContextMenuStrip2
         Me.ListBoxMonday.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBoxMonday.FormattingEnabled = True
         Me.ListBoxMonday.ItemHeight = 28
-        Me.ListBoxMonday.Location = New System.Drawing.Point(261, 148)
+        Me.ListBoxMonday.Location = New System.Drawing.Point(261, 87)
         Me.ListBoxMonday.Name = "ListBoxMonday"
-        Me.ListBoxMonday.Size = New System.Drawing.Size(577, 60)
+        Me.ListBoxMonday.Size = New System.Drawing.Size(434, 60)
         Me.ListBoxMonday.TabIndex = 16
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Modifier2ToolStripMenuItem, Me.Effacer2ToolStripMenuItem})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(160, 68)
+        '
+        'Modifier2ToolStripMenuItem
+        '
+        Me.Modifier2ToolStripMenuItem.Name = "Modifier2ToolStripMenuItem"
+        Me.Modifier2ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Modifier2ToolStripMenuItem.Text = "Modifier"
+        '
+        'Effacer2ToolStripMenuItem
+        '
+        Me.Effacer2ToolStripMenuItem.Image = CType(resources.GetObject("Effacer2ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.Effacer2ToolStripMenuItem.Name = "Effacer2ToolStripMenuItem"
+        Me.Effacer2ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Effacer2ToolStripMenuItem.Text = "Effacer"
         '
         'ListBoxTuesday
         '
+        Me.ListBoxTuesday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBoxTuesday.ContextMenuStrip = Me.ContextMenuStrip3
         Me.ListBoxTuesday.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBoxTuesday.FormattingEnabled = True
         Me.ListBoxTuesday.ItemHeight = 28
-        Me.ListBoxTuesday.Location = New System.Drawing.Point(261, 233)
+        Me.ListBoxTuesday.Location = New System.Drawing.Point(261, 153)
         Me.ListBoxTuesday.Name = "ListBoxTuesday"
-        Me.ListBoxTuesday.Size = New System.Drawing.Size(577, 60)
+        Me.ListBoxTuesday.Size = New System.Drawing.Size(434, 60)
         Me.ListBoxTuesday.TabIndex = 17
+        '
+        'ContextMenuStrip3
+        '
+        Me.ContextMenuStrip3.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Modifier3ToolStripMenuItem, Me.Effacer3ToolStripMenuItem})
+        Me.ContextMenuStrip3.Name = "ContextMenuStrip3"
+        Me.ContextMenuStrip3.Size = New System.Drawing.Size(160, 68)
+        '
+        'Modifier3ToolStripMenuItem
+        '
+        Me.Modifier3ToolStripMenuItem.Name = "Modifier3ToolStripMenuItem"
+        Me.Modifier3ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Modifier3ToolStripMenuItem.Text = "Modifier"
+        '
+        'Effacer3ToolStripMenuItem
+        '
+        Me.Effacer3ToolStripMenuItem.Image = CType(resources.GetObject("Effacer3ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.Effacer3ToolStripMenuItem.Name = "Effacer3ToolStripMenuItem"
+        Me.Effacer3ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Effacer3ToolStripMenuItem.Text = "Effacer"
         '
         'ListBoxWednesday
         '
+        Me.ListBoxWednesday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBoxWednesday.ContextMenuStrip = Me.ContextMenuStrip4
         Me.ListBoxWednesday.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBoxWednesday.FormattingEnabled = True
         Me.ListBoxWednesday.ItemHeight = 28
-        Me.ListBoxWednesday.Location = New System.Drawing.Point(260, 326)
+        Me.ListBoxWednesday.Location = New System.Drawing.Point(260, 219)
         Me.ListBoxWednesday.Name = "ListBoxWednesday"
-        Me.ListBoxWednesday.Size = New System.Drawing.Size(577, 60)
+        Me.ListBoxWednesday.Size = New System.Drawing.Size(434, 60)
         Me.ListBoxWednesday.TabIndex = 18
+        '
+        'ContextMenuStrip4
+        '
+        Me.ContextMenuStrip4.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Modifier4ToolStripMenuItem, Me.Effacer4ToolStripMenuItem})
+        Me.ContextMenuStrip4.Name = "ContextMenuStrip4"
+        Me.ContextMenuStrip4.Size = New System.Drawing.Size(160, 68)
+        '
+        'Modifier4ToolStripMenuItem
+        '
+        Me.Modifier4ToolStripMenuItem.Name = "Modifier4ToolStripMenuItem"
+        Me.Modifier4ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Modifier4ToolStripMenuItem.Text = "Modifier"
+        '
+        'Effacer4ToolStripMenuItem
+        '
+        Me.Effacer4ToolStripMenuItem.Image = CType(resources.GetObject("Effacer4ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.Effacer4ToolStripMenuItem.Name = "Effacer4ToolStripMenuItem"
+        Me.Effacer4ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Effacer4ToolStripMenuItem.Text = "Effacer"
         '
         'ListBoxThursday
         '
+        Me.ListBoxThursday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBoxThursday.ContextMenuStrip = Me.ContextMenuStrip5
         Me.ListBoxThursday.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBoxThursday.FormattingEnabled = True
         Me.ListBoxThursday.ItemHeight = 28
-        Me.ListBoxThursday.Location = New System.Drawing.Point(260, 413)
+        Me.ListBoxThursday.Location = New System.Drawing.Point(261, 285)
         Me.ListBoxThursday.Name = "ListBoxThursday"
-        Me.ListBoxThursday.Size = New System.Drawing.Size(577, 60)
+        Me.ListBoxThursday.Size = New System.Drawing.Size(434, 60)
         Me.ListBoxThursday.TabIndex = 19
+        '
+        'ContextMenuStrip5
+        '
+        Me.ContextMenuStrip5.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip5.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Modifier5ToolStripMenuItem, Me.Effacer5ToolStripMenuItem})
+        Me.ContextMenuStrip5.Name = "ContextMenuStrip5"
+        Me.ContextMenuStrip5.Size = New System.Drawing.Size(160, 68)
+        '
+        'Modifier5ToolStripMenuItem
+        '
+        Me.Modifier5ToolStripMenuItem.Name = "Modifier5ToolStripMenuItem"
+        Me.Modifier5ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Modifier5ToolStripMenuItem.Text = "Modifier"
+        '
+        'Effacer5ToolStripMenuItem
+        '
+        Me.Effacer5ToolStripMenuItem.Image = CType(resources.GetObject("Effacer5ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.Effacer5ToolStripMenuItem.Name = "Effacer5ToolStripMenuItem"
+        Me.Effacer5ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Effacer5ToolStripMenuItem.Text = "Effacer"
         '
         'ListBoxFriday
         '
+        Me.ListBoxFriday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBoxFriday.ContextMenuStrip = Me.ContextMenuStrip6
         Me.ListBoxFriday.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBoxFriday.FormattingEnabled = True
         Me.ListBoxFriday.ItemHeight = 28
-        Me.ListBoxFriday.Location = New System.Drawing.Point(260, 505)
+        Me.ListBoxFriday.Location = New System.Drawing.Point(260, 351)
         Me.ListBoxFriday.Name = "ListBoxFriday"
-        Me.ListBoxFriday.Size = New System.Drawing.Size(577, 60)
+        Me.ListBoxFriday.Size = New System.Drawing.Size(434, 60)
         Me.ListBoxFriday.TabIndex = 20
+        '
+        'ContextMenuStrip6
+        '
+        Me.ContextMenuStrip6.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip6.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Modifier6ToolStripMenuItem, Me.Effacer6ToolStripMenuItem})
+        Me.ContextMenuStrip6.Name = "ContextMenuStrip6"
+        Me.ContextMenuStrip6.Size = New System.Drawing.Size(160, 68)
+        '
+        'Modifier6ToolStripMenuItem
+        '
+        Me.Modifier6ToolStripMenuItem.Name = "Modifier6ToolStripMenuItem"
+        Me.Modifier6ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Modifier6ToolStripMenuItem.Text = "Modifier"
+        '
+        'Effacer6ToolStripMenuItem
+        '
+        Me.Effacer6ToolStripMenuItem.Image = CType(resources.GetObject("Effacer6ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.Effacer6ToolStripMenuItem.Name = "Effacer6ToolStripMenuItem"
+        Me.Effacer6ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Effacer6ToolStripMenuItem.Text = "Effacer"
         '
         'ListBoxSaturday
         '
+        Me.ListBoxSaturday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBoxSaturday.ContextMenuStrip = Me.ContextMenuStrip7
         Me.ListBoxSaturday.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBoxSaturday.FormattingEnabled = True
         Me.ListBoxSaturday.ItemHeight = 28
-        Me.ListBoxSaturday.Location = New System.Drawing.Point(260, 593)
+        Me.ListBoxSaturday.Location = New System.Drawing.Point(260, 417)
         Me.ListBoxSaturday.Name = "ListBoxSaturday"
-        Me.ListBoxSaturday.Size = New System.Drawing.Size(577, 60)
+        Me.ListBoxSaturday.Size = New System.Drawing.Size(434, 60)
         Me.ListBoxSaturday.TabIndex = 21
+        '
+        'ContextMenuStrip7
+        '
+        Me.ContextMenuStrip7.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip7.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Modifier7ToolStripMenuItem, Me.Effacer7ToolStripMenuItem})
+        Me.ContextMenuStrip7.Name = "ContextMenuStrip7"
+        Me.ContextMenuStrip7.Size = New System.Drawing.Size(160, 68)
+        '
+        'Modifier7ToolStripMenuItem
+        '
+        Me.Modifier7ToolStripMenuItem.Name = "Modifier7ToolStripMenuItem"
+        Me.Modifier7ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Modifier7ToolStripMenuItem.Text = "Modifier"
+        '
+        'Effacer7ToolStripMenuItem
+        '
+        Me.Effacer7ToolStripMenuItem.Image = CType(resources.GetObject("Effacer7ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.Effacer7ToolStripMenuItem.Name = "Effacer7ToolStripMenuItem"
+        Me.Effacer7ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
+        Me.Effacer7ToolStripMenuItem.Text = "Effacer"
         '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(857, 754)
+        Me.ClientSize = New System.Drawing.Size(718, 567)
         Me.Controls.Add(Me.ListBoxSaturday)
         Me.Controls.Add(Me.ListBoxFriday)
         Me.Controls.Add(Me.ListBoxThursday)
@@ -216,6 +399,13 @@ Partial Class frmMenu
         Me.MaximizeBox = False
         Me.Name = "frmMenu"
         Me.Text = "Menu"
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.ContextMenuStrip2.ResumeLayout(False)
+        Me.ContextMenuStrip3.ResumeLayout(False)
+        Me.ContextMenuStrip4.ResumeLayout(False)
+        Me.ContextMenuStrip5.ResumeLayout(False)
+        Me.ContextMenuStrip6.ResumeLayout(False)
+        Me.ContextMenuStrip7.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -235,4 +425,25 @@ Partial Class frmMenu
     Friend WithEvents ListBoxThursday As ListBox
     Friend WithEvents ListBoxFriday As ListBox
     Friend WithEvents ListBoxSaturday As ListBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ModifierToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EffacerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents Modifier2ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Effacer2ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
+    Friend WithEvents Modifier3ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Effacer3ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip4 As ContextMenuStrip
+    Friend WithEvents Modifier4ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Effacer4ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip5 As ContextMenuStrip
+    Friend WithEvents Modifier5ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Effacer5ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip6 As ContextMenuStrip
+    Friend WithEvents Modifier6ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Effacer6ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip7 As ContextMenuStrip
+    Friend WithEvents Modifier7ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Effacer7ToolStripMenuItem As ToolStripMenuItem
 End Class

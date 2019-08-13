@@ -1,4 +1,8 @@
-﻿Imports System.Windows.Forms
+﻿''' Copyright Martin Laflamme 2003/2019
+''' Read licence.txt
+
+
+Imports System.Windows.Forms
 Imports Microsoft.Win32
 
 Public Class dlgAddMenu
