@@ -60,3 +60,5 @@ C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\Release\Popotte.vbp
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\Release\Popotte.vbproj.CopyComplete
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\Release\Popotte.exe
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\Release\Popotte.pdb
+C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\Release\Popotte.dlgAddMenu.resources
+C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\obj\Release\Popotte.frmMenu.resources
