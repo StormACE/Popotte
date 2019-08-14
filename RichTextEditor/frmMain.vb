@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.2.2.72
-''' 1 mars 2016 au 28 juillet 2019
+''' Popotte 5.3.0.74
+''' 1 mars 2016 au 13 Août 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -191,6 +191,7 @@ Public Class frmMain
         ToolStripMenuItemArchiverLesRecettes.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "48")
         SaveBD_ToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "49")
         OuvrirLeRépertoireDesRecettesToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "50")
+        ToolStripMenuItemMenu.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "102")
 
         'Menu Options
         AffichageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "51")
@@ -642,6 +643,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
         If Not regKey Is Nothing Then
             regKey.CreateSubKey("DerRecette")
+            regKey.CreateSubKey("Menu")
         End If
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres", True)
         If regKey Is Nothing Then
@@ -3431,9 +3433,11 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub ToolStripComboBoxPolices_Disposed(sender As Object, e As EventArgs) Handles ToolStripComboBoxPolices.Disposed
-
+    Private Sub ToolStripMenuItemMenu_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemMenu.Click
+        Dim mn As New frmMenu
+        mn.Show()
     End Sub
+
 
 
 #End Region

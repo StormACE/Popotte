@@ -16,7 +16,7 @@ Public Class dlgLivres
     'Get Popotte Dir
     Public PopotteDir As String = frmMain.PopotteDir
     'Folder we are in
-    Private LastLivre As String = ""
+    Public LastLivre As String = ""
     'Use for registry
     Private regKey As RegistryKey
     'use by listviewrecette
@@ -45,6 +45,7 @@ Public Class dlgLivres
         EffacerLaRecetteToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "6")
         EnleverFavToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "7")
         ToolStripMenuItemFAV.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "8")
+        ToolStripMenuItemMenu.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "9")
 
 
         ' Set ListViewLivres Properties
@@ -431,11 +432,13 @@ Public Class dlgLivres
         If e.Button = MouseButtons.Right Then
             If ListViewRecettes.SelectedItems.Count > 1 Then
                 RecetteContextMenuStrip.Show(ListViewRecettes, New Point(e.X, e.Y))
+                ToolStripMenuItemMenu.Enabled = False
                 EffacerLaRecetteToolStripMenuItem.Enabled = False
                 OuvrirAvecEditeurExterneToolStripMenuItem.Enabled = False
                 ToolStripMenuItemFAV.Enabled = False
             ElseIf ListViewRecettes.SelectedItems.Count = 1 Then
                 RecetteContextMenuStrip.Show(ListViewRecettes, New Point(e.X, e.Y))
+                ToolStripMenuItemMenu.Enabled = True
                 EffacerLaRecetteToolStripMenuItem.Enabled = True
                 OuvrirAvecEditeurExterneToolStripMenuItem.Enabled = True
                 ToolStripMenuItemFAV.Enabled = True
@@ -1272,6 +1275,18 @@ FileFound:
                 MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "10"), LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "8"), MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
+    End Sub
+
+    Private Sub ToolStripMenuItemMenu_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemMenu.Click
+        Dim livre As String = ""
+        If LastLivre <> "" Then
+            livre = LastLivre
+        Else
+            livre = frmMain.LivreOuvert
+        End If
+        Dim adm As New dlgAddMenu(ListViewRecettes.SelectedItems(0).Text, livre)
+        adm.ShowDialog()
+        adm.Dispose()
     End Sub
 
 
