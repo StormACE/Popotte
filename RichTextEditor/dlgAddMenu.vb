@@ -56,7 +56,25 @@ Public Class dlgAddMenu
             regKey.CreateSubKey("Menu")
         End If
 
-        Dim day As String = ListBoxDays.SelectedItem.ToString
+        Dim daynum As Integer = ListBoxDays.SelectedIndex
+        Dim day As String = ""
+        Select Case daynum
+            Case 0
+                day = "Sunday"
+            Case 1
+                day = "Monday"
+            Case 2
+                day = "Tuesday"
+            Case 3
+                day = "Wednesday"
+            Case 4
+                day = "Thursday"
+            Case 5
+                day = "Friday"
+            Case 6
+                day = "Saturday"
+        End Select
+
         Dim meal As Integer = ListBoxMeal.SelectedIndex
         Dim mealgroup As String = ""
 
