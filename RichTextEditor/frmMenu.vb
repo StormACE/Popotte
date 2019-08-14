@@ -590,7 +590,7 @@ Public Class frmMenu
         If regKey IsNot Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\Sunday", True)
             regKey.DeleteSubKey(mealgroup)
-            ListBoxSunday.Items(index) = "Aucune recette"
+            ListBoxSunday.Items(index) = LangINI.GetKeyValue("Popotte - Menu", "1")
         End If
     End Sub
 
@@ -610,7 +610,7 @@ Public Class frmMenu
         If regKey IsNot Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\Monday", True)
             regKey.DeleteSubKey(mealgroup)
-            ListBoxMonday.Items(index) = "Aucune recette"
+            ListBoxMonday.Items(index) = LangINI.GetKeyValue("Popotte - Menu", "1")
         End If
     End Sub
 
@@ -630,7 +630,7 @@ Public Class frmMenu
         If regKey IsNot Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\Tuesday", True)
             regKey.DeleteSubKey(mealgroup)
-            ListBoxTuesday.Items(index) = "Aucune recette"
+            ListBoxTuesday.Items(index) = LangINI.GetKeyValue("Popotte - Menu", "1")
         End If
     End Sub
 
@@ -650,7 +650,7 @@ Public Class frmMenu
         If regKey IsNot Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\Wednesday", True)
             regKey.DeleteSubKey(mealgroup)
-            ListBoxWednesday.Items(index) = "Aucune recette"
+            ListBoxWednesday.Items(index) = LangINI.GetKeyValue("Popotte - Menu", "1")
         End If
     End Sub
 
@@ -670,7 +670,7 @@ Public Class frmMenu
         If regKey IsNot Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\Thursday", True)
             regKey.DeleteSubKey(mealgroup)
-            ListBoxThursday.Items(index) = "Aucune recette"
+            ListBoxThursday.Items(index) = LangINI.GetKeyValue("Popotte - Menu", "1")
         End If
     End Sub
 
@@ -690,7 +690,7 @@ Public Class frmMenu
         If regKey IsNot Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\Friday", True)
             regKey.DeleteSubKey(mealgroup)
-            ListBoxFriday.Items(index) = "Aucune recette"
+            ListBoxFriday.Items(index) = LangINI.GetKeyValue("Popotte - Menu", "1")
         End If
     End Sub
 
@@ -710,7 +710,7 @@ Public Class frmMenu
         If regKey IsNot Nothing Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Menu\Saturday", True)
             regKey.DeleteSubKey(mealgroup)
-            ListBoxSaturday.Items(index) = "Aucune recette"
+            ListBoxSaturday.Items(index) = LangINI.GetKeyValue("Popotte - Menu", "1")
         End If
     End Sub
 
