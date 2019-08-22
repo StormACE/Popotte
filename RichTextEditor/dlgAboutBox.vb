@@ -11,7 +11,7 @@ Public NotInheritable Class dlgAboutBox
     'Get Language
     Private LangINI As IniFile = frmMain.LangIni
     Dim Button_Licence As Control
-    Dim xCPU As String = "x64"
+    Dim xCPU As String = "x86"
 #End Region
 
     Private Sub AboutBox1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load

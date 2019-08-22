@@ -768,7 +768,8 @@ Public Class frmMenu
 
     Private Sub ButtonPreview_Click(sender As Object, e As EventArgs) Handles ButtonPreview.Click
         If frmMain.rtbDoc.Modified = False Then
-            printmenu()
+            Printmenu()
+            Close()
         Else
             Dim answer As Integer = MessageBox.Show(LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "10"), LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation)
             Select Case answer
