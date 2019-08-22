@@ -2,7 +2,7 @@
 Recipes management software
 Read licence.txt before use or modification!!!
 
-Nightly Branch availlable 5.3.0.75
+Nightly Branch availlable 5.3.1.77
 
 New 5.3.0.75 Master build released.
 
