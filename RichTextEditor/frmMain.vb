@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.0.74
-''' 1 mars 2016 au 13 Août 2019
+''' Popotte 5.3.1.77
+''' 1 mars 2016 au 22 Août 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -17,9 +17,11 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Fix minor bugs
+''' Add a way to print the menu of the week
+''' Add a button to erase the menu
 ''' ////////// Francais /////////////////////
-''' Réglé des bogues mineurs
+''' Ajouté un moyen d'imprimer le menu de la semaine
+''' Ajouté un bouton pour tout effacer le menu
 
 
 Public Class frmMain
@@ -848,7 +850,7 @@ Public Class frmMain
         End With
     End Sub
 
-    Private Sub SetDefaultFont()
+    Public Sub SetDefaultFont()
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DefaultFont", True)
         If regKey IsNot Nothing Then
             DefaultFontEffect = regKey.GetValue("Effects", "Standard")
@@ -1289,7 +1291,7 @@ Public Class frmMain
         End If
 
         currentFile = ""
-        Me.Text = "Popotte - Nouvelle Recette"
+        Me.Text = "Popotte"
         LivreOuvert = ""
         rtbDoc.SelectionAlignment = TextAlign.Left
         ToolStripButtonGauche.Checked = True
