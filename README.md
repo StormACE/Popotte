@@ -4,12 +4,12 @@ Read licence.txt before use or modification!!!
 
 Nightly Branch availlable 5.3.1.77
 
-New 5.3.0.75 Master build released.
+New 5.3.1.77 Master build released.
 
 Logiciel de gestion de recettes
 Lisez License.txt avant d'utiliser ou modifier!!!
 
-La nouvelle version 5.3.0.75 Master est en-ligne.
+La nouvelle version 5.3.1.77 Master est en-ligne.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
