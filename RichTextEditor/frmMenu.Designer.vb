@@ -60,6 +60,8 @@ Partial Class frmMenu
         Me.ContextMenuStrip7 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Modifier7ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Effacer7ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ButtonPreview = New System.Windows.Forms.Button()
+        Me.Button1Touteff = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.ContextMenuStrip3.SuspendLayout()
@@ -373,11 +375,33 @@ Partial Class frmMenu
         Me.Effacer7ToolStripMenuItem.Size = New System.Drawing.Size(159, 32)
         Me.Effacer7ToolStripMenuItem.Text = "Effacer"
         '
+        'ButtonPreview
+        '
+        Me.ButtonPreview.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPreview.Location = New System.Drawing.Point(465, 508)
+        Me.ButtonPreview.Name = "ButtonPreview"
+        Me.ButtonPreview.Size = New System.Drawing.Size(129, 47)
+        Me.ButtonPreview.TabIndex = 22
+        Me.ButtonPreview.Text = "Version Papier"
+        Me.ButtonPreview.UseVisualStyleBackColor = True
+        '
+        'Button1Touteff
+        '
+        Me.Button1Touteff.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1Touteff.Location = New System.Drawing.Point(330, 508)
+        Me.Button1Touteff.Name = "Button1Touteff"
+        Me.Button1Touteff.Size = New System.Drawing.Size(129, 47)
+        Me.Button1Touteff.TabIndex = 23
+        Me.Button1Touteff.Text = "Tout Effacer"
+        Me.Button1Touteff.UseVisualStyleBackColor = True
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(718, 567)
+        Me.Controls.Add(Me.Button1Touteff)
+        Me.Controls.Add(Me.ButtonPreview)
         Me.Controls.Add(Me.ListBoxSaturday)
         Me.Controls.Add(Me.ListBoxFriday)
         Me.Controls.Add(Me.ListBoxThursday)
@@ -446,4 +470,6 @@ Partial Class frmMenu
     Friend WithEvents ContextMenuStrip7 As ContextMenuStrip
     Friend WithEvents Modifier7ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Effacer7ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ButtonPreview As Button
+    Friend WithEvents Button1Touteff As Button
 End Class
