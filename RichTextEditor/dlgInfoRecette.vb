@@ -65,7 +65,7 @@ Public Class dlgInfoRecette
 
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre & "\" & strText, True)
         If regKey IsNot Nothing Then
-            NoteComboBox.SelectedIndex = regKey.GetValue("Note", 5)
+            NoteComboBox.SelectedIndex = CInt(regKey.GetValue("Note", 5))
             DescTextBox.Text = regKey.GetValue("Description", "").ToString
         Else
             NoteComboBox.SelectedIndex = 5
@@ -150,8 +150,8 @@ Public Class dlgInfoRecette
                                 Me.DialogResult = System.Windows.Forms.DialogResult.OK
                                 Me.Close()
                             Else
-                                Dim DiaAnswer As DialogResult = MsgBox(LangINI.GetKeyValue("Popotte - ModifyInfo - MessageBox", "1"), MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Popotte - " & LangINI.GetKeyValue("Popotte - ModifyInfo - MessageBox", "2"))
-                                If DiaAnswer = Windows.Forms.DialogResult.Yes Then
+                                Dim DiaAnswer As MsgBoxResult = MsgBox(LangINI.GetKeyValue("Popotte - ModifyInfo - MessageBox", "1"), MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Popotte - " & LangINI.GetKeyValue("Popotte - ModifyInfo - MessageBox", "2"))
+                                If DiaAnswer = MsgBoxResult.Yes Then
                                     If MoveFile(SourceFile, Newfile, True) <> -1 Then
                                         Dim SourceRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NewLivre & "\" & NewName, True)
                                         If SourceRegKey IsNot Nothing Then
@@ -240,11 +240,11 @@ Public Class dlgInfoRecette
                     CreateFolder(PopotteDir & NewLivre)
                 End If
                 If Not File.Exists(PopotteDir & NewLivre & "\" & NewName & ".rtf") Then
-                    Savefile(NewLivre, NewName, NewDesc, NewNote)
+                    Savefile(NewLivre, NewName, NewDesc, CInt(NewNote))
                 Else
-                    Dim DiaAnswer As DialogResult = MsgBox(LangINI.GetKeyValue("Popotte - ModifyInfo - MessageBox", "1"), MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Popotte - " & LangINI.GetKeyValue("Popotte - ModifyInfo - MessageBox", "2"))
-                    If DiaAnswer = Windows.Forms.DialogResult.Yes Then
-                        Savefile(NewLivre, NewName, NewDesc, NewNote)
+                    Dim DiaAnswer As MsgBoxResult = MsgBox(LangINI.GetKeyValue("Popotte - ModifyInfo - MessageBox", "1"), MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Popotte - " & LangINI.GetKeyValue("Popotte - ModifyInfo - MessageBox", "2"))
+                    If DiaAnswer = MsgBoxResult.Yes Then
+                        Savefile(NewLivre, NewName, NewDesc, CInt(NewNote))
                     End If
                 End If
             Else

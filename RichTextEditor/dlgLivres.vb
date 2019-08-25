@@ -242,7 +242,7 @@ Public Class dlgLivres
                 Dim itm As ListViewItem
                 With ListViewRecettes
                     regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
-                    Dim filename As String = Path.GetFileNameWithoutExtension(regKey.GetValue("Recette", ""))
+                    Dim filename As String = Path.GetFileNameWithoutExtension(CType(regKey.GetValue("Recette", ""), String))
                     If File.Exists(regKey.GetValue("DerRecette", "").ToString) Then
                         itm = .FindItemWithText(filename, False, 0, True)
                         If Not itm Is Nothing Then
@@ -281,7 +281,7 @@ Public Class dlgLivres
                 Dim RecetteCount As Integer = GetLivresRecetteCount(Folder)
                 RecetteTotalCount += RecetteCount
                 'Ajouter le dossier a la listview
-                Me.ListViewLivres.Items.Add(FolderName, 0).SubItems.Add(RecetteCount)
+                Me.ListViewLivres.Items.Add(FolderName, 0).SubItems.Add(CType(RecetteCount, String))
                 LivresCount += 1
             Next
         End If
@@ -351,8 +351,8 @@ Public Class dlgLivres
                 For Each subKeyName As String In subKeys
                     Dim NewSubRegKey As RegistryKey = NewBaseRegKey.CreateSubKey(subKeyName)
                     Dim SubRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & Livre & "\" & subKeyName, True)
-                    Dim Note As Integer = SubRegKey.GetValue("Note")
-                    Dim Desc As String = SubRegKey.GetValue("Description")
+                    Dim Note As Integer = CInt(SubRegKey.GetValue("Note"))
+                    Dim Desc As String = CType(SubRegKey.GetValue("Description"), String)
                     NewSubRegKey.SetValue("Note", Note)
                     NewSubRegKey.SetValue("Description", Desc)
                     Sourcekey.DeleteSubKey(subKeyName)
@@ -551,7 +551,7 @@ Public Class dlgLivres
         End If
     End Sub
 
-    Private Function LoadRecette(ByVal nRecette As String)
+    Private Sub LoadRecette(ByVal nRecette As String)
         Dim recette As String = nRecette & ".rtf"
         Dim Path As String = ""
         If LastLivre <> "" Then
@@ -575,8 +575,7 @@ Public Class dlgLivres
         frmMain.RappelTimer.Stop()
         frmMain.RappelTimer.Start()
         Me.Close()
-        Return Nothing
-    End Function
+    End Sub
 
     Private Sub GetRecettes(ByVal Path As String)
         Dim objItem As ListViewItem
@@ -620,8 +619,8 @@ Public Class dlgLivres
                 note = 5
                 description = ""
             Else
-                note = regKey.GetValue("Note", 5)
-                description = regKey.GetValue("Description", "")
+                note = CInt(regKey.GetValue("Note", 5))
+                description = CType(regKey.GetValue("Description", ""), String)
             End If
 
             AddImageToImagelist(rname, "")
@@ -729,7 +728,7 @@ Public Class dlgLivres
         End If
 
         Dim hexDigits As Integer = imageDataHex.Length
-        Dim dataSize As Integer = hexDigits / 2
+        Dim dataSize As Integer = CInt(hexDigits / 2)
         Dim imageDataBinary(dataSize) As Byte
 
         Dim Hex As StringBuilder = New StringBuilder(2)
@@ -848,7 +847,7 @@ Public Class dlgLivres
                         Dim Filename As String = Strings.LCase(fi.Name)
                         Dim FirstCharacter As Integer = Strings.Left(Filename, Filename.Length - 4).IndexOf(RechercheTexte.Trim)
                         If FirstCharacter <> -1 Then
-                            Dim key = "Software\Popotte\Livres\" & FolderName & "\" & Strings.Left(Filename, Filename.Length - 4)
+                            Dim key As String = "Software\Popotte\Livres\" & FolderName & "\" & Strings.Left(Filename, Filename.Length - 4)
                             Dim note As Integer = -1
                             Dim Description As String = ""
                             regKey = Registry.CurrentUser.OpenSubKey(key, True)
@@ -865,7 +864,7 @@ Public Class dlgLivres
                                 .SubItems.Add(ConvertNote(note))
                                 .SubItems.Add(Description)
                                 .SubItems.Add(FolderName)
-                                .SubItems.Add(-1)
+                                .SubItems.Add(CType(-1, String))
                                 .SubItems.Add(RechercheTexte)
                                 .ImageIndex = imgidx
                             End With
@@ -894,7 +893,7 @@ Public Class dlgLivres
                                     .SubItems.Add(ConvertNote(note))
                                     .SubItems.Add(Description)
                                     .SubItems.Add(FolderName)
-                                    .SubItems.Add(-1)
+                                    .SubItems.Add(CType(-1, String))
                                     .SubItems.Add(RechercheTexte)
                                     .ImageIndex = imgidx
                                 End With

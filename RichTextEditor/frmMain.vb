@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.1.77
-''' 1 mars 2016 au 22 Août 2019
+''' Popotte 5.3.2.78
+''' 1 mars 2016 au 25 Août 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -17,11 +17,9 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Add a way to print the menu of the week
-''' Add a button to erase the menu
+''' Fix a lot of warning
 ''' ////////// Francais /////////////////////
-''' Ajouté un moyen d'imprimer le menu de la semaine
-''' Ajouté un bouton pour tout effacer le menu
+''' Réparé beaucoup d'avertissement
 
 
 Public Class frmMain
@@ -36,7 +34,7 @@ Public Class frmMain
 #Region "Declarations"
 
     Private checkPrint As Integer
-    Private DefaultFontName As String = "Calibri Light"
+    Private DefaultFontName As String = "Calibri"
     Private DefaultFontSize As Integer = 16
     Private DefaultFontColor As Color = Color.Black
     Private HighlightColor As Color = Color.Yellow
@@ -261,10 +259,10 @@ Public Class frmMain
         'Vérifier si la form a été redimensionner
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\WinSize", True)
         If regKey IsNot Nothing Then
-            If regKey.GetValue("Maximized", False) Then
+            If CBool(regKey.GetValue("Maximized", False)) Then
                 Me.WindowState = FormWindowState.Maximized
             Else
-                Me.Size = New Size(regKey.GetValue("Width", "800"), regKey.GetValue("Height", "602"))
+                Me.Size = New Size(CInt(regKey.GetValue("Width", "800")), CInt(regKey.GetValue("Height", "602")))
             End If
         Else
             Me.Size = New Size(800, 602)
@@ -303,8 +301,8 @@ Public Class frmMain
         GetSize()
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DefaultFont", True)
         If regKey IsNot Nothing Then
-            DefaultFontName = regKey.GetValue("Fontname", "Times New Roman")
-            DefaultFontSize = regKey.GetValue("Size", 16)
+            DefaultFontName = CType(regKey.GetValue("Fontname", "Calibri"), String)
+            DefaultFontSize = CInt(regKey.GetValue("Size", 16))
         End If
         SetDefaultFont()
         FontLoaded = True
@@ -316,7 +314,7 @@ Public Class frmMain
         'Get and set indent
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Indent", True)
         If regKey IsNot Nothing Then
-            rtbDoc.SelectionIndent = regKey.GetValue("", 0)
+            rtbDoc.SelectionIndent = CInt(regKey.GetValue("", 0))
             Select Case regKey.GetValue("", 0)
                 Case 0
                     AucunToolStripMenuItem.Checked = True
@@ -427,31 +425,31 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\MargeDroite", True)
         If regKey IsNot Nothing Then
             Dim MargeDroite As Integer
-            MargeDroite = regKey.GetValue("", 8) 'defaut aucun
+            MargeDroite = CInt(regKey.GetValue("", 8)) 'defaut aucun
             Select Case MargeDroite
                 Case 0
-                    rtbDoc.RightMargin = rtbDoc.Width - 30 - 14.173228346
+                    rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 14.173228346)
                     CmToolStripMenuItem.Checked = True
                 Case 1
-                    rtbDoc.RightMargin = rtbDoc.Width - 30 - 28.346456693
+                    rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 28.346456693)
                     CmToolStripMenuItem1.Checked = True
                 Case 2
-                    rtbDoc.RightMargin = rtbDoc.Width - 30 - 42.519685039
+                    rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 42.519685039)
                     CmToolStripMenuItem2.Checked = True
                 Case 3
-                    rtbDoc.RightMargin = rtbDoc.Width - 30 - 56.692913386
+                    rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 56.692913386)
                     CmToolStripMenuItem3.Checked = True
                 Case 4
-                    rtbDoc.RightMargin = rtbDoc.Width - 30 - 70.866141732
+                    rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 70.866141732)
                     CmToolStripMenuItem4.Checked = True
                 Case 5
-                    rtbDoc.RightMargin = rtbDoc.Width - 30 - 85.039370079
+                    rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 85.039370079)
                     CmToolStripMenuItem5.Checked = True
                 Case 6
-                    rtbDoc.RightMargin = rtbDoc.Width - 30 - 99.212598425
+                    rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 99.212598425)
                     CmToolStripMenuItem6.Checked = True
                 Case 7
-                    rtbDoc.RightMargin = rtbDoc.Width - 30 - 113.385826772
+                    rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 113.385826772)
                     CmToolStripMenuItem7.Checked = True
                 Case 8
                     rtbDoc.RightMargin = rtbDoc.Width - 30
@@ -467,7 +465,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\UrlDetect", True)
         Dim URLDetect As Integer
         If regKey IsNot Nothing Then
-            URLDetect = regKey.GetValue("check", 1)
+            URLDetect = CInt(regKey.GetValue("check", 1))
         Else
             URLDetect = 1
         End If
@@ -485,8 +483,8 @@ Public Class frmMain
         Dim TextTool As Integer
         Dim NavTool As Integer
         If regKey IsNot Nothing Then
-            TextTool = regKey.GetValue("TexteCheck", 1)
-            NavTool = regKey.GetValue("NavigationCheck", 1)
+            TextTool = CInt(regKey.GetValue("TexteCheck", 1))
+            NavTool = CInt(regKey.GetValue("NavigationCheck", 1))
         Else
             TextTool = 1
             NavTool = 1
@@ -529,7 +527,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\LireSeulement", True)
         Dim LireSeul As Integer
         If regKey IsNot Nothing Then
-            LireSeul = regKey.GetValue("check", 0)
+            LireSeul = CInt(regKey.GetValue("check", 0))
         Else
             LireSeul = 0
         End If
@@ -546,7 +544,7 @@ Public Class frmMain
         'Afficher les images dans la liste du dialogue mes livres de recettes
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\ImageRecette", True)
         If regKey IsNot Nothing Then
-            ImageRecette = regKey.GetValue("", True)
+            ImageRecette = CBool(regKey.GetValue("", True))
             AfficherLesImagesDesRecettesDansLaListeToolStripMenuItem.Checked = ImageRecette
         Else
             ImageRecette = True
@@ -557,7 +555,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RappelSave", True)
         Dim RappelSave As Integer
         If regKey IsNot Nothing Then
-            RappelSave = regKey.GetValue("check", 1)
+            RappelSave = CInt(regKey.GetValue("check", 1))
         Else
             RappelSave = 1
         End If
@@ -566,7 +564,7 @@ Public Class frmMain
             RappelToolStripMenuItem.Checked = True
             ' Create a timer 
             If regKey IsNot Nothing Then
-                Delay = regKey.GetValue("Delay", 300000)
+                Delay = CInt(regKey.GetValue("Delay", 300000))
                 RappelTimer.Interval = Delay
                 RappelTimer.Start()
             Else
@@ -581,7 +579,7 @@ Public Class frmMain
         'Options de dossier de sauvegarde
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RecetteDir", True)
         If regKey IsNot Nothing Then
-            Dim DossierOpt As Integer = regKey.GetValue("FolderOpt", 3)
+            Dim DossierOpt As Integer = CInt(regKey.GetValue("FolderOpt", 3))
             Select Case DossierOpt
                 Case 1
                     ToolStripMenuItemOnedrive.Checked = True
@@ -595,14 +593,14 @@ Public Class frmMain
         'look if file associations is set or not
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\FileAsso", True)
         If regKey IsNot Nothing Then
-            FileAssoValue = regKey.GetValue("", False)
+            FileAssoValue = CBool(regKey.GetValue("", False))
         End If
 
         If FileAssoValue Then
             Dim rtfvalue As String = ""
             regKey = Registry.CurrentUser.OpenSubKey("Software\Classes\.rtf", True)
             If regKey IsNot Nothing Then
-                rtfvalue = regKey.GetValue("", "")
+                rtfvalue = CType(regKey.GetValue("", ""), String)
                 If rtfvalue = "Popotte" Then
                     OptRTFToolStripMenuItem.Checked = True
                 Else
@@ -618,7 +616,7 @@ Public Class frmMain
         'HighLightColor
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\HLColor", True)
         If regKey IsNot Nothing Then
-            HighlightColor = ColorFromData(regKey.GetValue(""))
+            HighlightColor = ColorFromData(CType(regKey.GetValue(""), String))
         End If
 
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\AutoCExt", True)
@@ -672,7 +670,7 @@ Public Class frmMain
         'Quand un engins de recherche est sélectionné dans le context menu
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\CentreRecherche", True)
         If regKey IsNot Nothing Then
-            Dim Link As String = regKey.GetValue(sender.ToString, "")
+            Dim Link As String = CType(regKey.GetValue(sender.ToString, ""), String)
             Dim Word As String = rtbDoc.SelectedText
             If Word <> "" Then
                 Dim Position As Integer = InStr(Link, ";in;")
@@ -728,7 +726,7 @@ Public Class frmMain
         'Vérifier si un dossier a été sélectionné
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RecetteDir", True)
         If regKey IsNot Nothing Then
-            PopotteDir = regKey.GetValue("", "")
+            PopotteDir = CType(regKey.GetValue("", ""), String)
         Else
             Dim f As New dlgStartup
             f.ShowDialog(Me)
@@ -739,7 +737,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\VerUpdate", True)
         Dim VerUpdate As Integer
         If regKey IsNot Nothing Then
-            VerUpdate = regKey.GetValue("check", 1)
+            VerUpdate = CInt(regKey.GetValue("check", 1))
         Else
             VerUpdate = 1
         End If
@@ -756,7 +754,7 @@ Public Class frmMain
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\LivreDem", True)
             Dim LivreDem As Integer
             If regKey IsNot Nothing Then
-                LivreDem = regKey.GetValue("check", 0)
+                LivreDem = CInt(regKey.GetValue("check", 0))
             Else
                 LivreDem = 0
             End If
@@ -772,14 +770,14 @@ Public Class frmMain
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
             Dim DerRecette As Integer
             If regKey IsNot Nothing Then
-                DerRecette = regKey.GetValue("check", 0)
+                DerRecette = CInt(regKey.GetValue("check", 0))
             Else
                 DerRecette = 0
             End If
 
             If DerRecette = 1 Then
                 OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Checked = True
-                Dim Recette As String = regKey.GetValue("DerRecette", "")
+                Dim Recette As String = CType(regKey.GetValue("DerRecette", ""), String)
                 Dim strExt As String
                 strExt = Path.GetExtension(Recette)
                 strExt = strExt.ToLower()
@@ -799,8 +797,8 @@ Public Class frmMain
                 End Select
 
                 rtbDoc.Modified = False
-                LivreOuvert = regKey.GetValue("Livre", "")
-                currentFile = regKey.GetValue("Recette", "")
+                LivreOuvert = CType(regKey.GetValue("Livre", ""), String)
+                currentFile = CType(regKey.GetValue("Recette", ""), String)
             Else
                 OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Checked = False
             End If
@@ -853,7 +851,7 @@ Public Class frmMain
     Public Sub SetDefaultFont()
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DefaultFont", True)
         If regKey IsNot Nothing Then
-            DefaultFontEffect = regKey.GetValue("Effects", "Standard")
+            DefaultFontEffect = CType(regKey.GetValue("Effects", "Standard"), String)
         Else
             DefaultFontEffect = "Standard"
         End If
@@ -987,21 +985,21 @@ Public Class frmMain
             'resize la marge dans rtbDoc
             Dim Size As Integer = 0
             If CmToolStripMenuItem.Checked Then
-                Size = rtbDoc.Width - 30 - 14.173228346
+                Size = CInt(rtbDoc.Width - 30 - 14.173228346)
             ElseIf CmToolStripMenuItem1.Checked Then
-                Size = rtbDoc.Width - 30 - 28.346456693
+                Size = CInt(rtbDoc.Width - 30 - 28.346456693)
             ElseIf CmToolStripMenuItem2.Checked Then
-                Size = rtbDoc.Width - 30 - 42.519685039
+                Size = CInt(rtbDoc.Width - 30 - 42.519685039)
             ElseIf CmToolStripMenuItem3.Checked Then
-                Size = rtbDoc.Width - 30 - 56.692913386
+                Size = CInt(rtbDoc.Width - 30 - 56.692913386)
             ElseIf CmToolStripMenuItem4.Checked Then
-                Size = rtbDoc.Width - 30 - 70.866141732
+                Size = CInt(rtbDoc.Width - 30 - 70.866141732)
             ElseIf CmToolStripMenuItem5.Checked Then
-                Size = rtbDoc.Width - 30 - 85.039370079
+                Size = CInt(rtbDoc.Width - 30 - 85.039370079)
             ElseIf CmToolStripMenuItem6.Checked Then
-                Size = rtbDoc.Width - 30 - 99.212598425
+                Size = CInt(rtbDoc.Width - 30 - 99.212598425)
             ElseIf CmToolStripMenuItem7.Checked Then
-                Size = rtbDoc.Width - 30 - 113.385826772
+                Size = CInt(rtbDoc.Width - 30 - 113.385826772)
             ElseIf CMToolStripMenuItem8.Checked Then
                 Size = rtbDoc.Width - 30
             End If
@@ -1398,8 +1396,8 @@ Public Class frmMain
     Public Sub SaveToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveToolStripMenuItem.Click
 
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
-        Dim livre As String = regKey.GetValue("Livre")
-        Dim recette As String = regKey.GetValue("Recette")
+        Dim livre As String = CType(regKey.GetValue("Livre"), String)
+        Dim recette As String = CType(regKey.GetValue("Recette"), String)
         If recette <> "" Then
             recette = Path.GetFileNameWithoutExtension(recette)
         End If
@@ -1570,7 +1568,7 @@ Public Class frmMain
 
         If FontDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
             DefaultFontName = FontDialog1.Font.Name
-            DefaultFontSize = FontDialog1.Font.Size
+            DefaultFontSize = CInt(FontDialog1.Font.Size)
             regKey.SetValue("Fontname", DefaultFontName)
             regKey.SetValue("Size", DefaultFontSize)
             Dim newFontStyle As System.Drawing.FontStyle = FontDialog1.Font.Style
@@ -2391,8 +2389,8 @@ Public Class frmMain
                             For Each KeyRecette As String In regKeyRecette.GetSubKeyNames()
                                 Dim regKeyRecette2 As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & KeyLivre & "\" & KeyRecette, True)
                                 If regKeyRecette2 IsNot Nothing Then
-                                    Dim description As String = regKeyRecette2.GetValue("Description")
-                                    Dim note As String = regKeyRecette2.GetValue("Note")
+                                    Dim description As String = CType(regKeyRecette2.GetValue("Description"), String)
+                                    Dim note As String = CType(regKeyRecette2.GetValue("Note"), String)
                                     sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Livres\" & KeyLivre & "\" & KeyRecette & "]")
                                     sb.AppendLine(Chr(34) & "Description" & Chr(34) & "=" & Chr(34) & description & Chr(34))
                                     sb.AppendLine(Chr(34) & "Note" & Chr(34) & "=dword:" & note)
@@ -2495,7 +2493,7 @@ Public Class frmMain
                 Dim ValueCount As Integer = regKey.ValueCount()
                 If ValueCount > 0 Then
                     sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Settings\HLColor\" & "]")
-                    sb.AppendLine(Chr(34) & "" & Chr(34) & "=" & Chr(34) & regKey.GetValue("") & Chr(34))
+                    sb.AppendLine(CType(Chr(34) & "" & Chr(34) & "=" & Chr(34) & CType(regKey.GetValue(""), String) & Chr(34), String))
                     sb.AppendLine()
                 End If
             End If
@@ -2506,7 +2504,7 @@ Public Class frmMain
                 Dim ValueCount As Integer = regKey.ValueCount()
                 If ValueCount > 0 Then
                     sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Settings\Indent\" & "]")
-                    sb.AppendLine(Chr(34) & "" & Chr(34) & "=" & Chr(34) & regKey.GetValue("") & Chr(34))
+                    sb.AppendLine(CType(Chr(34) & "" & Chr(34) & "=" & Chr(34) & CType(regKey.GetValue(""), String) & Chr(34), String))
                     sb.AppendLine()
                 End If
             End If
@@ -2517,7 +2515,7 @@ Public Class frmMain
                 Dim ValueCount As Integer = regKey.ValueCount()
                 If ValueCount > 0 Then
                     sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Settings\Language\" & "]")
-                    sb.AppendLine(Chr(34) & "" & Chr(34) & "=" & Chr(34) & regKey.GetValue("") & Chr(34))
+                    sb.AppendLine(CType(Chr(34) & "" & Chr(34) & "=" & Chr(34) & CType(regKey.GetValue(""), String) & Chr(34), String))
                     sb.AppendLine()
                 End If
             End If
@@ -2565,7 +2563,7 @@ Public Class frmMain
         End If
 
         Dim DelayregKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RappelSave", True)
-        Delay = DelayregKey.GetValue("Delay", Delay)
+        Delay = CInt(DelayregKey.GetValue("Delay", Delay))
 
         Dim d As New RappelDialog
         d.ShowDialog()
@@ -2702,7 +2700,7 @@ Public Class frmMain
         Dim ppath As String = ""
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\EditeurExt", True)
         If regKey IsNot Nothing Then
-            ppath = regKey.GetValue("")
+            ppath = CType(regKey.GetValue(""), String)
         End If
 
         OpenFileDialog1.Title = "Popotte - " & LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "86")
@@ -2741,7 +2739,7 @@ Public Class frmMain
     End Sub
 
     Private Sub CmToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CmToolStripMenuItem.Click
-        rtbDoc.RightMargin = rtbDoc.Width - 30 - 14.173228346
+        rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 14.173228346)
         CmToolStripMenuItem.Checked = True
         CmToolStripMenuItem1.Checked = False
         CmToolStripMenuItem2.Checked = False
@@ -2760,7 +2758,7 @@ Public Class frmMain
     End Sub
 
     Private Sub CmToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CmToolStripMenuItem1.Click
-        rtbDoc.RightMargin = rtbDoc.Width - 30 - 28.346456693
+        rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 28.346456693)
         CmToolStripMenuItem.Checked = False
         CmToolStripMenuItem1.Checked = True
         CmToolStripMenuItem2.Checked = False
@@ -2779,7 +2777,7 @@ Public Class frmMain
     End Sub
 
     Private Sub CmToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles CmToolStripMenuItem2.Click
-        rtbDoc.RightMargin = rtbDoc.Width - 30 - 42.519685039
+        rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 42.519685039)
         CmToolStripMenuItem.Checked = False
         CmToolStripMenuItem1.Checked = False
         CmToolStripMenuItem2.Checked = True
@@ -2798,7 +2796,7 @@ Public Class frmMain
     End Sub
 
     Private Sub CmToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles CmToolStripMenuItem3.Click
-        rtbDoc.RightMargin = rtbDoc.Width - 30 - 56.692913386
+        rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 56.692913386)
         CmToolStripMenuItem.Checked = False
         CmToolStripMenuItem1.Checked = False
         CmToolStripMenuItem2.Checked = False
@@ -2817,7 +2815,7 @@ Public Class frmMain
     End Sub
 
     Private Sub CmToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles CmToolStripMenuItem4.Click
-        rtbDoc.RightMargin = rtbDoc.Width - 30 - 70.866141732
+        rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 70.866141732)
         CmToolStripMenuItem.Checked = False
         CmToolStripMenuItem1.Checked = False
         CmToolStripMenuItem2.Checked = False
@@ -2836,7 +2834,7 @@ Public Class frmMain
     End Sub
 
     Private Sub CmToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles CmToolStripMenuItem5.Click
-        rtbDoc.RightMargin = rtbDoc.Width - 30 - 85.039370079
+        rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 85.039370079)
         CmToolStripMenuItem.Checked = False
         CmToolStripMenuItem1.Checked = False
         CmToolStripMenuItem2.Checked = False
@@ -2855,7 +2853,7 @@ Public Class frmMain
     End Sub
 
     Private Sub CmToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles CmToolStripMenuItem6.Click
-        rtbDoc.RightMargin = rtbDoc.Width - 30 - 99.212598425
+        rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 99.212598425)
         CmToolStripMenuItem.Checked = False
         CmToolStripMenuItem1.Checked = False
         CmToolStripMenuItem2.Checked = False
@@ -2874,7 +2872,7 @@ Public Class frmMain
     End Sub
 
     Private Sub CmToolStripMenuItem7_Click(sender As Object, e As EventArgs) Handles CmToolStripMenuItem7.Click
-        rtbDoc.RightMargin = rtbDoc.Width - 30 - 113.385826772
+        rtbDoc.RightMargin = CInt(rtbDoc.Width - 30 - 113.385826772)
         CmToolStripMenuItem.Checked = False
         CmToolStripMenuItem1.Checked = False
         CmToolStripMenuItem2.Checked = False
@@ -2922,7 +2920,7 @@ Public Class frmMain
         End If
         regKey = Registry.CurrentUser.OpenSubKey("Software\Microsoft\OneDrive\Accounts\Personal", True)
         If regKey IsNot Nothing Then
-            PopotteDir = regKey.GetValue("UserFolder", "")
+            PopotteDir = CType(regKey.GetValue("UserFolder", ""), String)
             If PopotteDir = "" Then
                 MessageBox.Show(LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "39"), "Popotte", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
@@ -3046,7 +3044,7 @@ Public Class frmMain
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\FileAsso", True)
             FileAssoValue = False
         Else
-            FileAssoValue = regKey.GetValue("", True)
+            FileAssoValue = CBool(regKey.GetValue("", True))
         End If
 
         If FileAssoValue Then
@@ -3108,7 +3106,7 @@ Public Class frmMain
             Dim newregKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
             regKey = newregKey.CreateSubKey("HLColor")
         Else
-            HighlightColor = ColorFromData(regKey.GetValue(""))
+            HighlightColor = ColorFromData(CType(regKey.GetValue(""), String))
         End If
 
         ColorDialog1.Color = HighlightColor
@@ -3130,7 +3128,7 @@ Public Class frmMain
         Dim ppath As String = ""
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\AutoCExt", True)
         If regKey IsNot Nothing Then
-            ppath = regKey.GetValue("")
+            ppath = CType(regKey.GetValue(""), String)
         End If
 
         OpenFileDialog1.Title = "Popotte - " & LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "99")
@@ -3252,9 +3250,9 @@ Public Class frmMain
             If FontLoaded Then
 
                 If rtbDoc.SelectionFont IsNot Nothing Then
-                    Dim SelectedFont As String = Me.ToolStripComboBoxPolices.SelectedItem
+                    Dim SelectedFont As String = CType(ToolStripComboBoxPolices.SelectedItem, String)
                     Dim newFontStyle As System.Drawing.FontStyle = rtbDoc.SelectionFont.Style
-                    Dim SelectedSize As String = Me.ToolStripComboBoxSize.SelectedItem
+                    Dim SelectedSize As String = CType(ToolStripComboBoxSize.SelectedItem, String)
 
                     rtbDoc.SelectionFont = New Font(
                        SelectedFont,

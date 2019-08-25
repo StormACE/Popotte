@@ -32,8 +32,8 @@ Public Class dlgFind
         'Get dlg opacity
         regkey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\SearchOpacity", True)
         If regKey IsNot Nothing Then
-            Dim SearchOpacity As Double = regkey.GetValue("", 100)
-            OpacityHScrollBar.Value = SearchOpacity
+            Dim SearchOpacity As Double = Val(regkey.GetValue("", 100))
+            OpacityHScrollBar.Value = CInt(SearchOpacity)
         Else
             OpacityHScrollBar.Value = 100
         End If

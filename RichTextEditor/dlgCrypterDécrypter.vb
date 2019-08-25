@@ -83,7 +83,7 @@ Public Class dlgCrypterDécrypter
                 If TextBoxPass.Text = TextBoxVerifyPass.Text Then
 
                     If CheckBoxCrypt.Checked Then
-                        Dim text1 As String = Encrypt(frmMain.rtbDoc.SelectedText, TextBoxPass.Text, TextBoxSel.Text, Val(TextBoxIteration.Text))
+                        Dim text1 As String = Encrypt(frmMain.rtbDoc.SelectedText, TextBoxPass.Text, TextBoxSel.Text, CInt(TextBoxIteration.Text))
                         If text1 <> "" Then
                             frmMain.rtbDoc.SelectedText = text1
                             frmMain.rtbDoc.Select(0, 0)
@@ -91,7 +91,7 @@ Public Class dlgCrypterDécrypter
                             Me.Close()
                         End If
                     Else
-                        Dim text2 As String = Decrypt(frmMain.rtbDoc.SelectedText, TextBoxPass.Text, TextBoxSel.Text, Val(TextBoxIteration.Text))
+                        Dim text2 As String = Decrypt(frmMain.rtbDoc.SelectedText, TextBoxPass.Text, TextBoxSel.Text, CInt(TextBoxIteration.Text))
                         If text2 <> "" Then
                             frmMain.rtbDoc.SelectedText = text2
                             frmMain.rtbDoc.Select(0, 0)
