@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.2.78
-''' 1 mars 2016 au 25 Août 2019
+''' Popotte 5.3.2.79
+''' 1 mars 2016 au 31 Août 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -18,8 +18,10 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
 ''' Fix a lot of warning
+''' Ajouté, peut maintenant ajouté une recette favorite au menu de la semaine
 ''' ////////// Francais /////////////////////
 ''' Réparé beaucoup d'avertissement
+''' Add, now you can add a favorite recipe to the menu of the week
 
 
 Public Class frmMain

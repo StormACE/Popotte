@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 30 juin 2019
+''' 1 mars 2016 au 31 Aout 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -46,6 +46,7 @@ Public Class dlgLivres
         EnleverFavToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "7")
         ToolStripMenuItemFAV.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "8")
         ToolStripMenuItemMenu.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "9")
+        AddToMenuToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "9")
 
 
         ' Set ListViewLivres Properties
@@ -1284,6 +1285,15 @@ FileFound:
             livre = frmMain.LivreOuvert
         End If
         Dim adm As New dlgAddMenu(ListViewRecettes.SelectedItems(0).Text, livre)
+        adm.ShowDialog()
+        adm.Dispose()
+    End Sub
+
+    Private Sub AddToMenuToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToMenuToolStripMenuItem.Click
+        Dim livre As String = ""
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & ListViewRecherche.SelectedItems(0).Text, True)
+        livre = regKey.GetValue("Livre").ToString
+        Dim adm As New dlgAddMenu(ListViewRecherche.SelectedItems(0).Text, livre)
         adm.ShowDialog()
         adm.Dispose()
     End Sub
