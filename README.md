@@ -6,12 +6,12 @@ Page Facebook: https://www.facebook.com/PopotteKC
 
 Nightly Branch availlable 5.3.2.79
 
-New 5.3.1.77 Master build released.
+New 5.3.2.79 Master build released.
 
 Logiciel de gestion de recettes
 Lisez License.txt avant d'utiliser ou modifier!!!
 
-La nouvelle version 5.3.1.77 Master est en-ligne.
+La nouvelle version 5.3.2.79 Master est en-ligne.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
