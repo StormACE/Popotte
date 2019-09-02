@@ -35,8 +35,8 @@ Public Class dlgMultiModInfo
             If MoveFile(PopotteDir & NomLivre & "\" & recette.Text & ".rtf", PopotteDir & NewLivre & "\" & recette.Text & ".rtf", False) <> -1 Then
                 Dim RecetteRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre & "\" & recette.Text, True)
                 If RecetteRegKey IsNot Nothing Then
-                    Dim note As Integer = RecetteRegKey.GetValue("Note", 6)
-                    Dim Desc As String = RecetteRegKey.GetValue("Description", "")
+                    Dim note As Integer = CInt(RecetteRegKey.GetValue("Note", 6))
+                    Dim Desc As String = CType(RecetteRegKey.GetValue("Description", ""), String)
                     Dim NewLivreRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\", True)
                     Try
                         NewLivreRegKey.CreateSubKey(NewLivre)

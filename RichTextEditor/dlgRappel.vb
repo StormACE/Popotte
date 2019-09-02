@@ -20,7 +20,7 @@ Public Class RappelDialog
         DeactivateButton.Text = LangINI.GetKeyValue("Popotte - AlertSave", "4")
         Cancel_Button.Text = LangINI.GetKeyValue("Popotte - AlertSave", "5")
 
-        Dim delay As Integer = (frmMain.Delay / 1000)
+        Dim delay As Double = (frmMain.Delay / 1000)
         DelayTextBox.Text = delay.ToString
         If frmMain.RappelToolStripMenuItem.Checked Then
             DeactivateButton.TabIndex = 0
@@ -43,7 +43,7 @@ Public Class RappelDialog
             Else
                 frmMain.RappelToolStripMenuItem.Checked = True
                 frmMain.regKey.SetValue("check", 1)
-                frmMain.Delay = Val(DelayTextBox.Text * 1000)
+                frmMain.Delay = CInt(CInt(DelayTextBox.Text) * 1000)
                 frmMain.RappelTimer.Interval = frmMain.Delay
                 frmMain.regKey.SetValue("Delay", frmMain.Delay)
                 If frmMain.RappelTimer.Enabled = False Then

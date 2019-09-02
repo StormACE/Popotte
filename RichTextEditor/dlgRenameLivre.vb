@@ -81,8 +81,8 @@ Public Class RenommerLivreDialog
                 For Each subKeyName As String In subKeys
                     Dim NewSubRegKey As RegistryKey = NewBaseRegKey.CreateSubKey(subKeyName)
                     Dim SubRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & Livre & "\" & subKeyName, True)
-                    Dim Note As Integer = SubRegKey.GetValue("Note")
-                    Dim Desc As String = SubRegKey.GetValue("Description")
+                    Dim Note As Integer = CInt(SubRegKey.GetValue("Note"))
+                    Dim Desc As String = SubRegKey.GetValue("Description").ToString
                     NewSubRegKey.SetValue("Note", Note)
                     NewSubRegKey.SetValue("Description", Desc)
                     Sourcekey.DeleteSubKey(subKeyName)

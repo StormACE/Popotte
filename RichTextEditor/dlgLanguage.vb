@@ -34,7 +34,7 @@ Public Class LanguageDialog
         Language = frmMain.Language
 
         If regKey IsNot Nothing Then
-            Language = regKey.GetValue("", "")
+            Language = CType(regKey.GetValue("", ""), String)
         Else
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\", True)
             regKey = regKey.CreateSubKey("Language")

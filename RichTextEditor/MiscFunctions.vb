@@ -13,7 +13,7 @@ Module MiscFunctions
     ''' <returns>A System.Drawing.Color.</returns>
     ''' <remarks>Returns Black if the color could not be parsed.</remarks>
     Public Function ColorFromData(s As String) As Color
-        Dim fallbackColor = Color.Black
+        Dim fallbackColor As Color = Color.Black
 
         If Not s.StartsWith("color", StringComparison.OrdinalIgnoreCase) Then
             Return fallbackColor

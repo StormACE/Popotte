@@ -35,6 +35,7 @@ Partial Class dlgLivres
         Me.ListViewRecettes = New System.Windows.Forms.ListView()
         Me.RecetteContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItemFAV = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItemMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ModifierLesInfosDeLaRecetteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -48,9 +49,9 @@ Partial Class dlgLivres
         Me.ButtonFav = New System.Windows.Forms.Button()
         Me.TextBoxRecherche = New System.Windows.Forms.TextBox()
         Me.FavorisContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.AddToMenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnleverFavToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ButtonRandom = New System.Windows.Forms.Button()
-        Me.ToolStripMenuItemMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.LivreContextMenuStrip.SuspendLayout()
         Me.RecetteContextMenuStrip.SuspendLayout()
         Me.FavorisContextMenuStrip.SuspendLayout()
@@ -147,7 +148,7 @@ Partial Class dlgLivres
         Me.RecetteContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.RecetteContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemFAV, Me.ToolStripMenuItemMenu, Me.ToolStripSeparator4, Me.ModifierLesInfosDeLaRecetteToolStripMenuItem, Me.ToolStripSeparator3, Me.OuvrirAvecEditeurExterneToolStripMenuItem, Me.ToolStripSeparator2, Me.EffacerLaRecetteToolStripMenuItem})
         Me.RecetteContextMenuStrip.Name = "RecetteContextMenuStrip"
-        Me.RecetteContextMenuStrip.Size = New System.Drawing.Size(331, 215)
+        Me.RecetteContextMenuStrip.Size = New System.Drawing.Size(331, 182)
         '
         'ToolStripMenuItemFAV
         '
@@ -155,6 +156,12 @@ Partial Class dlgLivres
         Me.ToolStripMenuItemFAV.Name = "ToolStripMenuItemFAV"
         Me.ToolStripMenuItemFAV.Size = New System.Drawing.Size(330, 32)
         Me.ToolStripMenuItemFAV.Text = "Ajouter aux Favoris"
+        '
+        'ToolStripMenuItemMenu
+        '
+        Me.ToolStripMenuItemMenu.Name = "ToolStripMenuItemMenu"
+        Me.ToolStripMenuItemMenu.Size = New System.Drawing.Size(330, 32)
+        Me.ToolStripMenuItemMenu.Text = "Ajouter au Menu"
         '
         'ToolStripSeparator4
         '
@@ -253,15 +260,21 @@ Partial Class dlgLivres
         '
         Me.FavorisContextMenuStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
         Me.FavorisContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.FavorisContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnleverFavToolStripMenuItem})
+        Me.FavorisContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToMenuToolStripMenuItem, Me.EnleverFavToolStripMenuItem})
         Me.FavorisContextMenuStrip.Name = "RecetteContextMenuStrip"
-        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(240, 36)
+        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(249, 101)
+        '
+        'AddToMenuToolStripMenuItem
+        '
+        Me.AddToMenuToolStripMenuItem.Name = "AddToMenuToolStripMenuItem"
+        Me.AddToMenuToolStripMenuItem.Size = New System.Drawing.Size(248, 32)
+        Me.AddToMenuToolStripMenuItem.Text = "Add to menu"
         '
         'EnleverFavToolStripMenuItem
         '
         Me.EnleverFavToolStripMenuItem.Image = CType(resources.GetObject("EnleverFavToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EnleverFavToolStripMenuItem.Name = "EnleverFavToolStripMenuItem"
-        Me.EnleverFavToolStripMenuItem.Size = New System.Drawing.Size(239, 32)
+        Me.EnleverFavToolStripMenuItem.Size = New System.Drawing.Size(248, 32)
         Me.EnleverFavToolStripMenuItem.Text = "Enlever des favoris"
         '
         'ButtonRandom
@@ -273,12 +286,6 @@ Partial Class dlgLivres
         Me.ButtonRandom.Size = New System.Drawing.Size(69, 68)
         Me.ButtonRandom.TabIndex = 8
         Me.ButtonRandom.UseVisualStyleBackColor = True
-        '
-        'ToolStripMenuItemMenu
-        '
-        Me.ToolStripMenuItemMenu.Name = "ToolStripMenuItemMenu"
-        Me.ToolStripMenuItemMenu.Size = New System.Drawing.Size(330, 32)
-        Me.ToolStripMenuItemMenu.Text = "Ajouter au Menu"
         '
         'dlgLivres
         '
@@ -340,4 +347,5 @@ Partial Class dlgLivres
     Friend WithEvents EnleverFavToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ButtonRandom As Button
     Friend WithEvents ToolStripMenuItemMenu As ToolStripMenuItem
+    Friend WithEvents AddToMenuToolStripMenuItem As ToolStripMenuItem
 End Class
