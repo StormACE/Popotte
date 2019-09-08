@@ -8,7 +8,7 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.2.79
+''' Popotte 5.3.3.80
 ''' 1 mars 2016 au 31 Août 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
@@ -17,11 +17,9 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Fix a lot of warning
-''' Ajouté, peut maintenant ajouté une recette favorite au menu de la semaine
+''' Fix little bugs
 ''' ////////// Francais /////////////////////
-''' Réparé beaucoup d'avertissement
-''' Add, now you can add a favorite recipe to the menu of the week
+''' Réparé des petits bogues
 
 
 Public Class frmMain
@@ -1410,7 +1408,11 @@ Public Class frmMain
         End If
 
         Dim SaveDialogue As New dlgInfoRecette(recette, livre, True)
-        SaveDialogue.ShowDialog()
+        Dim result As DialogResult = SaveDialogue.ShowDialog()
+        If result = DialogResult.OK Then
+            RappelTimer.Stop()
+            RappelTimer.Start()
+        End If
         SaveDialogue.Dispose()
 
 
@@ -1450,6 +1452,8 @@ Public Class frmMain
         rtbDoc.Modified = False
         Me.Text = "Popotte - [" & currentFile.ToString() & "]"
         SaveFileDialog1.Dispose()
+        RappelTimer.Stop()
+        RappelTimer.Start()
     End Sub
 
     Private Sub SaveAsUNICODEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsUNICODEToolStripMenuItem.Click
@@ -1485,6 +1489,8 @@ Public Class frmMain
         rtbDoc.Modified = False
         Me.Text = "Popotte - [" & currentFile.ToString() & "]"
         SaveFileDialog1.Dispose()
+        RappelTimer.Stop()
+        RappelTimer.Start()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
