@@ -8,7 +8,8 @@ Imports System.Text
 
 Module EncryptionSHA1
 
-    <CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Ne pas supprimer d'objets plusieurs fois")>
+    'Get Language
+    Dim LangINI As IniFile = frmMain.LangIni
     Public Function Encrypt(ByVal plainText As String, ByVal passPhrase As String, saltValue As String, iterration As Integer) As String
         Dim hashAlgorithm As String = "SHA1"
         Dim password As Rfc2898DeriveBytes
@@ -32,7 +33,7 @@ Module EncryptionSHA1
         Try
             password = New Rfc2898DeriveBytes(passPhrase, saltValueBytes, passwordIterations)
         Catch ex As Exception
-            MsgBox("Le sel doit contenir 8 caractères ou plus", MsgBoxStyle.Exclamation, "Attention!")
+            MsgBox(LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "4"), MsgBoxStyle.Exclamation, LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"))
             Exit Function
         End Try
 
@@ -62,7 +63,7 @@ Module EncryptionSHA1
     Public Function Decrypt(ByVal cipherText As String, ByVal passPhrase As String, saltValue As String, iterration As Integer) As String
 
         If saltValue.Length < 8 Then
-            MsgBox("Le sel doit contenir 8 caractères ou plus", MsgBoxStyle.Exclamation, "Attention!")
+            MsgBox(LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "4"), MsgBoxStyle.Exclamation, LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"))
             Exit Function
         End If
 
@@ -134,7 +135,7 @@ Module EncryptionSHA1
             ' Start decrypting.
             decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length)
         Catch ex As Exception
-            MsgBox("Mauvais mot de passe", MsgBoxStyle.Exclamation, "Attention!")
+            MsgBox(LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "50"), MsgBoxStyle.Exclamation, LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"))
             Exit Function
         End Try
 
