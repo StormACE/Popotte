@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="16.0">
  <Targets>
-  <Target Name="C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\bin\Release\Popotte.exe">
+  <Target Name="C:\Users\krypt\source\Popotte\RichTextEditor\bin\Release\Popotte.exe">
    <Modules>
     <Module Name="popotte.exe">
      <Namespaces>
@@ -12,8 +12,8 @@
          <Members>
           <Member Name="#Encrypt(System.String,System.String,System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-09-09 19:27:01Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor" File="EncryptionSHA1.vb" Line="54">L'objet 'memoryStream' peut être supprimé plusieurs fois dans la méthode 'EncryptionSHA1.Encrypt(String, String, String, Integer)'. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.: Lines: 54</Issue>
+            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-09-11 14:18:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\krypt\source\Popotte\RichTextEditor" File="EncryptionSHA1.vb" Line="54">L'objet 'memoryStream' peut être supprimé plusieurs fois dans la méthode 'EncryptionSHA1.Encrypt(String, String, String, Integer)'. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.: Lines: 54</Issue>
             </Message>
            </Messages>
           </Member>
