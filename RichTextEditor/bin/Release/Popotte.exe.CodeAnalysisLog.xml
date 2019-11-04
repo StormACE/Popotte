@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#Encrypt(System.String,System.String,System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-09-11 14:18:35Z" FixCategory="DependsOnFix">
+            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-11-04 19:23:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\krypt\source\Popotte\RichTextEditor" File="EncryptionSHA1.vb" Line="54">L'objet 'memoryStream' peut être supprimé plusieurs fois dans la méthode 'EncryptionSHA1.Encrypt(String, String, String, Integer)'. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.: Lines: 54</Issue>
             </Message>
            </Messages>

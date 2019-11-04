@@ -538,6 +538,7 @@ Public Class dlgLivres
 
         Fav = False
         frmMain.rtbDoc.Modified = False
+        frmMain.Text = "Popotte - [" & recette & "]"
         Me.Close()
 
     End Sub

@@ -76,6 +76,5 @@ C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgLivres.r
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.frmMenu.resources
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.Resources.resources
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.GenerateResource.cache
-C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.CoreCompileInputs.cache
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.CopyComplete
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.exe
