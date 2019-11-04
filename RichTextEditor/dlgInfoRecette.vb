@@ -116,10 +116,22 @@ Public Class dlgInfoRecette
                                 Dim NewSrcRecetteBaseRegKey As RegistryKey = NewSourceBaseRegKey.CreateSubKey(NewName)
                                 NewSrcRecetteBaseRegKey.SetValue("Note", NewNote)
                                 NewSrcRecetteBaseRegKey.SetValue("Description", NewDesc)
+
+                                'Fix favorites
+                                Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+                                FavRegkey.CreateSubKey(NewName)
+                                Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NewName, True)
+                                NewFavRegkey.SetValue("Livre", NewLivre)
+
                                 Dim OldRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre & "\" & strText, True)
                                 If OldRegKey IsNot Nothing Then
                                     Dim OldBaseRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre, True)
                                     OldBaseRegKey.DeleteSubKey(strText)
+                                End If
+
+                                Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & strText, True)
+                                If OldFavRegKey IsNot Nothing Then
+                                    FavRegkey.DeleteSubKey(strText)
                                 End If
                             End If
                             Me.DialogResult = System.Windows.Forms.DialogResult.OK
@@ -198,10 +210,21 @@ Public Class dlgInfoRecette
                                     Dim NewSrcRecetteBaseRegKey As RegistryKey = NewSourceBaseRegKey.CreateSubKey(NewName)
                                     NewSrcRecetteBaseRegKey.SetValue("Note", NewNote)
                                     NewSrcRecetteBaseRegKey.SetValue("Description", NewDesc)
+
+                                    'Fix favorites
+                                    Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+                                    FavRegkey.CreateSubKey(NewName)
+                                    Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NewName, True)
+                                    NewFavRegkey.SetValue("Livre", NewLivre)
+
                                     Dim OldRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre & "\" & strText, True)
                                     If OldRegKey IsNot Nothing Then
                                         Dim OldBaseRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre, True)
                                         OldBaseRegKey.DeleteSubKey(strText)
+                                    End If
+                                    Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & strText, True)
+                                    If OldFavRegKey IsNot Nothing Then
+                                        FavRegkey.DeleteSubKey(strText)
                                     End If
                                 End If
                                 Me.DialogResult = System.Windows.Forms.DialogResult.OK

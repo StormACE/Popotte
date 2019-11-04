@@ -400,14 +400,36 @@ Public Class dlgLivres
                     Dim NewSourceBaseRegKey As RegistryKey = SourceBaseRegKey.CreateSubKey(LastLivre)
                     If NewSourceBaseRegKey IsNot Nothing Then
                         Dim NewSrcRecetteBaseRegKey As RegistryKey = NewSourceBaseRegKey.CreateSubKey(e.Label.ToString.Trim)
+
+                        'Fix favorites
+                        Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+                        FavRegkey.CreateSubKey(e.Label.ToString.Trim)
+                        Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & e.Label.ToString.Trim, True)
+                        NewFavRegkey.SetValue("Livre", LastLivre)
+
                         If NewSrcRecetteBaseRegKey IsNot Nothing Then
                             Dim SourceBaseOldRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & LastLivre & "\" & SourceRecetteLabel, True)
                             If SourceBaseOldRegKey IsNot Nothing Then
-                                NewSrcRecetteBaseRegKey.SetValue("Note", SourceBaseOldRegKey.GetValue("Note"))
-                                NewSrcRecetteBaseRegKey.SetValue("Description", SourceBaseOldRegKey.GetValue("Description"))
+                                Dim note As String = SourceBaseOldRegKey.GetValue("Note")
+                                If note <> "" Then
+                                    NewSrcRecetteBaseRegKey.SetValue("Note", note)
+                                Else
+                                    NewSrcRecetteBaseRegKey.SetValue("Note", "")
+                                End If
+                                Dim Desc As String = SourceBaseOldRegKey.GetValue("Description")
+                                If Desc <> "" Then
+                                    NewSrcRecetteBaseRegKey.SetValue("Description", Desc)
+                                Else
+                                    NewSrcRecetteBaseRegKey.SetValue("Description", "")
+                                End If
+
                                 Dim OldBaseRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & LastLivre, True)
                                 If SourceBaseOldRegKey IsNot Nothing Then
                                     OldBaseRegKey.DeleteSubKey(SourceRecetteLabel)
+                                End If
+                                Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & SourceRecetteLabel, True)
+                                If OldFavRegKey IsNot Nothing Then
+                                    FavRegkey.DeleteSubKey(SourceRecetteLabel)
                                 End If
                             End If
                         End If
@@ -530,9 +552,6 @@ Public Class dlgLivres
             ' Highlight the search string
             If position <> -1 Then
                 frmMain.rtbDoc.Select(position, Recherchetexte.Length)
-                frmMain.Text = "Popotte - [" & recette & "]"
-            Else
-                frmMain.Text = "Popotte - [" & recette & "]"
             End If
         End If
 
@@ -968,7 +987,6 @@ FileFound:
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
         If regKey IsNot Nothing Then
             For Each subKeyName As String In regKey.GetSubKeyNames()
-
                 RecetteTotalCount += 1
                 Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "20") & " - (" & RecetteTotalCount.ToString & ")"
 
@@ -979,9 +997,12 @@ FileFound:
                 If regKey IsNot Nothing Then
                     Dim note As Integer = CType(regKey.GetValue("Note"), Integer)
                     Dim description As String = regKey.GetValue("Description").ToString
+
                     AddImageToImagelist(subKeyName, Livre)
+
                     'Add to listview
                     objItem = ListViewRecherche.Items.Add(subKeyName)
+
                     With objItem
                         .SubItems.Add(ConvertNote(note))
                         .SubItems.Add(description)
