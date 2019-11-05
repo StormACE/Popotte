@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 31 Aout 2019
+''' 1 mars 2016 au 5 novembre 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -402,21 +402,23 @@ Public Class dlgLivres
                         Dim NewSrcRecetteBaseRegKey As RegistryKey = NewSourceBaseRegKey.CreateSubKey(e.Label.ToString.Trim)
 
                         'Fix favorites
-                        Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
-                        FavRegkey.CreateSubKey(e.Label.ToString.Trim)
-                        Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & e.Label.ToString.Trim, True)
-                        NewFavRegkey.SetValue("Livre", LastLivre)
+                        Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & SourceRecetteLabel, True)
+                        If OldFavRegKey IsNot Nothing Then
+                            Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+                            FavRegkey.CreateSubKey(e.Label.ToString.Trim)
+                            Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & e.Label.ToString.Trim, True)
+                            NewFavRegkey.SetValue("Livre", LastLivre)
+                            FavRegkey.DeleteSubKey(SourceRecetteLabel)
+                        End If
 
                         If NewSrcRecetteBaseRegKey IsNot Nothing Then
                             Dim SourceBaseOldRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & LastLivre & "\" & SourceRecetteLabel, True)
                             If SourceBaseOldRegKey IsNot Nothing Then
-                                Dim note As String = SourceBaseOldRegKey.GetValue("Note")
+                                Dim note As String = CType(SourceBaseOldRegKey.GetValue("Note"), String)
                                 If note <> "" Then
                                     NewSrcRecetteBaseRegKey.SetValue("Note", note)
-                                Else
-                                    NewSrcRecetteBaseRegKey.SetValue("Note", "")
                                 End If
-                                Dim Desc As String = SourceBaseOldRegKey.GetValue("Description")
+                                Dim Desc As String = CType(SourceBaseOldRegKey.GetValue("Description"), String)
                                 If Desc <> "" Then
                                     NewSrcRecetteBaseRegKey.SetValue("Description", Desc)
                                 Else
@@ -426,10 +428,6 @@ Public Class dlgLivres
                                 Dim OldBaseRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & LastLivre, True)
                                 If SourceBaseOldRegKey IsNot Nothing Then
                                     OldBaseRegKey.DeleteSubKey(SourceRecetteLabel)
-                                End If
-                                Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & SourceRecetteLabel, True)
-                                If OldFavRegKey IsNot Nothing Then
-                                    FavRegkey.DeleteSubKey(SourceRecetteLabel)
                                 End If
                             End If
                         End If

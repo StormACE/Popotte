@@ -3,9 +3,9 @@ Imports System.IO
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 13 Janvier 2017
+''' 1 mars 2016 au 5 novembre 2019
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2017
+''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
 ''' </summary>
 
@@ -118,20 +118,19 @@ Public Class dlgInfoRecette
                                 NewSrcRecetteBaseRegKey.SetValue("Description", NewDesc)
 
                                 'Fix favorites
-                                Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
-                                FavRegkey.CreateSubKey(NewName)
-                                Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NewName, True)
-                                NewFavRegkey.SetValue("Livre", NewLivre)
+                                Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & strText, True)
+                                If OldFavRegKey IsNot Nothing Then
+                                    Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+                                    FavRegkey.CreateSubKey(NewName)
+                                    Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NewName, True)
+                                    NewFavRegkey.SetValue("Livre", NewLivre)
+                                    FavRegkey.DeleteSubKey(strText)
+                                End If
 
                                 Dim OldRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre & "\" & strText, True)
                                 If OldRegKey IsNot Nothing Then
                                     Dim OldBaseRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre, True)
                                     OldBaseRegKey.DeleteSubKey(strText)
-                                End If
-
-                                Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & strText, True)
-                                If OldFavRegKey IsNot Nothing Then
-                                    FavRegkey.DeleteSubKey(strText)
                                 End If
                             End If
                             Me.DialogResult = System.Windows.Forms.DialogResult.OK
@@ -212,19 +211,19 @@ Public Class dlgInfoRecette
                                     NewSrcRecetteBaseRegKey.SetValue("Description", NewDesc)
 
                                     'Fix favorites
-                                    Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
-                                    FavRegkey.CreateSubKey(NewName)
-                                    Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NewName, True)
-                                    NewFavRegkey.SetValue("Livre", NewLivre)
+                                    Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & strText, True)
+                                    If OldFavRegKey IsNot Nothing Then
+                                        Dim FavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites", True)
+                                        FavRegkey.CreateSubKey(NewName)
+                                        Dim NewFavRegkey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & NewName, True)
+                                        NewFavRegkey.SetValue("Livre", NewLivre)
+                                        FavRegkey.DeleteSubKey(strText)
+                                    End If
 
                                     Dim OldRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre & "\" & strText, True)
                                     If OldRegKey IsNot Nothing Then
                                         Dim OldBaseRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre, True)
                                         OldBaseRegKey.DeleteSubKey(strText)
-                                    End If
-                                    Dim OldFavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & strText, True)
-                                    If OldFavRegKey IsNot Nothing Then
-                                        FavRegkey.DeleteSubKey(strText)
                                     End If
                                 End If
                                 Me.DialogResult = System.Windows.Forms.DialogResult.OK
