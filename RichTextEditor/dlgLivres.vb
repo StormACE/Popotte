@@ -662,6 +662,8 @@ Public Class dlgLivres
             Else
                 Me.Text = "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog", "12") & " " & frmMain.LivreOuvert & " (" & Rcount & ")"
             End If
+            'Flush Ram
+            GC.Collect()
         Next
     End Sub
 
