@@ -61,7 +61,6 @@ C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgAddMenu.
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.LanguageDialog.resources
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgmodifymenu.resources
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgMultiModInfo.resources
-C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.RappelDialog.resources
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgCrypterDécrypter.resources
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgConverter.resources
 C:\Users\krypt\source\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgInfoRecette.resources
