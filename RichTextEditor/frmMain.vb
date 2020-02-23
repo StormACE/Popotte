@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.5.85
-''' 1 mars 2016 au 28 novembre 2019
+''' Popotte 5.3.6.86
+''' 1 mars 2016 au 21 février 2020
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2019
 ''' Read licence.txt
@@ -17,9 +17,9 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Better RAM Management
+''' Regression, remove save reminder options
 ''' ////////// Francais /////////////////////
-''' Meilleur gestion du RAM
+''' Régression, enlever l'option rappel de sauvegarde
 
 
 Public Class frmMain
@@ -57,8 +57,6 @@ Public Class frmMain
     Public DPI As Integer = 0
     Public LangIni As New IniFile
     Public currentFile As String  ' le fichier ouvert
-    Public Delay As Integer = 300000
-    Public MeTimer As Timer
     Public Language As String
 
 #End Region
@@ -207,7 +205,6 @@ Public Class frmMain
         NavigationToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "61")
         TexteToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "62")
         AfficherLesImagesDesRecettesDansLaListeToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "63")
-        RappelToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "76")
         LanguageToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "77")
         ToolStripMenuItemOnedrive.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "93")
         ToolStripMenuItemDropbox.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "94")
@@ -551,31 +548,6 @@ Public Class frmMain
             AfficherLesImagesDesRecettesDansLaListeToolStripMenuItem.Checked = ImageRecette
         End If
 
-        'Rappel de Sauvegarde
-        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RappelSave", True)
-        Dim RappelSave As Integer
-        If regKey IsNot Nothing Then
-            RappelSave = CInt(regKey.GetValue("check", 1))
-        Else
-            RappelSave = 1
-        End If
-
-        If RappelSave = 1 Then
-            RappelToolStripMenuItem.Checked = True
-            ' Create a timer 
-            If regKey IsNot Nothing Then
-                Delay = CInt(regKey.GetValue("Delay", 300000))
-                RappelTimer.Interval = Delay
-                RappelTimer.Start()
-            Else
-                Delay = 300000
-                RappelTimer.Interval = Delay
-                RappelTimer.Start()
-            End If
-        Else
-            RappelToolStripMenuItem.Checked = False
-        End If
-
         'Options de dossier de sauvegarde
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RecetteDir", True)
         If regKey IsNot Nothing Then
@@ -912,17 +884,6 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub RappelTimer_Tick(sender As Object, e As EventArgs) Handles RappelTimer.Tick
-        RappelTimer.Stop()
-        If rtbDoc.Modified Then
-            Dim result As Integer = MessageBox.Show(LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "37") & Environment.NewLine & LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "38") & Environment.NewLine & Environment.NewLine & LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "49"), "Popotte", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If result = DialogResult.Yes Then
-                SaveToolStripMenuItem_Click(Me, e)
-            End If
-        End If
-        RappelTimer.Start()
-    End Sub
-
     Public Function CloseApp(ByVal e As EventArgs) As DialogResult
         If rtbDoc.Modified Then
             Dim answer As Integer = MessageBox.Show(LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "8"), LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation)
@@ -930,21 +891,17 @@ Public Class frmMain
                 Case DialogResult.Yes
                     SaveToolStripMenuItem_Click(Me, e)
                     SaveSize()
-                    If RappelTimer.Enabled Then
-                        RappelTimer.Stop()
-                    End If
+
                     rtbDoc.RightMargin = 0
-                    RappelTimer.Dispose()
+
                     If Not restart Then
                         End
                     End If
                 Case DialogResult.No
                     SaveSize()
-                    If RappelTimer.Enabled Then
-                        RappelTimer.Stop()
-                    End If
+
                     rtbDoc.RightMargin = 0
-                    RappelTimer.Dispose()
+
                     If Not restart Then
                         End
                     End If
@@ -953,11 +910,8 @@ Public Class frmMain
             End Select
         Else
             SaveSize()
-            If RappelTimer.Enabled Then
-                RappelTimer.Stop()
-            End If
+
             rtbDoc.RightMargin = 0
-            RappelTimer.Dispose()
             If Not restart Then
                 End
             End If
@@ -1299,8 +1253,6 @@ Public Class frmMain
         TexteCentréToolStripMenuItem.Checked = False
         TexteÀDroiteToolStripMenuItem.Checked = False
         rtbDoc.Modified = False
-        RappelTimer.Stop()
-        RappelTimer.Start()
 
     End Sub
 
@@ -1370,8 +1322,6 @@ Public Class frmMain
         regKey.SetValue("Livre", "")
         regKey.SetValue("Recette", "")
         OpenFileDialog1.Dispose()
-        RappelTimer.Stop()
-        RappelTimer.Start()
     End Sub
 
     Private Function is_unicode(ByVal path As String) As Boolean
@@ -1410,8 +1360,6 @@ Public Class frmMain
         Dim SaveDialogue As New dlgInfoRecette(recette, livre, True)
         Dim result As DialogResult = SaveDialogue.ShowDialog()
         If result = DialogResult.OK Then
-            RappelTimer.Stop()
-            RappelTimer.Start()
         End If
         SaveDialogue.Dispose()
 
@@ -1452,8 +1400,6 @@ Public Class frmMain
         rtbDoc.Modified = False
         Me.Text = "Popotte - [" & currentFile.ToString() & "]"
         SaveFileDialog1.Dispose()
-        RappelTimer.Stop()
-        RappelTimer.Start()
     End Sub
 
     Private Sub SaveAsUNICODEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsUNICODEToolStripMenuItem.Click
@@ -1489,8 +1435,6 @@ Public Class frmMain
         rtbDoc.Modified = False
         Me.Text = "Popotte - [" & currentFile.ToString() & "]"
         SaveFileDialog1.Dispose()
-        RappelTimer.Stop()
-        RappelTimer.Start()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -2561,21 +2505,6 @@ Public Class frmMain
         End If
 
         SaveFileDialog1.Dispose()
-    End Sub
-
-    Private Sub RappelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RappelToolStripMenuItem.Click
-        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RappelSave", True)
-        If regKey Is Nothing Then
-            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\", True)
-            regKey = regKey.CreateSubKey("RappelSave")
-        End If
-
-        Dim DelayregKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RappelSave", True)
-        Delay = CInt(DelayregKey.GetValue("Delay", Delay))
-
-        Dim d As New RappelDialog
-        d.ShowDialog()
-        d.Dispose()
     End Sub
 
     Private Sub LanguageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LanguageToolStripMenuItem.Click

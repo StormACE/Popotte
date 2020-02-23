@@ -146,8 +146,6 @@ Partial Class frmMain
         Me.OuvrirMesLivresAuDémarrageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator25 = New System.Windows.Forms.ToolStripSeparator()
-        Me.RappelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator28 = New System.Windows.Forms.ToolStripSeparator()
         Me.VérifierSiUneMiseÀJourEstDisponibleAuDémarrageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AidesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -875,7 +873,7 @@ Partial Class frmMain
         '
         'OptionsToolStripMenuItem
         '
-        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AffichageToolStripMenuItem, Me.ToolStripSeparator27, Me.LanguageToolStripMenuItem, Me.ToolStripSeparator34, Me.OptRTFToolStripMenuItem, Me.ToolStripSeparator26, Me.ÉditeurExterneParDéfautToolStripMenuItem, Me.AutoCToolStripMenuItem, Me.ToolStripSeparator11, Me.ToolStripMenuItemOnedrive, Me.ToolStripMenuItemDropbox, Me.DossierRecetteToolStripMenuItem, Me.ToolStripSeparator4, Me.OuvrirMesLivresAuDémarrageToolStripMenuItem, Me.OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem, Me.ToolStripSeparator25, Me.RappelToolStripMenuItem, Me.ToolStripSeparator28, Me.VérifierSiUneMiseÀJourEstDisponibleAuDémarrageToolStripMenuItem})
+        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AffichageToolStripMenuItem, Me.ToolStripSeparator27, Me.LanguageToolStripMenuItem, Me.ToolStripSeparator34, Me.OptRTFToolStripMenuItem, Me.ToolStripSeparator26, Me.ÉditeurExterneParDéfautToolStripMenuItem, Me.AutoCToolStripMenuItem, Me.ToolStripSeparator11, Me.ToolStripMenuItemOnedrive, Me.ToolStripMenuItemDropbox, Me.DossierRecetteToolStripMenuItem, Me.ToolStripSeparator4, Me.OuvrirMesLivresAuDémarrageToolStripMenuItem, Me.OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem, Me.ToolStripSeparator25, Me.VérifierSiUneMiseÀJourEstDisponibleAuDémarrageToolStripMenuItem})
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
         Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(92, 29)
         Me.OptionsToolStripMenuItem.Text = "&Options"
@@ -1033,17 +1031,6 @@ Partial Class frmMain
         '
         Me.ToolStripSeparator25.Name = "ToolStripSeparator25"
         Me.ToolStripSeparator25.Size = New System.Drawing.Size(539, 6)
-        '
-        'RappelToolStripMenuItem
-        '
-        Me.RappelToolStripMenuItem.Name = "RappelToolStripMenuItem"
-        Me.RappelToolStripMenuItem.Size = New System.Drawing.Size(542, 34)
-        Me.RappelToolStripMenuItem.Text = "Rappel de Sauvegarde..."
-        '
-        'ToolStripSeparator28
-        '
-        Me.ToolStripSeparator28.Name = "ToolStripSeparator28"
-        Me.ToolStripSeparator28.Size = New System.Drawing.Size(539, 6)
         '
         'VérifierSiUneMiseÀJourEstDisponibleAuDémarrageToolStripMenuItem
         '
@@ -1538,9 +1525,6 @@ Partial Class frmMain
         Me.NumériqueToolStripMenuItem.Size = New System.Drawing.Size(202, 34)
         Me.NumériqueToolStripMenuItem.Text = "Numérique"
         '
-        'RappelTimer
-        '
-        '
         'rtbDoc
         '
         Me.rtbDoc.AcceptsTab = True
@@ -1745,10 +1729,8 @@ Partial Class frmMain
     Friend WithEvents EPtsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FPtsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GPtsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RappelToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator27 As ToolStripSeparator
     Friend WithEvents LanguageToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator28 As ToolStripSeparator
     Friend WithEvents MargeDToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CmToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CmToolStripMenuItem1 As ToolStripMenuItem
