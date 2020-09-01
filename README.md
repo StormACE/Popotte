@@ -66,6 +66,7 @@ Voici quelques caractéristiques des fonctionnalités :
 -Conçu pour les débutants ainsi que les utilisateurs plus avancés Popotte permet de gérer des recettes facilement et sont interface WYSIWYG est simple et efficace!
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Structure tree to get the build to work...
 
 Folder needed in the root of the software folder:
