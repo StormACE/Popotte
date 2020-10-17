@@ -8,3 +8,13 @@ C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\Debug\Extended
 C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\Debug\AdvRTB.dll
 C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\Debug\AdvRTB.xml
 C:\Users\krypt\OneDrive\Documents\Popotte\ExtendedRichTextBox\obj\Debug\AdvRTB.pdb
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\bin\Debug\AdvRTB.dll
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\bin\Debug\AdvRTB.pdb
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\bin\Debug\AdvRTB.xml
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Debug\ExtendedRichTextBox.vbprojAssemblyReference.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Debug\ExtendedRichTextBox.Resources.resources
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Debug\ExtendedRichTextBox.vbproj.GenerateResource.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Debug\ExtendedRichTextBox.vbproj.CoreCompileInputs.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Debug\AdvRTB.dll
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Debug\AdvRTB.xml
+C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\ExtendedRichTextBox\obj\Debug\AdvRTB.pdb
