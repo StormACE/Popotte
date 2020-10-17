@@ -1,6 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="16.0">
+ <Targets>
+  <Target Name="C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\RichTextEditor\bin\Debug\Popotte.exe">
+   <Modules>
+    <Module Name="popotte.exe">
+     <Namespaces>
+      <Namespace Name="Popotte">
+       <Types>
+        <Type Name="EncryptionSHA1" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Encrypt(System.String,System.String,System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-10-17 16:06:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\RichTextEditor" File="EncryptionSHA1.vb" Line="54">L'objet 'memoryStream' peut être supprimé plusieurs fois dans la méthode 'EncryptionSHA1.Encrypt(String, String, String, Integer)'. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.: Lines: 54</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Ne pas supprimer d'objets plusieurs fois</Name>
+   <Description>Il est possible d'appeler plusieurs fois une méthode Dispose correctement implémentée sans lever d'exception. La réussite de l'opération n'est toutefois pas garantie et, pour éviter de générer un System.ObjectDisposedException, n'appelez pas cette méthode plus d'une fois par objet.</Description>
+   <Resolution Name="Default">L'objet {0} peut être supprimé plusieurs fois dans la méthode {1}. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.: Lines: 145</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="16.0.0.0" />
+  </Rule>
+ </Rules>
  <Localized>
   <String Key="Category">Catégorie</String>
   <String Key="Certainty">Certitude</String>

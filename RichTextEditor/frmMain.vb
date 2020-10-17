@@ -8,18 +8,18 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.6.86
-''' 1 mars 2016 au 21 février 2020
+''' Popotte 5.3.7.87
+''' 1 mars 2016 au 17 octobre 2020
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2019
+''' Copyright Martin Laflamme 2003/2020
 ''' Read licence.txt
 ''' </summary>
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Regression, remove save reminder options
+''' Fix minors bugs
 ''' ////////// Francais /////////////////////
-''' Régression, enlever l'option rappel de sauvegarde
+''' Réparé des bogues mineurs
 
 
 Public Class frmMain

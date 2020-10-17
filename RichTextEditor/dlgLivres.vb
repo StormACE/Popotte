@@ -1249,23 +1249,25 @@ FileFound:
     Private Sub OuvrirAvecEditeurExterneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OuvrirAvecEditeurExterneToolStripMenuItem.Click
         If ListViewRecettes.SelectedItems.Count = 1 Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\EditeurExt", True)
-            Dim Editpath As String = regKey.GetValue("").ToString
+            If regKey IsNot Nothing Then
+                Dim Editpath As String = regKey.GetValue("").ToString
 
-            Dim NomRecette As String = ListViewRecettes.SelectedItems(0).Text
-            Dim Argument As String
-            If LastLivre <> "" Then
-                Argument = PopotteDir & LastLivre & "\" & NomRecette & ".rtf"
-            Else
-                Argument = PopotteDir & frmMain.LivreOuvert & "\" & NomRecette & ".rtf"
+                Dim NomRecette As String = ListViewRecettes.SelectedItems(0).Text
+                Dim Argument As String
+                If LastLivre <> "" Then
+                    Argument = PopotteDir & LastLivre & "\" & NomRecette & ".rtf"
+                Else
+                    Argument = PopotteDir & frmMain.LivreOuvert & "\" & NomRecette & ".rtf"
+                End If
+
+                Argument = Chr(34) & Argument & Chr(34)
+
+                Try
+                    Process.Start(Editpath, Argument)
+                Catch ex As Exception
+                    MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "6") & " " & ex.ToString, "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "1"), MessageBoxButtons.OK, MessageBoxIcon.Warning) 'else display any possible error
+                End Try
             End If
-
-            Argument = Chr(34) & Argument & Chr(34)
-
-            Try
-                Process.Start(Editpath, Argument)
-            Catch ex As Exception
-                MessageBox.Show(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "6") & " " & ex.ToString, "Popotte - " & LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "1"), MessageBoxButtons.OK, MessageBoxIcon.Warning) 'else display any possible error
-            End Try
         End If
     End Sub
 
