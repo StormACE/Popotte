@@ -3,7 +3,7 @@ Version=6.5
 Edition=0
 GUID={5F0BB561-EC49-40B9-A624-D4B295995512}
 AppName=Popotte
-AppVersion=5.3.5.85
+AppVersion=5.3.8.88
 AppDescription=Recipes Software / Logiciel pour recettes
 CompanyName=Kryptik Creations
 WebSite=https://github.com/StormACE/Popotte
@@ -28,7 +28,7 @@ Windows Server 2008 R2=1
 Windows Server 2012=1
 Windows Server 2012 R2=1
 Windows Server 2016=1
-x64=0
+x64=1
 Admin=1
 Internet=0
 CloseApp=1
@@ -55,11 +55,11 @@ SQLExpressVersion=2005
 LinkSQLE=http://www.microsoft.com/en-us/download/details.aspx?id=30438
 PackageType=0
 DataFileName=
-SetupFolder=C:\Users\krypt\OneDrive\Desktop
-SetupFileName=PopotteInstallationX86
-SetupFile=C:\Users\krypt\OneDrive\Desktop\PopotteInstallationX86.exe
-IconFile=C:\Users\krypt\source\Popotte\RichTextEditor\Popotte64-GoldMember.ico
-SourceDir=C:\Users\krypt\OneDrive\Desktop\Popotte
+SetupFolder=K:
+SetupFileName=PopotteInstallationX64
+SetupFile=K:\PopotteInstallationX64.exe
+IconFile=C:\Users\krypt\OneDrive\Documents\GitHub\Popotte\RichTextEditor\Popotte256-GoldMember.ico
+SourceDir=C:\Users\krypt\Desktop\Popotte
 InstallationPath=<ProgramFiles>\<AppName>
 MainExecutable=<InstallDir>\Popotte.exe
 ProgramGroup=<AppName>
@@ -126,9 +126,9 @@ French=
 0=C:\Program Files (x86)\Actual Installer\Uninstall.exe?<InstallDir>\Uninstall.exe?1?-1
 
 [License]
-(Default)=C:\Users\krypt\OneDrive\Desktop\Popotte\licence.txt
-English=C:\Users\krypt\OneDrive\Desktop\Popotte\licence.txt
-French=C:\Users\krypt\OneDrive\Desktop\Popotte\licence.txt
+(Default)=C:\Users\krypt\Desktop\Popotte\licence.txt
+English=C:\Users\krypt\Desktop\Popotte\licence.txt
+French=C:\Users\krypt\Desktop\Popotte\licence.txt
 
 [Readme]
 (Default)=

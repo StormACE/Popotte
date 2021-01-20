@@ -1,43 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="16.0">
- <Targets>
-  <Target Name="C:\Users\krypt\source\Popotte\RichTextEditor\bin\Release\Popotte.exe">
-   <Modules>
-    <Module Name="popotte.exe">
-     <Namespaces>
-      <Namespace Name="Popotte">
-       <Types>
-        <Type Name="EncryptionSHA1" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
-         <Members>
-          <Member Name="#Encrypt(System.String,System.String,System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
-           <Messages>
-            <Message TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-19 15:48:04Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="C:\Users\krypt\source\Popotte\RichTextEditor" File="EncryptionSHA1.vb" Line="54">L'objet 'memoryStream' peut être supprimé plusieurs fois dans la méthode 'EncryptionSHA1.Encrypt(String, String, String, Integer)'. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.: Lines: 54</Issue>
-            </Message>
-           </Messages>
-          </Member>
-         </Members>
-        </Type>
-       </Types>
-      </Namespace>
-     </Namespaces>
-    </Module>
-   </Modules>
-  </Target>
- </Targets>
- <Rules>
-  <Rule TypeName="Ne pas supprimer d'objets plusieurs fois" Category="Microsoft.Usage" CheckId="CA2202">
-   <Name>Ne pas supprimer d'objets plusieurs fois</Name>
-   <Description>Il est possible d'appeler plusieurs fois une méthode Dispose correctement implémentée sans lever d'exception. La réussite de l'opération n'est toutefois pas garantie et, pour éviter de générer un System.ObjectDisposedException, n'appelez pas cette méthode plus d'une fois par objet.</Description>
-   <Resolution Name="Default">L'objet {0} peut être supprimé plusieurs fois dans la méthode {1}. Pour éviter de générer un System.ObjectDisposedException, n'appelez pas la méthode Dispose plus d'une fois par objet.: Lines: 145</Resolution>
-   <Owner>RuleOwner</Owner>
-   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
-   <Email />
-   <MessageLevel Certainty="75">Warning</MessageLevel>
-   <File Name="dataflowrules.dll" Version="16.0.0.0" />
-  </Rule>
- </Rules>
  <Localized>
   <String Key="Category">Catégorie</String>
   <String Key="Certainty">Certitude</String>
@@ -62,4 +25,28 @@
   <String Key="Warnings">avertissement(s)</String>
   <String Key="ReportTitle">Rapport d'analyse du code</String>
  </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0001" Kind="Engine">
+   <Type>Phx.FatalError</Type>
+   <ExceptionMessage>Une exception de type 'Phx.FatalError' a été levée.</ExceptionMessage>
+   <StackTrace>   à Phx.FatalError.Dispatch()
+   à Phx.Logging.Diagnostics.DiagnosticMessage.LogMessage(Severity severity, DiagnosticInfo diagnosticInfo, SourceContext sourceContext, String descriptionString)
+   à Phx.PE.PEUtilities.UserError(String infoMessage)
+   à Phx.Pdb.ReaderImplementation.Open(Boolean loadTypeOnly)
+   à Phx.PEModuleUnit.LoadPdb()
+   à Phx.PE.ReaderPhase.CheckSymbolicInformation()
+   à Phx.PEModuleUnit.LoadGlobalSymbols()
+   à Phx.PEModuleUnit.LoadEncodedIRUnitList()
+   à Phx.PEModuleUnit.GetEnumerableContributionUnit(ContributionUnitEnumerationKind contributionUnitEnumerationKind)
+   à Phx.PEModuleUnit.GetEnumerableContributionUnit()
+   à Microsoft.FxCop.Engines.Phoenix.PreScanPass.GetFunctionUnits(PEModuleUnit peModuleUnit)
+   à Microsoft.FxCop.Engines.Phoenix.PreScanPass.Execute(ModuleUnit moduleUnit)
+   à Phx.Passes.Pass.DoPass(ModuleUnit moduleUnit)
+   à Phx.Passes.PassList.DoPassList(ModuleUnit moduleUnit)
+   à Microsoft.FxCop.Engines.Phoenix.PhoenixAnalysisEngine.Host.ExecutePasses(PEModuleUnit peModuleUnit)
+   à Microsoft.FxCop.Engines.Phoenix.PhoenixAnalysisEngine.AnalyzeInternal()
+   à Microsoft.FxCop.Engines.Phoenix.PhoenixAnalysisEngine.Analyze()
+   à Microsoft.FxCop.Common.EngineManager.Analyze(Project project, Boolean verboseOutput)</StackTrace>
+  </Exception>
+ </Exceptions>
 </FxCopReport>
