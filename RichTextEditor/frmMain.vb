@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.9.89
-''' 1 mars 2016 au 14 février 2021
+''' Popotte 5.3.10.90
+''' 1 mars 2016 au 22 mai 2021
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2021
 ''' Read licence.txt
@@ -19,7 +19,7 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' ////////// English //////////////////////
 ''' Fix minors bugs
 ''' ////////// Francais /////////////////////
-''' Réparé des bogues mineurs
+''' Réparé des bogues mineurs quand le logiciel ferme
 
 
 Public Class frmMain
@@ -892,7 +892,7 @@ Public Class frmMain
                     SaveToolStripMenuItem_Click(Me, e)
                     SaveSize()
 
-                    rtbDoc.RightMargin = 0
+                    'rtbDoc.RightMargin = 0
 
                     If Not restart Then
                         End
@@ -900,7 +900,7 @@ Public Class frmMain
                 Case DialogResult.No
                     SaveSize()
 
-                    rtbDoc.RightMargin = 0
+                    'rtbDoc.RightMargin = 0
 
                     If Not restart Then
                         End
@@ -911,12 +911,11 @@ Public Class frmMain
         Else
             SaveSize()
 
-            rtbDoc.RightMargin = 0
+            'rtbDoc.RightMargin = 0
             If Not restart Then
                 End
             End If
         End If
-        Return 0
     End Function
 
     Private Sub SaveSize()
