@@ -892,15 +892,11 @@ Public Class frmMain
                     SaveToolStripMenuItem_Click(Me, e)
                     SaveSize()
 
-                    'rtbDoc.RightMargin = 0
-
                     If Not restart Then
                         End
                     End If
                 Case DialogResult.No
                     SaveSize()
-
-                    'rtbDoc.RightMargin = 0
 
                     If Not restart Then
                         End
@@ -911,7 +907,6 @@ Public Class frmMain
         Else
             SaveSize()
 
-            'rtbDoc.RightMargin = 0
             If Not restart Then
                 End
             End If
