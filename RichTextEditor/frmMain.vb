@@ -2466,18 +2466,6 @@ Public Class frmMain
                 End If
             End If
 
-            'Rappel Save
-            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RappelSave\", True)
-            If regKey IsNot Nothing Then
-                Dim ValueCount As Integer = regKey.ValueCount()
-                If ValueCount > 0 Then
-                    sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Settings\RappelSave\" & "]")
-                    sb.AppendLine(Chr(34) & "check" & Chr(34) & "=dword:" & regKey.GetValue("check").ToString())
-                    sb.AppendLine(Chr(34) & "Delay" & Chr(34) & "=dword:" & regKey.GetValue("Delay").ToString())
-                    sb.AppendLine()
-                End If
-            End If
-
             'Marge Droite
             regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\MargeDroite\", True)
             If regKey IsNot Nothing Then
