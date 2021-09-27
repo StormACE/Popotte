@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.9.89
-''' 1 mars 2016 au 14 février 2021
+''' Popotte 5.3.11.91
+''' 1 mars 2016 au 27 septembre 2021
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2021
 ''' Read licence.txt
@@ -18,8 +18,10 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
 ''' Fix minors bugs
+''' Change update server
 ''' ////////// Francais /////////////////////
 ''' Réparé des bogues mineurs
+''' Changé le serveur de mise à jour
 
 
 Public Class frmMain
@@ -892,15 +894,11 @@ Public Class frmMain
                     SaveToolStripMenuItem_Click(Me, e)
                     SaveSize()
 
-                    rtbDoc.RightMargin = 0
-
                     If Not restart Then
                         End
                     End If
                 Case DialogResult.No
                     SaveSize()
-
-                    rtbDoc.RightMargin = 0
 
                     If Not restart Then
                         End
@@ -911,12 +909,10 @@ Public Class frmMain
         Else
             SaveSize()
 
-            rtbDoc.RightMargin = 0
             If Not restart Then
                 End
             End If
         End If
-        Return 0
     End Function
 
     Private Sub SaveSize()
@@ -2468,18 +2464,6 @@ Public Class frmMain
                 If ValueCount > 0 Then
                     sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Settings\Language\" & "]")
                     sb.AppendLine(CType(Chr(34) & "" & Chr(34) & "=" & Chr(34) & CType(regKey.GetValue(""), String) & Chr(34), String))
-                    sb.AppendLine()
-                End If
-            End If
-
-            'Rappel Save
-            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\RappelSave\", True)
-            If regKey IsNot Nothing Then
-                Dim ValueCount As Integer = regKey.ValueCount()
-                If ValueCount > 0 Then
-                    sb.AppendLine("[HKEY_CURRENT_USER\Software\Popotte\Settings\RappelSave\" & "]")
-                    sb.AppendLine(Chr(34) & "check" & Chr(34) & "=dword:" & regKey.GetValue("check").ToString())
-                    sb.AppendLine(Chr(34) & "Delay" & Chr(34) & "=dword:" & regKey.GetValue("Delay").ToString())
                     sb.AppendLine()
                 End If
             End If
