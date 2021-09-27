@@ -118,7 +118,6 @@ C:\Users\krypt\Github\Popotte\RichTextEditor\bin\x86\Release\Popotte.exe.CodeAna
 C:\Users\krypt\Github\Popotte\RichTextEditor\bin\x86\Release\Popotte.exe.lastcodeanalysissucceeded
 C:\Users\krypt\Github\Popotte\RichTextEditor\bin\x86\Release\AdvRTB.dll
 C:\Users\krypt\Github\Popotte\RichTextEditor\bin\x86\Release\Ionic.Zip.dll
-C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x86\Release\Popotte.vbprojAssemblyReference.cache
 C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x86\Release\Popotte.dlgAboutBox.resources
 C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x86\Release\Popotte.dlgAddMenu.resources
 C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x86\Release\Popotte.LanguageDialog.resources
@@ -141,3 +140,4 @@ C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x86\Release\Popotte.vbproj.Gene
 C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x86\Release\Popotte.vbproj.CoreCompileInputs.cache
 C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x86\Release\Popotte.vbproj.CopyComplete
 C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x86\Release\Popotte.exe
+C:\Users\krypt\GitHub\Popotte\RichTextEditor\obj\x86\Release\Popotte.vbproj.AssemblyReference.cache
