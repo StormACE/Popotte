@@ -3,7 +3,7 @@ Recipes management software Read licence.txt before use or modification!!!
 
 Page Facebook: https://www.facebook.com/PopotteKC
 
-Nightly Branch availlable 5.3.11.91
+Nightly Branch availlable 5.3.12.92
 
 New 5.3.11.91 Master build released.
 
