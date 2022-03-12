@@ -25,6 +25,8 @@ Here are some functionality characteristics :
 
 -Print your recipes with any printer 
 
+-Create a Menu for the Week that you can Print
+
 -Add and use search engines 
 
 -Converter with 24 measures conversions  
@@ -52,6 +54,8 @@ Voici quelques caractéristiques des fonctionnalités :
 -Insérez des images dans vos recettes 
 
 -Imprimez vos recettes avec n'importe quel imprimante 
+
+-Créer un Menu pour la semaine que vous pouvez imprimer
 
 -Utiliser ou ajouter des engins de recherches 
 
