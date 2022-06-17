@@ -36,7 +36,7 @@ Partial Class dlgmodifymenu
         Me.OK_Button.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.OK_Button.Name = "OK_Button"
         Me.OK_Button.Size = New System.Drawing.Size(111, 37)
-        Me.OK_Button.TabIndex = 0
+        Me.OK_Button.TabIndex = 2
         Me.OK_Button.Text = "OK"
         '
         'Cancel_Button
@@ -47,15 +47,16 @@ Partial Class dlgmodifymenu
         Me.Cancel_Button.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Cancel_Button.Name = "Cancel_Button"
         Me.Cancel_Button.Size = New System.Drawing.Size(111, 37)
-        Me.Cancel_Button.TabIndex = 1
+        Me.Cancel_Button.TabIndex = 3
         Me.Cancel_Button.Text = "Annuler"
         '
         'TextBox1
         '
+        Me.TextBox1.AcceptsTab = True
         Me.TextBox1.Location = New System.Drawing.Point(13, 75)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(377, 29)
-        Me.TextBox1.TabIndex = 2
+        Me.TextBox1.TabIndex = 1
         '
         'Label1
         '
@@ -63,7 +64,7 @@ Partial Class dlgmodifymenu
         Me.Label1.Location = New System.Drawing.Point(13, 50)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(154, 21)
-        Me.Label1.TabIndex = 3
+        Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nom de la recette :"
         '
         'dlgmodifymenu

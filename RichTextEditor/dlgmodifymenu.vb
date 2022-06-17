@@ -96,5 +96,8 @@ Public Class dlgmodifymenu
         Text = LangINI.GetKeyValue("Popotte - ModifyMenu", "1")
         Label1.Text = LangINI.GetKeyValue("Popotte - ModifyMenu", "2")
         Cancel_Button.Text = LangINI.GetKeyValue("Popotte - ModifyMenu", "3")
+        TextBox1.Text = recette
+        TextBox1.SelectAll()
+
     End Sub
 End Class
