@@ -264,7 +264,6 @@ Public Class dlgLivres
     End Sub
 
     Private Sub Livres_Closing(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Closing
-        Dispose()
         GC.Collect()
     End Sub
 
