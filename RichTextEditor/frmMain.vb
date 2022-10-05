@@ -8,18 +8,18 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.13.93
-''' 1 mars 2016 au 17 Juin 2022
-''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2022
+''' Popotte 5.3.14.94
+''' 1 mars 2016 au 05 Octobre 2022
+''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.0
+''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
 ''' </summary>
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Menu of the week is now better
+''' Optimized ram usage
 ''' ////////// Francais /////////////////////
-''' Le menu de la semaine est mieux maintenant
+''' Optimisé l'usage de la ram
 
 
 Public Class frmMain

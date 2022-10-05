@@ -4,9 +4,9 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 5 novembre 2019
-''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2019
+''' 1 mars 2016 au 05 Octobre 2022
+''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11 Need .Net Framework 4.0
+''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
 ''' </summary>
 
@@ -1023,7 +1023,7 @@ FileFound:
                 End If
             Next
         End If
-
+        GC.Collect()
     End Sub
 
     Private Sub ButtonRandom_Click(sender As Object, e As EventArgs) Handles ButtonRandom.Click

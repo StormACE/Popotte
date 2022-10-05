@@ -11,7 +11,7 @@ Public NotInheritable Class dlgAboutBox
     'Get Language
     Private LangINI As IniFile = frmMain.LangIni
     Dim Button_Licence As Control
-    Dim xCPU As String = "x86"
+    Dim xCPU As String = "x64"
 #End Region
 
     Private Sub AboutBox1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
@@ -37,7 +37,7 @@ Public NotInheritable Class dlgAboutBox
         ' Initialisez tout le texte affiché dans la boîte de dialogue À propos de.
         ' TODO: personnalisez les informations d'assembly de l'application dans le volet "Application" de la 
         '    boîte de dialogue Propriétés du projet (sous le menu "Projet").
-        Me.LabelProductName.Text = My.Application.Info.ProductName
+        Me.LabelProductName.Text = My.Application.Info.ProductName & "     20 ans :)"
         Me.LabelVersion.Text = String.Format(LangINI.GetKeyValue("Popotte - AboutBox", "2") & " {0}", My.Application.Info.Version.ToString) & "  " & xCPU & "   " & System.IO.File.GetLastWriteTime(System.AppDomain.CurrentDomain.BaseDirectory & "Popotte.exe").ToLongDateString()
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.TextBoxDescription.Text = My.Application.Info.Description
