@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 05 Octobre 2022
+''' 1 mars 2016 au 31 Octobre 2022
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11 Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -731,13 +731,23 @@ Public Class dlgLivres
 
     'use to extract image from rtf
     Public Function ExtractImgHex(s As String) As String
-        Dim pictTagIdx As Integer = s.IndexOf("{\pict\")
+        'New version picture extraction framework 4.8
+        Dim pictTagIdx As Integer = s.IndexOf("{\pict{\")
         If pictTagIdx <> -1 Then
             Dim startIndex As Integer = s.IndexOf(" ", pictTagIdx) + 1
             Dim endIndex As Integer = s.IndexOf("}", startIndex)
             Return s.Substring(startIndex, endIndex - startIndex)
         Else
-            Return Nothing
+            'Old version framework 4.0 (need for old recipes)
+            Dim pictTagIdx2 As Integer = s.IndexOf("{\pict\")
+            If pictTagIdx2 <> -1 Then
+                Dim startIndex As Integer = s.IndexOf(" ", pictTagIdx2) + 1
+                Dim endIndex As Integer = s.IndexOf("}", startIndex)
+                Return s.Substring(startIndex, endIndex - startIndex)
+            Else
+                'no pictures
+                Return Nothing
+            End If
         End If
     End Function
 
