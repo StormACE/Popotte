@@ -10,7 +10,7 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' <summary>
 ''' Popotte 5.3.15.95
 ''' 1 mars 2016 au 31 Octobre 2022
-''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
+''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
 ''' </summary>
@@ -19,9 +19,13 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' ////////// English //////////////////////
 ''' Optimized ram usage
 ''' Use .NET Framework 4.8 now
+''' Show images in the list checkbox in Books Dialog
+''' Fix some errors and minor bugs
 ''' ////////// Francais /////////////////////
 ''' Optimisé l'usage de la ram
 ''' Utilise le .NET framework 4.8 maintenant
+''' Une case à cocher pour assicher les images de la liste dans le dialogue Mes Livres de Recette
+''' Réparé quelques erreurs et bogues mineurs
 
 
 Public Class frmMain

@@ -35,6 +35,7 @@ Public Class dlgLivres
         RevenirButton.Text = LangINI.GetKeyValue("Popotte - BooksDialog", "2")
         ButtonRecherche.Text = LangINI.GetKeyValue("Popotte - BooksDialog", "3")
         FermerButton.Text = LangINI.GetKeyValue("Popotte - BooksDialog", "4")
+        CheckBoxImage.Text = LangINI.GetKeyValue("Popotte - BooksDialog", "21")
 
         'Contextmenu Language
         NewBookToolStripMenuItem.Text = LangINI.GetKeyValue("Popotte - BooksDialog - Contextmenu", "1")
@@ -101,6 +102,11 @@ Public Class dlgLivres
             OuvrirAvecEditeurExterneToolStripMenuItem.Enabled = True
         End If
 
+        'images dans liste check
+        If frmMain.ImageRecette = True Then
+            CheckBoxImage.Checked = True
+        End If
+
         ' Set ListViewRecherche Properties
         ListViewRecherche.Visible = False
         ListViewRecherche.View = View.Details
@@ -147,6 +153,7 @@ Public Class dlgLivres
         Dim buttonToolTip4 As New ToolTip()
         Dim buttonToolTip5 As New ToolTip()
         Dim buttonToolTip6 As New ToolTip()
+        Dim buttonToolTip7 As New ToolTip()
 
         buttonToolTip1.UseFading = True
         buttonToolTip1.UseAnimation = True
@@ -202,6 +209,15 @@ Public Class dlgLivres
         buttonToolTip6.ReshowDelay = 500
         buttonToolTip6.ToolTipIcon = ToolTipIcon.Info
 
+        buttonToolTip7.UseFading = True
+        buttonToolTip7.UseAnimation = True
+        buttonToolTip7.IsBalloon = True
+        buttonToolTip7.ShowAlways = True
+        buttonToolTip7.AutoPopDelay = 2500
+        buttonToolTip7.InitialDelay = 500
+        buttonToolTip7.ReshowDelay = 500
+        buttonToolTip7.ToolTipIcon = ToolTipIcon.Info
+
         buttonToolTip1.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "5")
         buttonToolTip1.SetToolTip(RevenirButton, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "1"))
         buttonToolTip2.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "6")
@@ -214,6 +230,8 @@ Public Class dlgLivres
         buttonToolTip5.SetToolTip(ButtonFav, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "10"))
         buttonToolTip6.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "11")
         buttonToolTip6.SetToolTip(ButtonRandom, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "12"))
+        buttonToolTip7.ToolTipTitle = LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "13")
+        buttonToolTip7.SetToolTip(CheckBoxImage, LangINI.GetKeyValue("Popotte - BooksDialog - Tooltips", "14"))
 
         'the textbox suggest favorites
         Dim Favcollection As AutoCompleteStringCollection = New AutoCompleteStringCollection()
@@ -664,6 +682,24 @@ Public Class dlgLivres
             'Flush Ram
             GC.Collect()
         Next
+    End Sub
+    Private Sub CheckBoxImage_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxImage.CheckedChanged
+        If CheckBoxImage.Checked Then
+            frmMain.ImageRecette = True
+            frmMain.AfficherLesImagesDesRecettesDansLaListeToolStripMenuItem.Checked = True
+        Else
+            frmMain.ImageRecette = False
+            frmMain.AfficherLesImagesDesRecettesDansLaListeToolStripMenuItem.Checked = False
+        End If
+
+        regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\ImageRecette", True)
+        If regKey IsNot Nothing Then
+            regKey.SetValue("", frmMain.ImageRecette)
+        Else
+            Dim newregKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
+            regKey = newregKey.CreateSubKey("ImageRecette")
+            regKey.SetValue("", frmMain.ImageRecette)
+        End If
     End Sub
 
     Private Function ConvertNote(ByVal Note As Integer) As String
@@ -1330,6 +1366,8 @@ FileFound:
         adm.ShowDialog()
         adm.Dispose()
     End Sub
+
+
 
 
 
