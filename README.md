@@ -3,7 +3,7 @@ Recipes management software Read licence.txt before use or modification!!!
 
 Page Facebook: https://www.facebook.com/PopotteKC
 
-Nightly Branch availlable 5.3.13.93
+Nightly Branch availlable 5.3.14.94
 
 New 5.3.13.93 Master build released.
 
@@ -104,7 +104,7 @@ GNU GPL v3.txt
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-To build the software you need at least Visual Studio Community Edition
+To build the software you need Visual Studio 2019 Community Edition
 
 Don't forget to read the "Licence.txt" file before using, modifying and/or distribute the software!
 
