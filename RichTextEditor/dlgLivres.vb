@@ -5,7 +5,7 @@ Imports System.Text
 ''' <summary>
 ''' Popotte v5
 ''' 1 mars 2016 au 31 Octobre 2022
-''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11 Need .Net Framework 4.0
+''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11 Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
 ''' </summary>
@@ -136,7 +136,7 @@ Public Class dlgLivres
 
         'Faire une imagelist avec les icons specifier
         Dim imageListSmall As New ImageList
-        imageListSmall.ImageSize = New Size(65, 65)
+        imageListSmall.ImageSize = New Size(55, 55)
         imageListSmall.Images.Add(Image.FromFile(Application.StartupPath & "\Images\livre.bmp"))
 
         'les image sont ajouter dynamiquement dans unn sub
