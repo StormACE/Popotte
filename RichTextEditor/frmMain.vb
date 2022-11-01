@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.15.95
-''' 1 mars 2016 au 31 Octobre 2022
+''' Popotte 5.3.15.96
+''' 1 mars 2016 au 1 Novembre 2022
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -621,6 +621,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
         If Not regKey Is Nothing Then
             regKey.CreateSubKey("DerRecette")
+            regKey.CreateSubKey("LivreDem")
             regKey.CreateSubKey("Menu")
         End If
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres", True)
@@ -2254,11 +2255,6 @@ Public Class frmMain
 
     Private Sub OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Click
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
-        If regKey Is Nothing Then
-            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\", True)
-            regKey = regKey.CreateSubKey("DerRecette")
-        End If
-
         If OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Checked Then
             OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Checked = False
             regKey.SetValue("check", 0)
