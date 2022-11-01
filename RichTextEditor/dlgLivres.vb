@@ -136,7 +136,7 @@ Public Class dlgLivres
 
         'Faire une imagelist avec les icons specifier
         Dim imageListSmall As New ImageList
-        imageListSmall.ImageSize = New Size(55, 55)
+        imageListSmall.ImageSize = New Size(65, 65)
         imageListSmall.Images.Add(Image.FromFile(Application.StartupPath & "\Images\livre.bmp"))
 
         'les image sont ajouter dynamiquement dans unn sub
