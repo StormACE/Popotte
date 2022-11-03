@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 31 Octobre 2022
+''' 1 mars 2016 au 3 Novembre 2022
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11 Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -342,22 +342,23 @@ Public Class dlgLivres
         End If
         Dim SourceLivreLabel As String = ListViewLivres.SelectedItems(0).Text
 
+        If e.Label.ToString.Trim = "" Then
+            Return
+        End If
+
         Dim SourceDir As String = PopotteDir & SourceLivreLabel
         Dim NewName As String = e.Label.ToString.Trim
 
-        If NewName <> "" Then
-            If NewName <> SourceDir Then
-                If RenameFolder(SourceDir, NewName + "_bak") <> -1 Then
-                    If RenameFolder(PopotteDir + NewName + "_bak", NewName) <> -1 Then
-                        Dim SourceRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & SourceLivreLabel, True)
-                        SourceRegKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & SourceDir, True)
-                        RenameLivreKey(SourceRegKey, NewName, SourceDir)
-                    End If
+        If NewName <> SourceDir Then
+            If RenameFolder(SourceDir, NewName + "_bak") <> -1 Then
+                If RenameFolder(PopotteDir + NewName + "_bak", NewName) <> -1 Then
+                    Dim SourceRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & SourceLivreLabel, True)
+                    SourceRegKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & SourceDir, True)
+                    RenameLivreKey(SourceRegKey, NewName, SourceDir)
                 End If
             End If
-        Else
-            MsgBox(LangINI.GetKeyValue("Popotte - ChangeBookName - MessageBox", "2"), MsgBoxStyle.Exclamation, "Popotte - " & LangINI.GetKeyValue("Popotte - ChangeBookName - MessageBox", "1"))
         End If
+
     End Sub
 
     Private Sub RenameLivreKey(ByVal Sourcekey As RegistryKey, ByVal Destkeyname As String, ByVal Livre As String)
@@ -404,7 +405,6 @@ Public Class dlgLivres
         Dim SourceRecetteLabel As String = ListViewRecettes.SelectedItems(0).Text
 
         If e.Label.ToString.Trim = "" Then
-
             Return
         End If
 
