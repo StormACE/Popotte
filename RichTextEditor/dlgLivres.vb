@@ -400,7 +400,13 @@ Public Class dlgLivres
         If e.Label Is Nothing Then
             Return
         End If
+
         Dim SourceRecetteLabel As String = ListViewRecettes.SelectedItems(0).Text
+
+        If e.Label.ToString.Trim = "" Then
+
+            Return
+        End If
 
         If LastLivre <> "" Then
             Dim LivreRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & LastLivre, True)
