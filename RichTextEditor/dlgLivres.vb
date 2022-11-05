@@ -1195,14 +1195,20 @@ FileFound:
             Dim subKeys As String() = LivreRegKey.GetSubKeyNames()
             If subKeys IsNot Nothing Then
                 For Each subKeyName As String In subKeys
-                    LivreRegKey.DeleteSubKey(subKeyName)
+                    If subKeyName <> "" Then
+                        LivreRegKey.DeleteSubKey(subKeyName)
+                    End If
                     Dim FavRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\" & subKeyName, True)
+                    Dim FavRegKey2 As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\Favorites\", True)
                     If FavRegKey IsNot Nothing Then
-                        FavRegKey.DeleteSubKey(subKeyName)
+                        FavRegKey2.DeleteSubKey(subKeyName)
                     End If
                 Next
                 Dim SRegKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres", True)
-                SRegKey.DeleteSubKey(NomLivre)
+                Dim SRegKey2 As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres\" & NomLivre, True)
+                If SRegKey2 IsNot Nothing Then
+                    SRegKey.DeleteSubKey(NomLivre)
+                End If
             End If
         End If
     End Sub
