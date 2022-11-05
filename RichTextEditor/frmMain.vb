@@ -245,6 +245,7 @@ Public Class frmMain
         ToolStripButtonDroite.ToolTipText = LangIni.GetKeyValue("Popotte - ToolBar Tooltips", "19")
         PageUpToolStripButton.ToolTipText = LangIni.GetKeyValue("Popotte - ToolBar Tooltips", "20")
         JustifyToolStripButton.ToolTipText = LangIni.GetKeyValue("Popotte - ToolBar Tooltips", "21")
+        ToolStripButtonBulletList.ToolTipText = LangIni.GetKeyValue("Popotte - ToolBar Tooltips", "22")
 
         'Rich Text Box Context Menu
         ToolStripMenuItemToutSel.Text = LangIni.GetKeyValue("Popotte - ContextMenu", "1")
