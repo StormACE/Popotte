@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 3 Novembre 2022
+''' 1 mars 2016 au 5 Novembre 2022
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11 Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -343,6 +343,7 @@ Public Class dlgLivres
         Dim SourceLivreLabel As String = ListViewLivres.SelectedItems(0).Text
 
         If e.Label.ToString.Trim = "" Then
+            e.CancelEdit = (e.Label = String.Empty)
             Return
         End If
 
@@ -405,6 +406,7 @@ Public Class dlgLivres
         Dim SourceRecetteLabel As String = ListViewRecettes.SelectedItems(0).Text
 
         If e.Label.ToString.Trim = "" Then
+            e.CancelEdit = (e.Label = String.Empty)
             Return
         End If
 
