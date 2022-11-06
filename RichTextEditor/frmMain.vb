@@ -2506,11 +2506,7 @@ Public Class frmMain
     End Sub
 
     Private Sub AidesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AidesToolStripMenuItem1.Click
-        If Language = "Francais" Then
-            Process.Start(Application.StartupPath & "\Popotte - Francais.chm")
-        Else
-            Process.Start(Application.StartupPath & "\Popotte - English.chm")
-        End If
+        Process.Start(Application.StartupPath & "\Popotte.pdf")
     End Sub
 
     Private Sub ToolStripMenuItemSiteWeb_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemSiteWeb.Click
