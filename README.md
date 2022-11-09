@@ -91,7 +91,7 @@ Ionic.Zip.dll
 
 Popotte - English.chm
 
-Popotte - Francais.chm
+Popotte.pdf
 
 Popotte.exe
 
