@@ -9,7 +9,7 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
 ''' Popotte 5.4.0.99
-''' 1 mars 2016 au 8 Novembre 2022
+''' 1 mars 2016 au 9 Novembre 2022
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -761,24 +761,25 @@ Public Class frmMain
                 Dim strExt As String
                 strExt = Path.GetExtension(Recette)
                 strExt = strExt.ToLower()
+                If File.Exists(Recette) Then
+                    Select Case strExt
+                        Case ".rtf"
+                            rtbDoc.LoadFile(Recette, RichTextBoxStreamType.RichText)
+                            Me.Text = "Popotte - [" & Recette & "]"
+                        Case Else
+                            If is_unicode(Recette) = True Then
+                                rtbDoc.Text = File.ReadAllText(Recette)
+                                Me.Text = "Popotte - [" & Recette & "] - UNICODE"
+                            Else
+                                rtbDoc.LoadFile(Recette, RichTextBoxStreamType.PlainText)
+                                Me.Text = "Popotte - [" & Recette & "] - ANSI"
+                            End If
+                    End Select
 
-                Select Case strExt
-                    Case ".rtf"
-                        rtbDoc.LoadFile(Recette, RichTextBoxStreamType.RichText)
-                        Me.Text = "Popotte - [" & Recette & "]"
-                    Case Else
-                        If is_unicode(Recette) = True Then
-                            rtbDoc.Text = File.ReadAllText(Recette)
-                            Me.Text = "Popotte - [" & Recette & "] - UNICODE"
-                        Else
-                            rtbDoc.LoadFile(Recette, RichTextBoxStreamType.PlainText)
-                            Me.Text = "Popotte - [" & Recette & "] - ANSI"
-                        End If
-                End Select
-
-                rtbDoc.Modified = False
-                LivreOuvert = CType(regKey.GetValue("Livre", ""), String)
-                currentFile = CType(regKey.GetValue("Recette", ""), String)
+                    rtbDoc.Modified = False
+                    LivreOuvert = CType(regKey.GetValue("Livre", ""), String)
+                    currentFile = CType(regKey.GetValue("Recette", ""), String)
+                End If
             Else
                 OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Checked = False
             End If
