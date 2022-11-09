@@ -4,7 +4,7 @@ Imports System.Text
 
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 5 Novembre 2022
+''' 1 mars 2016 au 8 Novembre 2022
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11 Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -556,18 +556,32 @@ Public Class dlgLivres
         Dim Path As String = ""
         If LastLivre <> "" Then
             Path = PopotteDir & LastLivre & "\" & recette
-            frmMain.LivreOuvert = LastLivre
-            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
-            regKey.SetValue("DerRecette", Path)
-            regKey.SetValue("Livre", LastLivre)
-            regKey.SetValue("Recette", NomRecette)
+            If File.Exists(Path) Then
+                frmMain.LivreOuvert = LastLivre
+                regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
+                regKey.SetValue("DerRecette", Path)
+                regKey.SetValue("Livre", LastLivre)
+                regKey.SetValue("Recette", NomRecette)
+            Else
+                MsgBox(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "14"), MsgBoxStyle.Exclamation, "Popotte")
+                Return
+            End If
+
         Else
             Path = PopotteDir & frmMain.LivreOuvert & "\" & recette
-            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
-            regKey.SetValue("DerRecette", Path)
-            regKey.SetValue("Livre", frmMain.LivreOuvert)
-            regKey.SetValue("Recette", NomRecette)
+            If File.Exists(Path) Then
+                regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
+                regKey.SetValue("DerRecette", Path)
+                regKey.SetValue("Livre", frmMain.LivreOuvert)
+                regKey.SetValue("Recette", NomRecette)
+            Else
+                MsgBox(LangINI.GetKeyValue("Popotte - BooksDialog - MessageBox", "14"), MsgBoxStyle.Exclamation, "Popotte")
+                Return
+            End If
+
         End If
+
+
 
         frmMain.rtbDoc.LoadFile(Path, RichTextBoxStreamType.RichText)
 
