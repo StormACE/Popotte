@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.4.0.99
-''' 1 mars 2016 au 9 Novembre 2022
+''' Popotte 5.4.0.100
+''' 1 mars 2016 au 16 Novembre 2022
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -20,11 +20,13 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' Optimized ram usage
 ''' Use .NET Framework 4.8 now
 ''' Show images in the list checkbox in Books Dialog
+''' Redo Help file in pdf
 ''' Fix some errors and minor bugs
 ''' ////////// Francais /////////////////////
 ''' Optimisé l'usage de la ram
 ''' Utilise le .NET framework 4.8 maintenant
 ''' Une case à cocher pour assicher les images de la liste dans le dialogue Mes Livres de Recette
+''' Refait le fichier Aide en pdf
 ''' Réparé quelques erreurs et bogues mineurs
 
 
@@ -2507,7 +2509,13 @@ Public Class frmMain
     End Sub
 
     Private Sub AidesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AidesToolStripMenuItem1.Click
-        Process.Start(Application.StartupPath & "\Popotte.pdf")
+
+        If Language = "Francais" Then
+            Process.Start(Application.StartupPath & "\Popotte Francais.pdf")
+        Else
+            Process.Start(Application.StartupPath & "\Popotte English.pdf")
+        End If
+
     End Sub
 
     Private Sub ToolStripMenuItemSiteWeb_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemSiteWeb.Click
