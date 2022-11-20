@@ -802,6 +802,7 @@ Partial Class frmMain
         'ToolStripMenuItemMenu
         '
         Me.ToolStripMenuItemMenu.Name = "ToolStripMenuItemMenu"
+        Me.ToolStripMenuItemMenu.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.M), System.Windows.Forms.Keys)
         Me.ToolStripMenuItemMenu.Size = New System.Drawing.Size(537, 34)
         Me.ToolStripMenuItemMenu.Text = "Menu de la Semaine"
         '
