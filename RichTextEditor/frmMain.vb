@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.4.0.102
-''' 1 mars 2016 au 3 DECEMBRE 2022
+''' Popotte 5.4.0.103
+''' 1 mars 2016 au 9 DECEMBRE 2022
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -1457,11 +1457,12 @@ Public Class frmMain
     Private Sub CopyToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles CopyToolStripMenuItem.Click
         rtbDoc.Copy()
         Dim iData As IDataObject = Clipboard.GetDataObject()
-
-        If iData.GetDataPresent(DataFormats.Text) Then
-            Clipboard.SetText(rtbDoc.SelectedText.ToString())
-        ElseIf iData.GetDataPresent(DataFormats.Rtf) Then
-            rtbDoc.Copy()
+        If rtbDoc.SelectedText.ToString() <> "" Then
+            If iData.GetDataPresent(DataFormats.Text) Then
+                Clipboard.SetText(rtbDoc.SelectedText.ToString())
+            ElseIf iData.GetDataPresent(DataFormats.Rtf) Then
+                rtbDoc.Copy()
+            End If
         End If
     End Sub
 
