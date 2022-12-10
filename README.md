@@ -3,7 +3,7 @@ Recipes management software Read licence.txt before use or modification!!!
 
 Page Facebook: https://www.facebook.com/PopotteKC
 
-Nightly Branch availlable 5.4.0.101
+Nightly Branch availlable 5.4.0.102
 pass to .net 4.8
 
 New 5.3.13.93 Master build released.
@@ -89,9 +89,9 @@ AdvRTB.dll
 
 Ionic.Zip.dll
 
-Popotte - English.chm
+Popotte English.pdf
 
-Popotte.pdf
+Popotte Francais.pdf
 
 Popotte.exe
 
