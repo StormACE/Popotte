@@ -769,9 +769,10 @@ Public Class frmMenu
     Private Sub ButtonPreview_Click(sender As Object, e As EventArgs) Handles ButtonPreview.Click
         If frmMain.rtbDoc.Modified = False Then
             frmMain.rtbDoc.Clear()
+            Printmenu()
+            frmMain.rtbDoc.SelectAll()
             frmMain.SetDefaultFont()
             frmMain.rtbDoc.Focus()
-            Printmenu()
             frmMain.currentFile = ""
             frmMain.Text = "Popotte"
             frmMain.LivreOuvert = ""
@@ -782,8 +783,6 @@ Public Class frmMenu
             frmMain.TexteÀGaucheToolStripMenuItem.Checked = True
             frmMain.TexteCentréToolStripMenuItem.Checked = False
             frmMain.TexteÀDroiteToolStripMenuItem.Checked = False
-            frmMain.RappelTimer.Stop()
-            frmMain.RappelTimer.Start()
             Close()
         Else
             Dim answer As Integer = MessageBox.Show(LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "10"), LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation)
@@ -791,9 +790,10 @@ Public Class frmMenu
                 Case Windows.Forms.DialogResult.Cancel
                 Case Windows.Forms.DialogResult.No
                     frmMain.rtbDoc.Clear()
+                    Printmenu()
+                    frmMain.rtbDoc.SelectAll()
                     frmMain.SetDefaultFont()
                     frmMain.rtbDoc.Focus()
-                    Printmenu()
                     frmMain.currentFile = ""
                     frmMain.Text = "Popotte"
                     frmMain.LivreOuvert = ""
@@ -804,15 +804,14 @@ Public Class frmMenu
                     frmMain.TexteÀGaucheToolStripMenuItem.Checked = True
                     frmMain.TexteCentréToolStripMenuItem.Checked = False
                     frmMain.TexteÀDroiteToolStripMenuItem.Checked = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Close()
                 Case Windows.Forms.DialogResult.Yes
                     frmMain.SaveToolStripMenuItem_Click(Me, e)
                     frmMain.rtbDoc.Clear()
+                    Printmenu()
+                    frmMain.rtbDoc.SelectAll()
                     frmMain.SetDefaultFont()
                     frmMain.rtbDoc.Focus()
-                    Printmenu()
                     frmMain.currentFile = ""
                     frmMain.Text = "Popotte"
                     frmMain.LivreOuvert = ""
@@ -823,8 +822,6 @@ Public Class frmMenu
                     frmMain.TexteÀGaucheToolStripMenuItem.Checked = True
                     frmMain.TexteCentréToolStripMenuItem.Checked = False
                     frmMain.TexteÀDroiteToolStripMenuItem.Checked = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Close()
             End Select
         End If
