@@ -52,6 +52,7 @@ Partial Class dlgLivres
         Me.AddToMenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnleverFavToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ButtonRandom = New System.Windows.Forms.Button()
+        Me.CheckBoxImage = New System.Windows.Forms.CheckBox()
         Me.LivreContextMenuStrip.SuspendLayout()
         Me.RecetteContextMenuStrip.SuspendLayout()
         Me.FavorisContextMenuStrip.SuspendLayout()
@@ -262,19 +263,19 @@ Partial Class dlgLivres
         Me.FavorisContextMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.FavorisContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToMenuToolStripMenuItem, Me.EnleverFavToolStripMenuItem})
         Me.FavorisContextMenuStrip.Name = "RecetteContextMenuStrip"
-        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(249, 101)
+        Me.FavorisContextMenuStrip.Size = New System.Drawing.Size(240, 68)
         '
         'AddToMenuToolStripMenuItem
         '
         Me.AddToMenuToolStripMenuItem.Name = "AddToMenuToolStripMenuItem"
-        Me.AddToMenuToolStripMenuItem.Size = New System.Drawing.Size(248, 32)
+        Me.AddToMenuToolStripMenuItem.Size = New System.Drawing.Size(239, 32)
         Me.AddToMenuToolStripMenuItem.Text = "Add to menu"
         '
         'EnleverFavToolStripMenuItem
         '
         Me.EnleverFavToolStripMenuItem.Image = CType(resources.GetObject("EnleverFavToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EnleverFavToolStripMenuItem.Name = "EnleverFavToolStripMenuItem"
-        Me.EnleverFavToolStripMenuItem.Size = New System.Drawing.Size(248, 32)
+        Me.EnleverFavToolStripMenuItem.Size = New System.Drawing.Size(239, 32)
         Me.EnleverFavToolStripMenuItem.Text = "Enlever des favoris"
         '
         'ButtonRandom
@@ -287,6 +288,16 @@ Partial Class dlgLivres
         Me.ButtonRandom.TabIndex = 8
         Me.ButtonRandom.UseVisualStyleBackColor = True
         '
+        'CheckBoxImage
+        '
+        Me.CheckBoxImage.AutoSize = True
+        Me.CheckBoxImage.Location = New System.Drawing.Point(20, 716)
+        Me.CheckBoxImage.Name = "CheckBoxImage"
+        Me.CheckBoxImage.Size = New System.Drawing.Size(185, 25)
+        Me.CheckBoxImage.TabIndex = 9
+        Me.CheckBoxImage.Text = "Images dans la liste"
+        Me.CheckBoxImage.UseVisualStyleBackColor = True
+        '
         'dlgLivres
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(144.0!, 144.0!)
@@ -294,6 +305,7 @@ Partial Class dlgLivres
         Me.AutoSize = True
         Me.CancelButton = Me.FermerButton
         Me.ClientSize = New System.Drawing.Size(1053, 836)
+        Me.Controls.Add(Me.CheckBoxImage)
         Me.Controls.Add(Me.ButtonRandom)
         Me.Controls.Add(Me.TextBoxRecherche)
         Me.Controls.Add(Me.ButtonFav)
@@ -348,4 +360,5 @@ Partial Class dlgLivres
     Friend WithEvents ButtonRandom As Button
     Friend WithEvents ToolStripMenuItemMenu As ToolStripMenuItem
     Friend WithEvents AddToMenuToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckBoxImage As CheckBox
 End Class

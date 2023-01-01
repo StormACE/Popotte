@@ -98,7 +98,7 @@ Partial Class dlgStartup
         Me.RadioButton4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton4.Location = New System.Drawing.Point(669, 557)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(363, 36)
+        Me.RadioButton4.Size = New System.Drawing.Size(362, 36)
         Me.RadioButton4.TabIndex = 13
         Me.RadioButton4.TabStop = True
         Me.RadioButton4.Text = "   Dossier Local Personnalisé"
@@ -111,7 +111,7 @@ Partial Class dlgStartup
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(222, 20)
         Me.Label3.TabIndex = 14
-        Me.Label3.Text = "© Martin Laflamme 2003/2021" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label3.Text = "© Martin Laflamme 2003/2023" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Button1
         '

@@ -8,18 +8,26 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.3.13.93
-''' 1 mars 2016 au 17 Juin 2022
-''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2022
+''' Popotte 5.4.0.105
+''' 1 mars 2016 au 1er Janvier 2023
+''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
+''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
 ''' </summary>
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Menu of the week is now better
+''' Optimized ram usage
+''' Use .NET Framework 4.8 now
+''' Show images in the list checkbox in Books Dialog
+''' Redo Help file in pdf
+''' Fix some errors and minor bugs
 ''' ////////// Francais /////////////////////
-''' Le menu de la semaine est mieux maintenant
+''' Optimisé l'usage de la ram
+''' Utilise le .NET framework 4.8 maintenant
+''' Une case à cocher pour assicher les images de la liste dans le dialogue Mes Livres de Recette
+''' Refait le fichier Aide en pdf
+''' Réparé quelques erreurs et bogues mineurs
 
 
 Public Class frmMain
@@ -239,6 +247,7 @@ Public Class frmMain
         ToolStripButtonDroite.ToolTipText = LangIni.GetKeyValue("Popotte - ToolBar Tooltips", "19")
         PageUpToolStripButton.ToolTipText = LangIni.GetKeyValue("Popotte - ToolBar Tooltips", "20")
         JustifyToolStripButton.ToolTipText = LangIni.GetKeyValue("Popotte - ToolBar Tooltips", "21")
+        ToolStripButtonBulletList.ToolTipText = LangIni.GetKeyValue("Popotte - ToolBar Tooltips", "22")
 
         'Rich Text Box Context Menu
         ToolStripMenuItemToutSel.Text = LangIni.GetKeyValue("Popotte - ContextMenu", "1")
@@ -615,6 +624,7 @@ Public Class frmMain
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings", True)
         If Not regKey Is Nothing Then
             regKey.CreateSubKey("DerRecette")
+            regKey.CreateSubKey("LivreDem")
             regKey.CreateSubKey("Menu")
         End If
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Livres", True)
@@ -753,24 +763,25 @@ Public Class frmMain
                 Dim strExt As String
                 strExt = Path.GetExtension(Recette)
                 strExt = strExt.ToLower()
+                If File.Exists(Recette) Then
+                    Select Case strExt
+                        Case ".rtf"
+                            rtbDoc.LoadFile(Recette, RichTextBoxStreamType.RichText)
+                            Me.Text = "Popotte - [" & Recette & "]"
+                        Case Else
+                            If is_unicode(Recette) = True Then
+                                rtbDoc.Text = File.ReadAllText(Recette)
+                                Me.Text = "Popotte - [" & Recette & "] - UNICODE"
+                            Else
+                                rtbDoc.LoadFile(Recette, RichTextBoxStreamType.PlainText)
+                                Me.Text = "Popotte - [" & Recette & "] - ANSI"
+                            End If
+                    End Select
 
-                Select Case strExt
-                    Case ".rtf"
-                        rtbDoc.LoadFile(Recette, RichTextBoxStreamType.RichText)
-                        Me.Text = "Popotte - [" & Recette & "]"
-                    Case Else
-                        If is_unicode(Recette) = True Then
-                            rtbDoc.Text = File.ReadAllText(Recette)
-                            Me.Text = "Popotte - [" & Recette & "] - UNICODE"
-                        Else
-                            rtbDoc.LoadFile(Recette, RichTextBoxStreamType.PlainText)
-                            Me.Text = "Popotte - [" & Recette & "] - ANSI"
-                        End If
-                End Select
-
-                rtbDoc.Modified = False
-                LivreOuvert = CType(regKey.GetValue("Livre", ""), String)
-                currentFile = CType(regKey.GetValue("Recette", ""), String)
+                    rtbDoc.Modified = False
+                    LivreOuvert = CType(regKey.GetValue("Livre", ""), String)
+                    currentFile = CType(regKey.GetValue("Recette", ""), String)
+                End If
             Else
                 OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Checked = False
             End If
@@ -1446,11 +1457,12 @@ Public Class frmMain
     Private Sub CopyToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles CopyToolStripMenuItem.Click
         rtbDoc.Copy()
         Dim iData As IDataObject = Clipboard.GetDataObject()
-
-        If iData.GetDataPresent(DataFormats.Text) Then
-            Clipboard.SetText(rtbDoc.SelectedText.ToString())
-        ElseIf iData.GetDataPresent(DataFormats.Rtf) Then
-            rtbDoc.Copy()
+        If rtbDoc.SelectedText.ToString() <> "" Then
+            If iData.GetDataPresent(DataFormats.Text) Then
+                Clipboard.SetText(rtbDoc.SelectedText.ToString())
+            ElseIf iData.GetDataPresent(DataFormats.Rtf) Then
+                rtbDoc.Copy()
+            End If
         End If
     End Sub
 
@@ -2140,6 +2152,14 @@ Public Class frmMain
         ParagrapheToolStripMenuItem.Enabled = False
         JustifyToolStripButton.Enabled = False
         ToolStripButtonBulletList.Enabled = False
+        AnnulerLaSurbrillanceToolStripMenuItem.Enabled = False
+        CouleurDeSurbrillanceToolStripMenuItem.Enabled = False
+        SurlignerLaSélectionToolStripMenuItem.Enabled = False
+        AnnulerSurbrillanceToolStripMenuItem.Enabled = False
+        SurlignerToolStripMenuItem.Enabled = False
+        AutoCcontextToolStripMenuItem.Enabled = False
+        AutoCeditToolStripMenuItem.Enabled = False
+        CrypterToolStripMenuItem.Enabled = False
     End Sub
 
     Private Sub EnableControl()
@@ -2176,6 +2196,14 @@ Public Class frmMain
         ParagrapheToolStripMenuItem.Enabled = True
         JustifyToolStripButton.Enabled = True
         ToolStripButtonBulletList.Enabled = True
+        AnnulerLaSurbrillanceToolStripMenuItem.Enabled = True
+        CouleurDeSurbrillanceToolStripMenuItem.Enabled = True
+        SurlignerLaSélectionToolStripMenuItem.Enabled = True
+        AnnulerSurbrillanceToolStripMenuItem.Enabled = True
+        SurlignerToolStripMenuItem.Enabled = True
+        AutoCcontextToolStripMenuItem.Enabled = True
+        AutoCeditToolStripMenuItem.Enabled = True
+        CrypterToolStripMenuItem.Enabled = True
     End Sub
 
 
@@ -2248,11 +2276,6 @@ Public Class frmMain
 
     Private Sub OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Click
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
-        If regKey Is Nothing Then
-            regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\", True)
-            regKey = regKey.CreateSubKey("DerRecette")
-        End If
-
         If OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Checked Then
             OuvrirLaDernièrerecetteAuDémarrageToolStripMenuItem.Checked = False
             regKey.SetValue("check", 0)
@@ -2305,6 +2328,7 @@ Public Class frmMain
 
     Private Sub SaveBD_ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveBD_ToolStripMenuItem.Click
         SaveFileDialog1.Title = "Popotte - " & LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "91")
+        SaveFileDialog1.FileName = ""
         SaveFileDialog1.DefaultExt = "reg"
         SaveFileDialog1.Filter = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "92") & "|*.reg"
         SaveFileDialog1.FilterIndex = 1
@@ -2503,11 +2527,13 @@ Public Class frmMain
     End Sub
 
     Private Sub AidesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AidesToolStripMenuItem1.Click
+
         If Language = "Francais" Then
-            Process.Start(Application.StartupPath & "\Popotte - Francais.chm")
+            Process.Start(Application.StartupPath & "\Popotte Francais.pdf")
         Else
-            Process.Start(Application.StartupPath & "\Popotte - English.chm")
+            Process.Start(Application.StartupPath & "\Popotte English.pdf")
         End If
+
     End Sub
 
     Private Sub ToolStripMenuItemSiteWeb_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemSiteWeb.Click
@@ -2594,6 +2620,7 @@ Public Class frmMain
     Private Sub ToolStripMenuItemArchiverLesRecettes_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemArchiverLesRecettes.Click
         If IsDirectoryEmpty(PopotteDir) = False Then
             SaveFileDialog1.Title = "Popotte - " & LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "83")
+            SaveFileDialog1.FileName = ""
             SaveFileDialog1.DefaultExt = "zip"
             SaveFileDialog1.Filter = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "84") & " (*.zip)|*.zip"
             SaveFileDialog1.FilterIndex = 1
@@ -3164,7 +3191,7 @@ Public Class frmMain
         rtbDoc.Focus()
     End Sub
 
-    Private Sub SetFont()
+    Public Sub SetFont()
         If GCF = False Then
             If FontLoaded Then
 
@@ -3356,6 +3383,7 @@ Public Class frmMain
         Dim mn As New frmMenu
         mn.Show()
     End Sub
+
 
 
 

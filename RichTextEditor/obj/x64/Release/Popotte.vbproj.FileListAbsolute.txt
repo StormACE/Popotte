@@ -131,3 +131,4 @@ C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.Core
 C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.CopyComplete
 C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x64\Release\Popotte.exe
 C:\Users\krypt\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.AssemblyReference.cache
+C:\Users\krypt\Github\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.SuggestedBindingRedirects.cache

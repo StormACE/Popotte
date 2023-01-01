@@ -1,6 +1,6 @@
 ''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 13 Janvier 2017
+''' 1 mars 2016 au 31 Juillet 2022
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
 ''' Copyright Martin Laflamme 2003/2017
 ''' Read licence.txt
@@ -13,7 +13,6 @@ Module Internet
         If My.Computer.Network.IsAvailable = True Then
             Try
                 My.Computer.Network.DownloadFile(URL, destinationFileName, "", "", False, 60000, True)
-                'My.Computer.Network.DownloadFile(URL, destinationFileName)
             Catch ex As ArgumentException
                 MessageBox.Show(LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "18"), "Popotte - " & LangINI.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 RetVal = -1

@@ -218,7 +218,6 @@ Partial Class frmMain
         Me.BalleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NumériqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.RappelTimer = New System.Windows.Forms.Timer(Me.components)
         Me.rtbDoc = New ExtendedRichTextBox.AdvRichTextBoxPrintCtrl()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -802,6 +801,7 @@ Partial Class frmMain
         'ToolStripMenuItemMenu
         '
         Me.ToolStripMenuItemMenu.Name = "ToolStripMenuItemMenu"
+        Me.ToolStripMenuItemMenu.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.M), System.Windows.Forms.Keys)
         Me.ToolStripMenuItemMenu.Size = New System.Drawing.Size(537, 34)
         Me.ToolStripMenuItemMenu.Text = "Menu de la Semaine"
         '
@@ -1762,7 +1762,6 @@ Partial Class frmMain
     Friend WithEvents ListToolStripDropDownButton As ToolStripDropDownButton
     Friend WithEvents BalleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NumériqueToolStripMenuItem As ToolStripMenuItem
-    Public WithEvents RappelTimer As Timer
     Friend WithEvents AnnulerLaSurbrillanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AnnulerSurbrillanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripButtonBulletList As ToolStripButton
