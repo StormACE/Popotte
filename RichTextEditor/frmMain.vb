@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.4.0.104
-''' 1 mars 2016 au 18 DECEMBRE 2022
+''' Popotte 5.4.0.105
+''' 1 mars 2016 au 1er Janvier 2023
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -2328,6 +2328,7 @@ Public Class frmMain
 
     Private Sub SaveBD_ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveBD_ToolStripMenuItem.Click
         SaveFileDialog1.Title = "Popotte - " & LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "91")
+        SaveFileDialog1.FileName = ""
         SaveFileDialog1.DefaultExt = "reg"
         SaveFileDialog1.Filter = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "92") & "|*.reg"
         SaveFileDialog1.FilterIndex = 1
@@ -2619,6 +2620,7 @@ Public Class frmMain
     Private Sub ToolStripMenuItemArchiverLesRecettes_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemArchiverLesRecettes.Click
         If IsDirectoryEmpty(PopotteDir) = False Then
             SaveFileDialog1.Title = "Popotte - " & LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "83")
+            SaveFileDialog1.FileName = ""
             SaveFileDialog1.DefaultExt = "zip"
             SaveFileDialog1.Filter = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "84") & " (*.zip)|*.zip"
             SaveFileDialog1.FilterIndex = 1
@@ -3381,6 +3383,7 @@ Public Class frmMain
         Dim mn As New frmMenu
         mn.Show()
     End Sub
+
 
 
 

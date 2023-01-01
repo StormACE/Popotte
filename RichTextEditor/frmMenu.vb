@@ -265,8 +265,6 @@ Public Class frmMenu
                     frmMain.Text = "Popotte - [" & recette & "]"
                     frmMain.GetCharFormat()
                     frmMain.rtbDoc.Modified = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Me.Close()
                 End If
             End If
@@ -304,8 +302,6 @@ Public Class frmMenu
                     frmMain.Text = "Popotte - [" & recette & "]"
                     frmMain.GetCharFormat()
                     frmMain.rtbDoc.Modified = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Me.Close()
                 End If
             End If
@@ -343,8 +339,6 @@ Public Class frmMenu
                     frmMain.Text = "Popotte - [" & recette & "]"
                     frmMain.GetCharFormat()
                     frmMain.rtbDoc.Modified = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Me.Close()
                 End If
             End If
@@ -382,8 +376,6 @@ Public Class frmMenu
                     frmMain.Text = "Popotte - [" & recette & "]"
                     frmMain.GetCharFormat()
                     frmMain.rtbDoc.Modified = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Me.Close()
                 End If
             End If
@@ -421,8 +413,6 @@ Public Class frmMenu
                     frmMain.Text = "Popotte - [" & recette & "]"
                     frmMain.GetCharFormat()
                     frmMain.rtbDoc.Modified = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Me.Close()
                 End If
             End If
@@ -460,8 +450,6 @@ Public Class frmMenu
                     frmMain.Text = "Popotte - [" & recette & "]"
                     frmMain.GetCharFormat()
                     frmMain.rtbDoc.Modified = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Me.Close()
                 End If
             End If
@@ -499,8 +487,6 @@ Public Class frmMenu
                     frmMain.Text = "Popotte - [" & recette & "]"
                     frmMain.GetCharFormat()
                     frmMain.rtbDoc.Modified = False
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     Me.Close()
                 End If
             End If

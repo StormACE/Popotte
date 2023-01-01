@@ -630,8 +630,6 @@ Public Class dlgLivres
         frmMain.Text = "Popotte - [" & recette & "]"
         frmMain.GetCharFormat()
         frmMain.rtbDoc.Modified = False
-        frmMain.RappelTimer.Stop()
-        frmMain.RappelTimer.Start()
         Me.Close()
     End Sub
 
@@ -1135,8 +1133,6 @@ FileFound:
                     frmMain.rtbDoc.Modified = False
                     frmMain.LivreOuvert = Livre
                     frmMain.currentFile = Filepath
-                    frmMain.RappelTimer.Stop()
-                    frmMain.RappelTimer.Start()
                     regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\DerRecette", True)
                     regKey.SetValue("DerRecette", Filepath)
                     regKey.SetValue("Livre", Livre)
