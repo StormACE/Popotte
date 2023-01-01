@@ -3,7 +3,9 @@ Recipes management software Read licence.txt before use or modification!!!
 
 Page Facebook: https://www.facebook.com/PopotteKC
 
-New 5.3.13.93 Master build released.
+New 5.4.0.105 Master build released.
+
+Nightly Branch availlable at version 5.4.0.105
 
 Logiciel de gestion de recettes Lisez License.txt avant d'utiliser ou modifier!!!
 
