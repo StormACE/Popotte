@@ -9,7 +9,7 @@ Nightly Branch availlable at version 5.4.0.105
 
 Logiciel de gestion de recettes Lisez License.txt avant d'utiliser ou modifier!!!
 
-La nouvelle version 5.3.13.93 Master est en-ligne.
+La nouvelle version 5.4.0.105 Master est en-ligne.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
