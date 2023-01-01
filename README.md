@@ -73,6 +73,7 @@ Voici quelques caractéristiques des fonctionnalités :
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Structure tree to get the build to work...
+Folders and files needed can be found in RichTextEditor/bin/x64/Release/
 
 Folder needed in the root of the software folder:
 
