@@ -8,8 +8,8 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.4.0.105
-''' 1 mars 2016 au 1er Janvier 2023
+''' Popotte 5.4.1.106
+''' 1 mars 2016 au 28 Septembre 2023
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
 ''' Copyright Martin Laflamme 2003/2023
 ''' Read licence.txt
@@ -17,17 +17,9 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Optimized ram usage
-''' Use .NET Framework 4.8 now
-''' Show images in the list checkbox in Books Dialog
-''' Redo Help file in pdf
-''' Fix some errors and minor bugs
+''' Fix copy and cut problem with new windows 11 version
 ''' ////////// Francais /////////////////////
-''' Optimisé l'usage de la ram
-''' Utilise le .NET framework 4.8 maintenant
-''' Une case à cocher pour assicher les images de la liste dans le dialogue Mes Livres de Recette
-''' Refait le fichier Aide en pdf
-''' Réparé quelques erreurs et bogues mineurs
+''' Réparé les problèmes avec copie et couper sur la nouvelle version de windows 11
 
 
 Public Class frmMain
@@ -1448,35 +1440,17 @@ Public Class frmMain
 
 
     Private Sub SelectAllToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SelectAllToolStripMenuItem.Click
-
         rtbDoc.SelectAll()
-
     End Sub
 
 
     Private Sub CopyToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles CopyToolStripMenuItem.Click
         rtbDoc.Copy()
-        Dim iData As IDataObject = Clipboard.GetDataObject()
-        If rtbDoc.SelectedText.ToString() <> "" Then
-            If iData.GetDataPresent(DataFormats.Text) Then
-                Clipboard.SetText(rtbDoc.SelectedText.ToString())
-            ElseIf iData.GetDataPresent(DataFormats.Rtf) Then
-                rtbDoc.Copy()
-            End If
-        End If
     End Sub
 
 
     Private Sub CutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles CutToolStripMenuItem.Click
         rtbDoc.Cut()
-        Dim iData As IDataObject = Clipboard.GetDataObject()
-        If iData.GetDataPresent(DataFormats.Text) Then
-            If rtbDoc.SelectedText.ToString() <> "" Then
-                Clipboard.SetText(rtbDoc.SelectedText.ToString())
-            End If
-        ElseIf iData.GetDataPresent(DataFormats.Rtf) Then
-            rtbDoc.Cut()
-        End If
     End Sub
 
 
