@@ -17,9 +17,9 @@ Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Fix copy and cut problem with new windows 11 version
+''' Fix copy and cut and insert image problem with new windows 11 version
 ''' ////////// Francais /////////////////////
-''' Réparé les problèmes avec copie et couper sur la nouvelle version de windows 11
+''' Réparé les problèmes avec copie,couper et insérer une image sur la nouvelle version de windows 11
 
 
 Public Class frmMain
@@ -1778,7 +1778,7 @@ Public Class frmMain
             'Restore clipboard
             Clipboard.SetDataObject(orgData)
         Catch ex As Exception
-            MessageBox.Show(LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "12") & " " & ex.ToString, LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"), MessageBoxButtons.OK, MessageBoxIcon.Warning) 'else display any possible error
+            ''MessageBox.Show(LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "12") & " " & ex.ToString, LangIni.GetKeyValue("Popotte - EditorWindow - Messagebox", "7"), MessageBoxButtons.OK, MessageBoxIcon.Warning) 'else display any possible error
         End Try
         OpenFileDialog1.Dispose()
     End Sub
