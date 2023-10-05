@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Popotte"
-#define MyAppVersion "5.3.13.93"
+#define MyAppVersion "5.4.1.106"
 #define MyAppPublisher "Martin Laflamme"
 #define MyAppURL "https://github.com/StormACE/Popotte"
 #define MyAppExeName "Popotte.exe"
@@ -42,8 +42,6 @@ Source: "C:\Users\krypt\OneDrive\Desktop\Popotte\Popotte.exe"; DestDir: "{app}";
 Source: "C:\Users\krypt\OneDrive\Desktop\Popotte\AdvRTB.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\krypt\OneDrive\Desktop\Popotte\Ionic.Zip.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\krypt\OneDrive\Desktop\Popotte\licence.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\krypt\OneDrive\Desktop\Popotte\Popotte - English.chm"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\krypt\OneDrive\Desktop\Popotte\Popotte - Francais.chm"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: "..\..\OneDrive\Desktop\Popotte\Exemples\Desserts\Pouding Chômeur.rtf"; DestDir: "{app}\Exemples\Desserts"; Flags: ignoreversion
 Source: "..\..\OneDrive\Desktop\Popotte\Exemples\Desserts\Rondelles de pommes à la canelle.rtf"; DestDir: "{app}\Exemples\Desserts"; Flags: ignoreversion
@@ -58,6 +56,8 @@ Source: "..\..\OneDrive\Desktop\Popotte\Images\Livre.bmp"; DestDir: "{app}\Image
 Source: "..\..\OneDrive\Desktop\Popotte\Images\Recette.bmp"; DestDir: "{app}\Images"; Flags: ignoreversion
 Source: "..\..\OneDrive\Desktop\Popotte\Languages\English.ini"; DestDir: "{app}\Languages"; Flags: ignoreversion
 Source: "..\..\OneDrive\Desktop\Popotte\Languages\Francais.ini"; DestDir: "{app}\Languages"; Flags: ignoreversion
+Source: "..\..\OneDrive\Desktop\Popotte\Popotte English.pdf"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\OneDrive\Desktop\Popotte\Popotte Francais.pdf"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
