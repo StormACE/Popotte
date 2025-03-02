@@ -1,17 +1,43 @@
 # Popotte 5
+Logiciel de gestion de recettes Lisez License.txt avant d'utiliser ou modifier!!!
+
 Recipes management software Read licence.txt before use or modification!!!
 
 Page Facebook: https://www.facebook.com/PopotteKC
 
-New 5.4.1.106 Master build released.
-
-Nightly Branch availlable at version 5.4.1.106
-
-Logiciel de gestion de recettes Lisez License.txt avant d'utiliser ou modifier!!!
-
 La nouvelle version 5.4.1.106 Master est en-ligne.
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Popotte est un logiciel conçu pour Écrire, Lire et Classer des recettes facilement.
+
+Voici quelques caractéristiques des fonctionnalités :
+
+-Interface graphique simple pour Écrire, Lire et Classer des recettes 
+
+-Sauvegarde en format RTF par défaut ou en ce que vous voulez avec encodage ANSI ou UNICODE 
+
+-Insérez des images dans vos recettes 
+
+-Imprimez vos recettes avec n'importe quel imprimante 
+
+-Créer un Menu pour la semaine que vous pouvez imprimer
+
+-Utiliser ou ajouter des engins de recherches 
+
+-Convertisseur de 24 mesures 
+
+-Copier/Coller vos recettes facilement depuis votre navigateur (Chrome, Edge, Firefox, Opera, Vivaldi, IE, ect...) 
+
+-Sauvegardez et synchronisez vos recettes avec les services de stockage en-ligne (Dropbox, Google Drive, OneDrive, Pydio, ect...) 
+
+-Multi-Langages 
+
+-Conçu pour les débutants ainsi que les utilisateurs plus avancés Popotte permet de gérer des recettes facilement et sont interface WYSIWYG est simple et efficace!
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Popotte is a software build to write, read and sort your recipes easily.
 
@@ -39,35 +65,6 @@ Here are some functionality characteristics :
 
 -Build to be easy for newbie and for more advanced user, Popotte can manage your recipe collections easily and is WYSIWYG interface is simple and effective!
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-Popotte est un logiciel conçu pour Écrire, Lire et Classer des recettes facilement.
-
-Voici quelques caractéristiques des fonctionnalités :
-
--Interface graphique simple pour Écrire, Lire et Classer des recettes 
-
--Sauvegarde en format RTF par défaut ou en ce que vous voulez avec encodage ANSI ou UNICODE 
-
--Insérez des images dans vos recettes 
-
--Imprimez vos recettes avec n'importe quel imprimante 
-
--Créer un Menu pour la semaine que vous pouvez imprimer
-
--Utiliser ou ajouter des engins de recherches 
-
--Convertisseur de 24 mesures 
-
--Copier/Coller vos recettes facilement depuis votre navigateur (Chrome, Edge, Firefox, Opera, Vivaldi, IE, ect...) 
-
--Sauvegardez et synchronisez vos recettes avec les services de stockage en-ligne (Dropbox, Google Drive, OneDrive, Pydio, ect...) 
-
--Multi-Langages 
-
--Conçu pour les débutants ainsi que les utilisateurs plus avancés Popotte permet de gérer des recettes facilement et sont interface WYSIWYG est simple et efficace!
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -100,8 +97,6 @@ Apache v2.txt
 Licence Ionic Zip.txt
 
 licence.txt
-
-GNU GPL v3.txt
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
