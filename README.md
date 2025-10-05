@@ -3,8 +3,6 @@ Logiciel de gestion de recettes Lisez License.txt avant d'utiliser ou modifier!!
 
 Recipes management software Read licence.txt before use or modification!!!
 
-Page Facebook: https://www.facebook.com/PopotteKC
-
 La nouvelle version 5.4.1.106 Master est en-ligne.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,4 +105,5 @@ Don't forget to read the "Licence.txt" file before using, modifying and/or distr
 Open "Popotte.sln"
 
 Build the software.
+
 
