@@ -1,8 +1,6 @@
 # Popotte 5
 Recipes management software Read licence.txt before use or modification!!!
 
-Page Facebook: https://www.facebook.com/PopotteKC
-
 New 5.4.1.106 Master build released.
 
 Nightly Branch availlable at version 5.4.1.106
@@ -112,4 +110,5 @@ Don't forget to read the "Licence.txt" file before using, modifying and/or distr
 Open "Popotte.sln"
 
 Build the software.
+
 
