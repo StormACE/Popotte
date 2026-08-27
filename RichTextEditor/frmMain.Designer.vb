@@ -29,7 +29,6 @@ Partial Class frmMain
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsANSIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveAsUNICODEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuPageSetup = New System.Windows.Forms.ToolStripMenuItem()
         Me.PreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -239,7 +238,7 @@ Partial Class frmMain
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemLivres, Me.NewToolStripMenuItem, Me.OpenToolStripMenuItem, Me.ToolStripMenuItem1, Me.SaveToolStripMenuItem, Me.SaveAsANSIToolStripMenuItem, Me.SaveAsUNICODEToolStripMenuItem, Me.ToolStripMenuItem2, Me.mnuPageSetup, Me.PreviewToolStripMenuItem, Me.PrintToolStripMenuItem, Me.ToolStripMenuItem3, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemLivres, Me.NewToolStripMenuItem, Me.OpenToolStripMenuItem, Me.ToolStripMenuItem1, Me.SaveToolStripMenuItem, Me.SaveAsANSIToolStripMenuItem, Me.ToolStripMenuItem2, Me.mnuPageSetup, Me.PreviewToolStripMenuItem, Me.PrintToolStripMenuItem, Me.ToolStripMenuItem3, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(78, 29)
         Me.FileToolStripMenuItem.Text = "&Fichier"
@@ -286,14 +285,7 @@ Partial Class frmMain
         Me.SaveAsANSIToolStripMenuItem.Image = CType(resources.GetObject("SaveAsANSIToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SaveAsANSIToolStripMenuItem.Name = "SaveAsANSIToolStripMenuItem"
         Me.SaveAsANSIToolStripMenuItem.Size = New System.Drawing.Size(354, 34)
-        Me.SaveAsANSIToolStripMenuItem.Text = "&Sauvegarder sous... ANSI"
-        '
-        'SaveAsUNICODEToolStripMenuItem
-        '
-        Me.SaveAsUNICODEToolStripMenuItem.Image = CType(resources.GetObject("SaveAsUNICODEToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SaveAsUNICODEToolStripMenuItem.Name = "SaveAsUNICODEToolStripMenuItem"
-        Me.SaveAsUNICODEToolStripMenuItem.Size = New System.Drawing.Size(354, 34)
-        Me.SaveAsUNICODEToolStripMenuItem.Text = "&Sauvegarder sous... UNICODE"
+        Me.SaveAsANSIToolStripMenuItem.Text = "&Sauvegarder sous..."
         '
         'ToolStripMenuItem2
         '
@@ -1692,7 +1684,6 @@ Partial Class frmMain
     Friend WithEvents ResearchCenter_ContextMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator15 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents SaveBD_ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SaveAsUNICODEToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator21 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripMenuItemSiteWeb As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

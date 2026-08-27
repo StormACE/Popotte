@@ -125,8 +125,7 @@ Public Class frmMain
         NewToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "9")
         OpenToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "10")
         SaveToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "11")
-        SaveAsANSIToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "12") & " ANSI"
-        SaveAsUNICODEToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "12") & " UNICODE"
+        SaveAsANSIToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "12")
         mnuPageSetup.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "13")
         PreviewToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "14")
         PrintToolStripMenuItem.Text = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "15")
@@ -272,7 +271,6 @@ Public Class frmMain
         ToolStripButtonSave.Enabled = False
         SaveToolStripMenuItem.Enabled = False
         SaveAsANSIToolStripMenuItem.Enabled = False
-        SaveAsUNICODEToolStripMenuItem.Enabled = False
 
         'Charge les engins de recherche
         regKey = Registry.CurrentUser.OpenSubKey("Software\Popotte\Settings\CentreRecherche", True)
@@ -1161,12 +1159,10 @@ Public Class frmMain
             ToolStripButtonSave.Enabled = True
             SaveToolStripMenuItem.Enabled = True
             SaveAsANSIToolStripMenuItem.Enabled = True
-            SaveAsUNICODEToolStripMenuItem.Enabled = True
         Else
             ToolStripButtonSave.Enabled = False
             SaveToolStripMenuItem.Enabled = False
             SaveAsANSIToolStripMenuItem.Enabled = False
-            SaveAsUNICODEToolStripMenuItem.Enabled = False
         End If
     End Sub
 
@@ -1388,42 +1384,6 @@ Public Class frmMain
                 txtWriter.Write(rtbDoc.Text)
                 txtWriter.Close()
                 txtWriter = Nothing
-                txtWriter.Dispose()
-                rtbDoc.SelectionStart = 0
-                rtbDoc.SelectionLength = 0
-        End Select
-
-        currentFile = SaveFileDialog1.FileName
-        rtbDoc.Modified = False
-        Me.Text = "Popotte - [" & currentFile.ToString() & "]"
-        SaveFileDialog1.Dispose()
-    End Sub
-
-    Private Sub SaveAsUNICODEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsUNICODEToolStripMenuItem.Click
-        SaveFileDialog1.Title = "Popotte - " & LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "85") & " UNICODE"
-        SaveFileDialog1.DefaultExt = "txt"
-        SaveFileDialog1.Filter = LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "79") & "|*.*|Rich Text|*.rtf|" & LangIni.GetKeyValue("Popotte - EditorWindow - Menu", "80") & "|*.txt"
-        SaveFileDialog1.FilterIndex = 1
-        SaveFileDialog1.ShowDialog()
-
-
-        If SaveFileDialog1.FileName = "" Then Exit Sub
-
-        Dim strExt As String
-        strExt = Path.GetExtension(SaveFileDialog1.FileName)
-        strExt = strExt.ToLower()
-
-        Select Case strExt
-            Case ".rtf"
-                rtbDoc.SaveFile(SaveFileDialog1.FileName, RichTextBoxStreamType.RichText)
-            Case Else
-                Dim txtWriter As StreamWriter
-                'encode as Unicode
-                txtWriter = New StreamWriter(SaveFileDialog1.FileName, True, System.Text.Encoding.Unicode)
-                txtWriter.Write(rtbDoc.Text)
-                txtWriter.Close()
-                txtWriter = Nothing
-                txtWriter.Dispose()
                 rtbDoc.SelectionStart = 0
                 rtbDoc.SelectionLength = 0
         End Select

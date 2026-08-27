@@ -27,3 +27,9 @@ C:\Users\krypt\Github\Popotte\ExtendedRichTextBox\obj\x64\Release\ExtendedRichTe
 C:\Users\krypt\Github\Popotte\ExtendedRichTextBox\obj\x64\Release\ExtendedRichTextBox.vbproj.CoreCompileInputs.cache
 C:\Users\krypt\Github\Popotte\ExtendedRichTextBox\obj\x64\Release\AdvRTB.dll
 C:\Users\krypt\Github\Popotte\ExtendedRichTextBox\obj\x64\Release\ExtendedRichTextBox.vbproj.AssemblyReference.cache
+C:\Users\krypt\source\repos\StormACE\Popotte\ExtendedRichTextBox\bin\x64\Release\AdvRTB.dll
+C:\Users\krypt\source\repos\StormACE\Popotte\ExtendedRichTextBox\obj\x64\Release\ExtendedRichTextBox.vbproj.AssemblyReference.cache
+C:\Users\krypt\source\repos\StormACE\Popotte\ExtendedRichTextBox\obj\x64\Release\ExtendedRichTextBox.Resources.resources
+C:\Users\krypt\source\repos\StormACE\Popotte\ExtendedRichTextBox\obj\x64\Release\ExtendedRichTextBox.vbproj.GenerateResource.cache
+C:\Users\krypt\source\repos\StormACE\Popotte\ExtendedRichTextBox\obj\x64\Release\ExtendedRichTextBox.vbproj.CoreCompileInputs.cache
+C:\Users\krypt\source\repos\StormACE\Popotte\ExtendedRichTextBox\obj\x64\Release\AdvRTB.dll
