@@ -8,18 +8,18 @@ Imports System.Globalization
 Imports ExtendedRichTextBox.AdvRichTextBoxPrintCtrl
 
 ''' <summary>
-''' Popotte 5.4.1.106
-''' 1 mars 2016 au 28 Septembre 2023
+''' Popotte 5.4.2.107
+''' 1 mars 2016 au 27 aout 2026
 ''' Work on Windows 7 sp1, windows 8, Windows 8.1, Windows 10, Windows 11  Need .Net Framework 4.8
-''' Copyright Martin Laflamme 2003/2023
+''' Copyright Martin Laflamme 2003/2026
 ''' Read licence.txt
 ''' </summary>
 ''' 
 ''' ////////// Changes Logs ///////////////////////
 ''' ////////// English //////////////////////
-''' Fix copy and cut and insert image problem with new windows 11 version
+''' Fix save as 
 ''' ////////// Francais /////////////////////
-''' Réparé les problèmes avec copie,couper et insérer une image sur la nouvelle version de windows 11
+''' Réparé Sauvegarder sous...
 
 
 Public Class frmMain

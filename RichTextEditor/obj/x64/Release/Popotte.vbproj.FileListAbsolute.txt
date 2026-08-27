@@ -5,7 +5,6 @@ C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\bin\x64\Release\Ionic.Zip
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgAboutBox.resources
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.LanguageDialog.resources
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgMultiModInfo.resources
-C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.RappelDialog.resources
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgCrypterDécrypter.resources
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgConverter.resources
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgInfoRecette.resources
@@ -21,8 +20,6 @@ C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.R
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.GenerateResource.Cache
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.exe
 C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.CoreCompileInputs.cache
-C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.CopyComplete
-C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbprojAssemblyReference.cache
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\bin\x64\Release\Popotte.exe.config
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\bin\x64\Release\Popotte.exe
 C:\Users\krypt\OneDrive\Documents\Popotte\RichTextEditor\bin\x64\Release\AdvRTB.dll
@@ -159,3 +156,9 @@ C:\Users\krypt\source\repos\StormACE\Popotte\RichTextEditor\obj\x64\Release\Popo
 C:\Users\krypt\source\repos\StormACE\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.CoreCompileInputs.cache
 C:\Users\krypt\source\repos\StormACE\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.Up2Date
 C:\Users\krypt\source\repos\StormACE\Popotte\RichTextEditor\obj\x64\Release\Popotte.exe
+C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.AssemblyReference.cache
+C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.exe.config
+C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgAddMenu.resources
+C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.dlgmodifymenu.resources
+C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.frmMenu.resources
+C:\Users\krypt\Documents\GitHub\Popotte\RichTextEditor\obj\x64\Release\Popotte.vbproj.Up2Date

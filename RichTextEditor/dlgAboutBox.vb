@@ -1,8 +1,8 @@
 ﻿''' <summary>
 ''' Popotte v5
-''' 1 mars 2016 au 29 décembre 2017
+''' 1 mars 2016 au 27 aout 2026
 ''' Work on Vista sp2, Windows 7 sp1, windows 8, Windows 8.1 and Windows 10. Need .Net Framework 4.0
-''' Copyright Martin Laflamme 2003/2019
+''' Copyright Martin Laflamme 2003/2026
 ''' Read licence.txt
 ''' </summary>
 Public NotInheritable Class dlgAboutBox

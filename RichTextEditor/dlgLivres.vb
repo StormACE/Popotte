@@ -774,8 +774,7 @@ Public Class dlgLivres
             If imageDataHex IsNot Nothing Then
                 Dim imageBuffer As Byte() = ToBinary(imageDataHex)
                 Using stream As New MemoryStream(imageBuffer)
-                    Dim img = New Bitmap(stream)
-                    imageListSmallRecette.Images.Add(img)
+                    Dim unused = imageListSmallRecette.Images.Add(CObj(New Bitmap(stream)))
                 End Using
             Else
                 imageListSmallRecette.Images.Add(Image.FromFile(Application.StartupPath & "\Images\Recette.bmp"))
