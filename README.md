@@ -1,3 +1,8 @@
+Popotte version 6 .NET10 est maintenant disponible à cette adresse:
+https://github.com/StormACE/Popotte-6
+
+
+
 # Popotte 5
 Logiciel de gestion de recettes Lisez License.txt avant d'utiliser ou modifier!!!
 
